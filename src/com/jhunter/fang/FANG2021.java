@@ -45,35 +45,35 @@ public class FANG2021 {
         int idx1 = 0, idx2 = 0, idx3 = 0, resIdx = -1;
         while (idx1 < arr1.length || idx2 < arr2.length || idx3 < arr3.length) {
             int minimumValueArr;
-            if (idx1 >= arr1.length ) {
-                if (idx2 >= arr2.length ) {
+            if (idx1 >= arr1.length ) { /* Check if we have traversed all element of arr1. */
+                if (idx2 >= arr2.length ) { /* Check if we have traversed all element of arr2. */
                     minimumValueArr = arr3[idx3++];
-                } else if (idx3 >= arr3.length ) {
+                } else if (idx3 >= arr3.length ) { /* Check if we have traversed all element of arr3. */
                     minimumValueArr = arr2[idx2++];
                 } else {
-                    if (arr2[idx2] < arr3[idx3]) {
+                    if (arr2[idx2] < arr3[idx3]) { /* Find minimum element from arr2 and arr3. */
                         minimumValueArr = arr2[idx2++];
                     } else {
                         minimumValueArr = arr3[idx3++];
                     }
                 }
-            } else if ( idx2 >= arr2.length  ) {
-                if (idx3 >= arr3.length ) {
+            } else if ( idx2 >= arr2.length  ) { /* Check if we have traversed all element of arr2. */
+                if (idx3 >= arr3.length ) { /* Check if we have traversed all element of arr3. */
                     minimumValueArr = arr1[idx1++];
-                } else {
+                } else { /* Find minimum element from arr1 and arr3. */
                     if (arr1[idx1] < arr3[idx3]) {
                         minimumValueArr = arr1[idx1++];
                     } else {
                         minimumValueArr = arr3[idx3++];
                     }
                 }
-            } else if ( idx3 >= arr3.length ) {
-                if (arr1[idx1] < arr2[idx2]) {
+            } else if ( idx3 >= arr3.length ) {/* Check if we have traversed all element of arr3. */
+                if (arr1[idx1] < arr2[idx2]) { /* Find minimum element from arr1 and arr2. */
                     minimumValueArr = arr1[idx1++];
                 } else {
                     minimumValueArr = arr2[idx2++];
                 }
-            } else {
+            } else { /* Find minimum element from arr1, arr2 and arr3. */
                 if (arr1[idx1] < arr2[idx2]) {
                     if (arr1[idx1] < arr3[idx3]) {
                         minimumValueArr = arr1[idx1++];
@@ -86,7 +86,7 @@ public class FANG2021 {
                     minimumValueArr = arr3[idx3++];
                 }
             }
-            if (resIdx < 0 || resArr[resIdx] != minimumValueArr) {
+            if (resIdx < 0 || resArr[resIdx] != minimumValueArr) { /* Insert non duplicate values into output array. */
                 resArr[++resIdx] = minimumValueArr;
             }
         }
