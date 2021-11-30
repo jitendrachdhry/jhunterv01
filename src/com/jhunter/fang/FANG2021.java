@@ -27,9 +27,9 @@ public class FANG2021 {
 
         Big O:
         - Time Complexity
-          O(n)
+          O(m + n + o)
         - Space Complexity
-          O(n)
+          O(m + n + o)
 
         Test Cases:
         1. Take all same array length.
