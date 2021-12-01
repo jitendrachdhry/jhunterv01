@@ -103,4 +103,57 @@ public class FANG2021 {
         }
         return resArr;
     }
+
+    public static int[] addNumberFromIntArray(int[] arr1, int[] arr2) {
+
+        /*
+            Question:
+            Given two array A[0….n-1] and B[0….m-1] of size n and m respectively, representing two numbers such that every element of arrays represent a digit. For example, A[] = { 1, 2, 3} and B[] = { 2, 1, 4 } represent 123 and 214 respectively. The task is to find the sum of both the number. In above case, answer is 337.
+
+            Example:
+                Input :
+                a[] = { 9, 5, 4, 9 }
+                b[] = { 2, 1, 4 }
+                Output : 9763
+
+            Doubts to confirm:
+            1. can we get input like below?
+                a[] = { 0, 0, 0, 0, 0, 0, 0, 0}
+                b[] = { 2, 1, 4 }
+
+            Big O:
+            - Time Complexity
+              O(m + n)
+            - Space Complexity
+              O(m + n)
+         */
+        if(arr1 == null && arr2 == null) {
+            return null;
+        } else if(arr1 == null && arr2 != null) {
+            return Arrays.copyOfRange(arr2, 0, arr2.length);
+        } else if(arr2 == null && arr1 != null) {
+            return Arrays.copyOfRange(arr1, 0, arr1.length);
+        }
+        int[] resArr = new int[ Math.max(arr1.length , arr2.length ) + 1];
+        int idx1 = arr1.length - 1, idx2 = arr2.length - 1 , idxOutput = resArr.length -1 , carry = 0;
+        while(idx1 >= 0 || idx2 >= 0 ) {
+            int addition = 0;
+            if(idx1 >= 0 && idx2 >= 0) {
+                addition = arr1[idx1--] + arr2[idx2--] + carry;
+            } else if(idx1 >= 0) {
+                addition = arr1[idx1--] + carry;
+            } else {
+                addition = arr2[idx2--] + carry;
+            }
+            carry = (addition > 10 ) ? 1 : 0;
+            resArr[idxOutput--] = addition % 10;
+        }
+
+        System.out.print("\n\n\n\n Array Result: ");
+        int[] subArray = Arrays.copyOfRange(resArr, idxOutput+1, resArr.length  );
+        for (int i : subArray) {
+            System.out.print(i + " ");
+        }
+        return resArr;
+    }
 }
