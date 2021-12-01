@@ -96,7 +96,7 @@ public class FANG2021 {
                 resArr[++resIdx] = minimumValueArr;
             }
         }
-        System.out.print("\n\n\n\n Array Result: ");
+        System.out.print("\n ===================================== \n Array Result: ");
         int[] subArray = Arrays.copyOfRange(resArr, 0, resIdx + 1);
         for (int i : subArray) {
             System.out.print(i + " ");
@@ -127,33 +127,101 @@ public class FANG2021 {
             - Space Complexity
               O(m + n)
          */
-        if(arr1 == null && arr2 == null) {
+        if (arr1 == null && arr2 == null) {
             return null;
-        } else if(arr1 == null && arr2 != null) {
+        } else if (arr1 == null && arr2 != null) {
             return Arrays.copyOfRange(arr2, 0, arr2.length);
-        } else if(arr2 == null && arr1 != null) {
+        } else if (arr2 == null && arr1 != null) {
             return Arrays.copyOfRange(arr1, 0, arr1.length);
         }
-        int[] resArr = new int[ Math.max(arr1.length , arr2.length ) + 1];
-        int idx1 = arr1.length - 1, idx2 = arr2.length - 1 , idxOutput = resArr.length -1 , carry = 0;
-        while(idx1 >= 0 || idx2 >= 0 ) {
+        int[] resArr = new int[Math.max(arr1.length, arr2.length) + 1];
+        int idx1 = arr1.length - 1, idx2 = arr2.length - 1, idxOutput = resArr.length - 1, carry = 0;
+        while (idx1 >= 0 || idx2 >= 0) {
             int addition;
-            if(idx1 >= 0 && idx2 >= 0) {
+            if (idx1 >= 0 && idx2 >= 0) {
                 addition = arr1[idx1--] + arr2[idx2--] + carry;
-            } else if(idx1 >= 0) {
+            } else if (idx1 >= 0) {
                 addition = arr1[idx1--] + carry;
             } else {
                 addition = arr2[idx2--] + carry;
             }
-            carry = (addition > 10 ) ? 1 : 0;
+            carry = (addition > 10) ? 1 : 0;
             resArr[idxOutput--] = addition % 10;
         }
 
-        System.out.print("\n\n\n\n Array Result: ");
-        int[] subArray = Arrays.copyOfRange(resArr, idxOutput+1, resArr.length  );
+        System.out.print("\n ===================================== \n Array Result: ");
+        int[] subArray = Arrays.copyOfRange(resArr, idxOutput + 1, resArr.length);
         for (int i : subArray) {
             System.out.print(i + " ");
         }
         return resArr;
+    }
+
+    public static String addTwoStringNumberCompareWithOutputStringNumber(String str1, String str2) {
+        /*
+        Question:
+        Given two numbers as strings, return their sum as a string, e.g., “3.14” + “0.9” = “4.04”
+        */
+        if (str1 == null && str2 == null) {
+            return null;
+        } else if (str1 == null) {
+            return str2;
+        } else if (str2 == null) {
+            return str1;
+        }
+
+        char dot = '.';
+        char[] resOutput = new char[str1.length() + str2.length() + 1];
+        int decimalIdx1 = str1.indexOf(dot), decimalIdx2 = str2.indexOf(dot);
+        int decimialDigitCountStr1 = (decimalIdx1 != -1) ? str1.length() - decimalIdx1 - 1 : -1;
+        int decimialDigitCountStr2 = (decimalIdx2 != -1) ? str2.length() - decimalIdx2 - 1 : -1;
+        int idx1 = str1.length() - 1;
+        int idx2 = str2.length() - 1;
+        int idxRes = resOutput.length - 1;
+        int carry = 0;
+        while (decimialDigitCountStr1 > 0 || decimialDigitCountStr2 > 0) {
+            if (decimialDigitCountStr1 > decimialDigitCountStr2) {
+                resOutput[idxRes--] = str1.charAt(idx1--);
+                decimialDigitCountStr1--;
+            } else if (decimialDigitCountStr2 > decimialDigitCountStr1) {
+                resOutput[idxRes--] = str2.charAt(idx2--);
+                decimialDigitCountStr2--;
+            } else {
+                int addition = Integer.parseInt(String.valueOf(str1.charAt(idx1--))) + Integer.parseInt(String.valueOf(str2.charAt(idx2--))) + carry;
+                carry = (addition > 10) ? 1 : 0;
+                resOutput[idxRes--] = (char) ((addition % 10) + '0');
+                decimialDigitCountStr1--;
+                decimialDigitCountStr2--;
+            }
+        }
+
+        /* Insert dot. */
+        if (decimialDigitCountStr1 != -1 || decimialDigitCountStr2 != -1) {
+            resOutput[idxRes--] = dot;
+        }
+
+        idx1 = (decimalIdx1 != -1) ? decimalIdx1 - 1 : str1.length();
+        idx2 = (decimalIdx2 != -1) ? decimalIdx2 - 1 : str2.length() - 1;
+
+        while (idx1 >= 0 || idx2 >= 0) {
+            if (idx1 == -1) {
+                resOutput[idxRes--] = str2.charAt(idx2--);
+            } else if (idx2 == -1) {
+                resOutput[idxRes--] = str1.charAt(idx1--);
+            } else {
+                int addition = Integer.parseInt(String.valueOf(str1.charAt(idx1--))) + Integer.parseInt(String.valueOf(str2.charAt(idx2--))) + carry;
+                carry = (addition > 10) ? 1 : 0;
+                resOutput[idxRes--] = (char) ((addition % 10) + '0');
+            }
+        }
+
+        if (carry == 1) {
+            resOutput[idxRes--] = (char) (carry + '0');
+        }
+        System.out.println("\n ===================================== \n Sum of " + str1 + " and " + str2 + " = " + new String(resOutput));
+
+        //String outputStr = new String(resOutput, idxRes + 1, resOutput.length-1);
+        //System.out.println(" Sum of " + str1 + " and " + str2 + " = " + outputStr);
+        return String.valueOf(resOutput);
     }
 }

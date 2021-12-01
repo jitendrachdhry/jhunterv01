@@ -9,9 +9,11 @@ public class Main {
         int[] arr1 = null; // { 1,3,5};
         int[] arr2 = {2, 3, 6, 9};
         int[] arr3 = {0, 1, 5, 9};
-        // int[] arr3 = {0, 0, 0, 0};
+        //int[] arr3 = {0, 0, 0, 0};
 
         FANG2021.MergeMultipleSortedArray(arr1, arr2, arr3);
         FANG2021.addNumberFromIntArray(arr2, arr3);
+        String strNum1 = "123.4", strNum2 = ".123";
+        FANG2021.addTwoStringNumberCompareWithOutputStringNumber(strNum1, strNum2);
     }
 }
