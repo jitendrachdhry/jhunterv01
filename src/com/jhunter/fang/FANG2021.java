@@ -137,7 +137,7 @@ public class FANG2021 {
         int[] resArr = new int[ Math.max(arr1.length , arr2.length ) + 1];
         int idx1 = arr1.length - 1, idx2 = arr2.length - 1 , idxOutput = resArr.length -1 , carry = 0;
         while(idx1 >= 0 || idx2 >= 0 ) {
-            int addition = 0;
+            int addition;
             if(idx1 >= 0 && idx2 >= 0) {
                 addition = arr1[idx1--] + arr2[idx2--] + carry;
             } else if(idx1 >= 0) {
