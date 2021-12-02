@@ -24,5 +24,11 @@ public class Main {
         int[] dp = { 1, -2, 4, -5, 2, 0};
         AtomicInteger startIdx = new AtomicInteger(0), endIdx = new AtomicInteger(0);
         FANG2021DP.addTwoStringNumberCompareWithOutputStringNumber(dp, startIdx, endIdx);
+
+        int[] arrInput = {0,2,1,2,4,5};
+        // int[] arrInput = {0,2,1,-2,4,5};
+
+        int target = 7;
+        FANG2021DP.addTwoStringNumberCompareWithOutputStringNumber(arrInput, target);
     }
 }
