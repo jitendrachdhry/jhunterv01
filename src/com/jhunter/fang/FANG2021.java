@@ -224,4 +224,5 @@ public class FANG2021 {
         //System.out.println(" Sum of " + str1 + " and " + str2 + " = " + outputStr);
         return String.valueOf(resOutput);
     }
+
 }
