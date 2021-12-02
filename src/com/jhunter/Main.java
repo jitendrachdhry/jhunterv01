@@ -20,7 +20,8 @@ public class Main {
         String strNum1 = "123.4", strNum2 = ".123";
         FANG2021.addTwoStringNumberCompareWithOutputStringNumber(strNum1, strNum2);
 
-        int[] dp = { 1, -2, 4, 3, -2, 0};
+        //int[] dp = { 1, -2, 4, 3, -2, 0};
+        int[] dp = { 1, -2, 4, -5, 2, 0};
         AtomicInteger startIdx = new AtomicInteger(0), endIdx = new AtomicInteger(0);
         FANG2021DP.addTwoStringNumberCompareWithOutputStringNumber(dp, startIdx, endIdx);
     }
