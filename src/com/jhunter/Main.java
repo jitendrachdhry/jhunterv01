@@ -30,5 +30,10 @@ public class Main {
 
         int target = 7;
         FANG2021DP.addTwoStringNumberCompareWithOutputStringNumber(arrInput, target);
+
+        FANG2021DP.FindTheLongestIncreasingSubsequence(new int[] { -1, 3, 4, 5, 2, 2, 2, 2 });
+        FANG2021DP.FindTheLongestNonDecreasingSubsequence(new int[] { -1, 3, 4, 5, 2, 2, 2, 2 });
+        FANG2021DP.FindTheLongestDecreasingSubsequence(new int[] { -1, 3, 4, 5, 2, 2, 2, 2 });
+
     }
 }
