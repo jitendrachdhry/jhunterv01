@@ -3,28 +3,34 @@ package com.jhunter.fang;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicInteger;
 
+/*
+    Dynamic Programming:
+    Cut this into sub problem to build a global answer to the question.
+
+    ===================================================================================
+    Questions:
+    ===================================================================================
+    1. Maximum Value Contiguous Subsequence. Given a sequence of n real numbers A(1) ... A(n), determine a contiguous subsequence A(i) ... A(j) for which the sum of elements in the subsequence is maximized.
+        Input: { 1, -2, 4, 3, -2, 0} Result: 7 (2,3)
+    2. Given array of integers as input and a target, return true if a contiguous subsequence sums to the target.
+    3. Find The Longest (strict) Increasing Subsequence.
+        Input:
+        { -1, 3, 4, 5, 2, 2, 2, 2 }
+        Output:
+        { -1, 3, 4, 5 }
+    4. Find The Longest NonDecreasing Subsequence.
+        Input:
+        { -1, 3, 4, 5, 2, 2, 2, 2 }
+        Output:
+        { -1, 2, 2, 2, 2 }
+    5. Find The Longest Decreasing Subsequence.
+        Input:
+        { -1, 3, 4, 5, 2, 2, 2, 2 }
+        Output:
+        { 5, 2 }
+ */
+
 public class FANG2021DP {
-
-    /*
-        Dynamic Programming:
-        Cut this into sub problem to build a global answer to the question.
-
-        Questions:
-        1. Maximum Value Contiguous Subsequence. Given a sequence of n real numbers A(1) ... A(n), determine a contiguous subsequence A(i) ... A(j) for which the sum of elements in the subsequence is maximized.
-            Input: { 1, -2, 4, 3, -2, 0} Result: 7 (2,3)
-        2. Given array of integers as input and a target, return true if a contiguous subsequence sums to the target.
-        3. Find The Longest (strict) Increasing Subsequence.
-            Input:
-            { -1, 3, 4, 5, 2, 2, 2, 2 }
-            Output:
-            { -1, 3, 4, 5 }
-        4. Find The Longest NonDecreasing Subsequence.
-            Input:
-            { -1, 3, 4, 5, 2, 2, 2, 2 }
-            Output:
-            { -1, 2, 2, 2, 2 }
-     */
-
     public static int addTwoStringNumberCompareWithOutputStringNumber(int[] inputArr, AtomicInteger startIdx, AtomicInteger endIdx) {
         /*
         https://people.cs.clemson.edu/~bcdean/dp_practice/

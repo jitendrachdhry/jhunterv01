@@ -2,6 +2,28 @@ package com.jhunter.fang;
 
 import java.util.Arrays;
 
+/*
+    ===================================================================================
+    Questions:
+    ===================================================================================
+    1. Given 3 sorted int arrays, merge them into one sorted array without duplicates.
+    Example:
+    arr1[] = { 1,3,5}
+    arr2[] = { 2,3,6,9}
+    arr3[] = { 0,1,5,9}
+
+    Output:
+    resultArr[]= {0,1,2,3,5,6,9}
+
+    2. Given two array A[0….n-1] and B[0….m-1] of size n and m respectively, representing two numbers such that every element of arrays represent a digit. For example, A[] = { 1, 2, 3} and B[] = { 2, 1, 4 } represent 123 and 214 respectively. The task is to find the sum of both the number. In above case, answer is 337.
+    Example:
+    Input :
+        a[] = { 9, 5, 4, 9 }
+        b[] = { 2, 1, 4 }
+    Output : 9763
+
+    3. Given two numbers as strings, return their sum as a string, e.g., “3.14” + “0.9” = “4.04”
+ */
 public class FANG2021 {
     public static int[] MergeMultipleSortedArray(int[] arr1, int[] arr2, int[] arr3) {
         /*
