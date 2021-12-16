@@ -1,7 +1,9 @@
 package com.jhunter.JHunterString;
 
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.HashSet;
+import java.util.Map;
 
 public class JHunterString {
     /*
@@ -34,6 +36,11 @@ public class JHunterString {
     public static int MAX_ARR_SIZE = 256;
 
     public static int lengthOfLongestSubstring(String s) {
+        /*
+           Approach: Sliding window. Maintain two pointers.
+           Left:  To contract or decrease the window.
+           Right: To extend the window.
+         */
         if (s == null || s.length() == 0) return 0;
 
         int dp[] = new int[MAX_ARR_SIZE];
@@ -67,23 +74,37 @@ public class JHunterString {
         return subStringSize;
     }
 
-    public static int lengthOfLongestSubstringV01(String s) {
-        HashSet<Character> set =  new HashSet<Character>();
+    public int lengthOfLongestSubstringV01(String s) {
+        Map<Character, Integer> map = new HashMap<>();
+        int left = 0;
+        int right = 0;
+        int max = 0;
+        while (right < s.length()) {
+            char ch = s.charAt(right);
+            if (map.containsKey(ch)) {
+                left = Math.max(left, map.get(s.charAt(right)) + 1);
+            }
+            max = Math.max(max, right - left + 1);
+            map.put(ch, right);
+            right++;
+        }
+        return max;
+    }
 
-        int left=0, right=0, res=0;
-
-        while(right < s.length()){
-            if(set.contains(s.charAt(right))){
+    public static int lengthOfLongestSubstringV02(String s) {
+        HashSet<Character> set = new HashSet<Character>();
+        int left = 0, right = 0, res = 0;
+        while (right < s.length()) {
+            if (set.contains(s.charAt(right))) {
                 set.remove(s.charAt(left));
                 left++;
-            } else{
+            } else {
                 set.add(s.charAt(right));
                 right++;
                 res = Math.max(res, set.size());
             }
 
         }
-
         return res;
     }
 }

@@ -37,7 +37,7 @@ public class Main {
         FANG2021DP.FindTheLongestDecreasingSubsequence(new int[] { -1, 3, 4, 5, 2, 2, 2, 2 });
 
        // System.out.println(" lengthOfLongestSubstring Result: " + JHunterString.lengthOfLongestSubstring("abcabcbb"));
-        System.out.println(" lengthOfLongestSubstring Result: " + JHunterString.lengthOfLongestSubstring("ab"));
+        System.out.println(" lengthOfLongestSubstring Result: " + JHunterString.lengthOfLongestSubstring("tmmzuxt"));
         System.out.println(" lengthOfLongestSubstring Result: " + JHunterString.lengthOfLongestSubstring("abcabcbbefgh"));
         System.out.println(" lengthOfLongestSubstring Result: " + JHunterString.lengthOfLongestSubstring("gabcabeda"));
         System.out.println(" lengthOfLongestSubstring Result: " + JHunterString.lengthOfLongestSubstring(""));
