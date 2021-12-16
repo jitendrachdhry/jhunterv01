@@ -2,6 +2,7 @@ package com.jhunter;
 
 import com.jhunter.fang.FANG2021;
 import com.jhunter.fang.FANG2021DP;
+import com.jhunter.JHunterString.JHunterString;
 import java.util.concurrent.atomic.AtomicInteger;
 
 public class Main {
@@ -34,6 +35,13 @@ public class Main {
         FANG2021DP.FindTheLongestIncreasingSubsequence(new int[] { -1, 3, 4, 5, 2, 2, 2, 2 });
         FANG2021DP.FindTheLongestNonDecreasingSubsequence(new int[] { -1, 3, 4, 5, 2, 2, 2, 2 });
         FANG2021DP.FindTheLongestDecreasingSubsequence(new int[] { -1, 3, 4, 5, 2, 2, 2, 2 });
+
+       // System.out.println(" lengthOfLongestSubstring Result: " + JHunterString.lengthOfLongestSubstring("abcabcbb"));
+        System.out.println(" lengthOfLongestSubstring Result: " + JHunterString.lengthOfLongestSubstring("ab"));
+        System.out.println(" lengthOfLongestSubstring Result: " + JHunterString.lengthOfLongestSubstring("abcabcbbefgh"));
+        System.out.println(" lengthOfLongestSubstring Result: " + JHunterString.lengthOfLongestSubstring("gabcabeda"));
+        System.out.println(" lengthOfLongestSubstring Result: " + JHunterString.lengthOfLongestSubstring(""));
+        System.out.println(" lengthOfLongestSubstring Result: " + JHunterString.lengthOfLongestSubstring("aa"));
 
     }
 }
