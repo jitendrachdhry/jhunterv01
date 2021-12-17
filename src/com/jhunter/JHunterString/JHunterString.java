@@ -107,4 +107,55 @@ public class JHunterString {
         }
         return res;
     }
+
+
+    /*
+        Given a string s, return the longest palindromic substring in s.
+        Example 1:
+        Input: s = "babad"
+        Output: "bab"
+        Explanation: "aba" is also a valid answer.
+                Example 2:
+
+        Input: s = "cbbd"
+        Output: "bb"
+    */
+
+    public static String longestPalindrome(String s) {
+        if (s == null || s.length() == 0) {
+            return "";
+        }
+
+        int startIdx = 0, endIdx = 0, palindromStrMaxSize = 1;
+
+        for (int headIdx = 0; headIdx < s.length(); headIdx++) {
+            int leftIdx = headIdx, tailIdx = s.length() - 1;
+            boolean isPalindrome = false;
+            for (int rightIdx = s.length() - 1; rightIdx > headIdx; rightIdx--) {
+                if (s.charAt(leftIdx) == s.charAt(rightIdx)) {
+                    /*
+                        case to check:
+                        1. [0]a [1]a      ==> (head point to index 0 and tail points to index 1)
+                        2. [0]a [1]b [2]a ==> (head point to index 0 and tail points to index 2)
+                    */
+                    if ((leftIdx == (rightIdx - 1)) || ((rightIdx - leftIdx) - 1) == 1) {
+                        isPalindrome = true;
+                        break;
+                    }
+                    leftIdx++;
+                } else {
+                    leftIdx = headIdx;
+                    rightIdx = tailIdx--;
+                }
+            }
+            if (isPalindrome) {
+                if ((tailIdx - headIdx + 1) > palindromStrMaxSize) {
+                    startIdx = headIdx;
+                    endIdx = tailIdx;
+                    palindromStrMaxSize = tailIdx - headIdx + 1;
+                }
+            }
+        }
+        return s.substring(startIdx, endIdx + 1);
+    }
 }
