@@ -5,7 +5,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 
 /*
     Dynamic Programming:
-    Cut this into sub problem to build a global answer to the question.
+    Cut problem into sub problem to build a global answer to the question.
 
     ===================================================================================
     Questions:

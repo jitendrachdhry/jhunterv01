@@ -18,7 +18,7 @@
     <tr>
         <td>HashMap</td>
         <td>- HashMap is an implementation of Map Interface, which maps a key to value. <br />- Duplicate keys are not allowed in a Map. <br />- HashMap does not allow duplicate keys however it allows having duplicate values. <br />- HashMap permits single null key and any number of null values. <br />- It maintains no order when we add new (key,value).</td>
-        <td>  <b>get(), put(), remove(), keySet(), replace(),containsKey(), containsValue(), <br />values() Returns a Collection view of the values contained in this map. </td>
+        <td>  <b>get(), put(), remove(), keySet(), replace(),containsKey(), containsValue(), <br />values() </b>b> Returns a Collection view of the values contained in this map. </td>
         <td>HashMap offers 0(1) lookup and insertion.</td>
         <td>https://www.geeksforgeeks.org/differences-treemap-hashmap-linkedhashmap-java/</td>
     </tr>
@@ -72,5 +72,44 @@ URL: https://people.cs.clemson.edu/~bcdean/dp_practice/
 
 ![image](https://user-images.githubusercontent.com/28762727/144462085-e0c63c1c-7ce6-482c-9a7c-0c7ccdc4b35b.png)
 
+><h1> String based Qestions </h1>
 
-
+<table>
+    <tr>
+        <th>Question</th>
+        <th>Example</th>
+        <th>Time Complexity</th>
+        <th>Space Complexity</th>
+        <th>Leetcode Link</th>
+        <th>Solution Link</th>
+        <th>You Tube</th>
+    </tr>
+    <tr>
+    <td> Given a string s, find the length of the longest substring without repeating characters.
+    </td>
+    <td> 
+        Input: s = "abcabcbb" <br>
+        Output: 3 <br>
+        Explanation: <br>The answer is "abc", with the length of 3.
+    </td>
+    <td>O(n)</td>
+    <td>O(1)</td>
+    <td>.../</td>
+    <td>.../</td>
+    <td>.../</td>
+    </tr>
+    <tr>
+    <td> Given a string s, return the longest palindromic substring in s.
+    </td>
+    <td> 
+        Input: s = "babad" <br>
+        Output: "bab" <br>
+        Explanation: <br>"aba" is also a valid answer. <br>
+    </td>
+    <td>O(nx2)</td>
+    <td>O(1)</td>
+    <td>.../</td>
+    <td>.../</td>
+    <td>.../</td>
+    </tr>
+</table>
