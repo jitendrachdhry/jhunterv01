@@ -1,4 +1,124 @@
 # Interview Prepration in Java
+
+><h1> Dynamic Programming based Questions </h1>
+<table>
+    <tr>
+        <th>Question</th>
+        <th>Example</th>
+        <th>Time Complexity</th>
+        <th>Space Complexity</th>
+        <th>Leetcode Link</th>
+        <th>Solution Link</th>
+        <th>You Tube</th>
+    </tr>
+    <tr>
+    <td> Maximum Value Contiguous Subsequence. Given a sequence of n real numbers A(1) ... A(n), determine a contiguous subsequence A(i) ... A(j) for which the sum of elements in the subsequence is maximized.    </td>
+    <td> 
+        Input: { 1, -2, 4, 3, -2, 0} Result: 7 (2,3)
+    </td>
+    <td>O(n)</td>
+    <td>O(1)</td>
+    <td>.../</td>
+    <td>.../</td>
+    <td>.../</td>
+    </tr>
+    <tr>
+    <td> Given array of integers as input and a target, return true if a contiguous subsequence sums to the target.
+    </td>
+    <td> 
+        If A={2,5,6,−1} and k=5 then the answer is 2, since both 5 and 6,−1 sum to 5.
+    </td>
+    <td>O(nx2)</td>
+    <td>O(1)</td>
+    <td>.../</td>
+    <td>.../</td>
+    <td>.../</td>
+    </tr>
+    <tr>
+    <td> Find The Longest (strict) Increasing Subsequence. </td>
+    <td> 
+        Input:
+        { -1, 3, 4, 5, 2, 2, 2, 2 } <br>
+        Output:
+        { -1, 3, 4, 5 }
+    </td>
+    <td>O(nx2)</td>
+    <td>O(1)</td>
+    <td>.../</td>
+    <td>.../</td>
+    <td>.../</td>
+    </tr>
+    <tr>
+    <td> Find The Longest NonDecreasing Subsequence. </td>
+    <td> 
+        Input:
+        { -1, 3, 4, 5, 2, 2, 2, 2 } <br>
+        Output:
+        { -1, 2, 2, 2, 2 }
+    </td>
+    <td>O(nx2)</td>
+    <td>O(1)</td>
+    <td>.../</td>
+    <td>.../</td>
+    <td>.../</td>
+    </tr>
+    <tr>
+    <td> Find The Longest Decreasing Subsequence. </td>
+    <td> 
+        Input:
+        { -1, 3, 4, 5, 2, 2, 2, 2 } <br>
+        Output:
+        { 5, 2 }
+    </td>
+    <td>O(nx2)</td>
+    <td>O(1)</td>
+    <td>.../</td>
+    <td>.../</td>
+    <td>.../</td>
+    </tr>
+</table>
+
+><h1> String based Questions </h1>
+<table>
+    <tr>
+        <th>Question</th>
+        <th>Example</th>
+        <th>Time Complexity</th>
+        <th>Space Complexity</th>
+        <th>Leetcode Link</th>
+        <th>Solution Link</th>
+        <th>You Tube</th>
+    </tr>
+    <tr>
+    <td> Given a string s, find the length of the longest substring without repeating characters.
+    </td>
+    <td> 
+        Input: s = "abcabcbb" <br>
+        Output: 3 <br>
+        Explanation: <br>The answer is "abc", with the length of 3.
+    </td>
+    <td>O(n)</td>
+    <td>O(1)</td>
+    <td>.../</td>
+    <td>.../</td>
+    <td>.../</td>
+    </tr>
+    <tr>
+    <td> Given a string s, return the longest palindromic substring in s.
+    </td>
+    <td> 
+        Input: s = "babad" <br>
+        Output: "bab" <br>
+        Explanation: <br>"aba" is also a valid answer. <br>
+    </td>
+    <td>O(nx2)</td>
+    <td>O(1)</td>
+    <td>.../</td>
+    <td>.../</td>
+    <td>.../</td>
+    </tr>
+</table>
+
 <h1> Utility Classes </h1>
 <table>
     <tr>
@@ -72,44 +192,3 @@ URL: https://people.cs.clemson.edu/~bcdean/dp_practice/
 
 ![image](https://user-images.githubusercontent.com/28762727/144462085-e0c63c1c-7ce6-482c-9a7c-0c7ccdc4b35b.png)
 
-><h1> String based Qestions </h1>
-
-<table>
-    <tr>
-        <th>Question</th>
-        <th>Example</th>
-        <th>Time Complexity</th>
-        <th>Space Complexity</th>
-        <th>Leetcode Link</th>
-        <th>Solution Link</th>
-        <th>You Tube</th>
-    </tr>
-    <tr>
-    <td> Given a string s, find the length of the longest substring without repeating characters.
-    </td>
-    <td> 
-        Input: s = "abcabcbb" <br>
-        Output: 3 <br>
-        Explanation: <br>The answer is "abc", with the length of 3.
-    </td>
-    <td>O(n)</td>
-    <td>O(1)</td>
-    <td>.../</td>
-    <td>.../</td>
-    <td>.../</td>
-    </tr>
-    <tr>
-    <td> Given a string s, return the longest palindromic substring in s.
-    </td>
-    <td> 
-        Input: s = "babad" <br>
-        Output: "bab" <br>
-        Explanation: <br>"aba" is also a valid answer. <br>
-    </td>
-    <td>O(nx2)</td>
-    <td>O(1)</td>
-    <td>.../</td>
-    <td>.../</td>
-    <td>.../</td>
-    </tr>
-</table>
