@@ -93,7 +93,7 @@ public class JHunterString {
         for (int i = 1; i < sArr.length; i++) {
             int newSubStringSize = 0;
             // access each character
-            if ((dp[(int) sArr[i]] != -1 && dp[(int) sArr[i]] >= minIdx)) {
+            if (dp[(int) sArr[i]] >= minIdx) {
                 newSubStringSize = i - minIdx; // calculate newStringSize once we found duplicate char in dp[].
             } else if (i == (sArr.length - 1)) { // Reached end of the array.
                 newSubStringSize = (i - minIdx) + 1; // calculate newStringSize , from minIdx to end of string idx.
