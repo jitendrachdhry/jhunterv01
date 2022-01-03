@@ -101,7 +101,7 @@ public class JHunterString {
             if (newSubStringSize > subStringSize) {
                 subStringSize = newSubStringSize;
                 startIdx = minIdx;
-                endIdx = i - 1;
+                endIdx = (i == (sArr.length - 1)) ? i : (i - 1);
             }
             if (newSubStringSize != 0) { // set minIdx only if we found duplicate char in the dp[].
                 minIdx = dp[(int) sArr[i]] + 1;
