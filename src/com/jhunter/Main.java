@@ -43,14 +43,16 @@ public class Main {
         System.out.println(" lengthOfLongestSubstring Result: " + JHunterString.lengthOfLongestSubstring(""));
         System.out.println(" lengthOfLongestSubstring Result: " + JHunterString.lengthOfLongestSubstring("aa"));
 
-        System.out.println("input: " + "a" + " longestPalindrome Result: " + JHunterString.longestPalindrome("a") );
-        System.out.println("input: " + "aa" + " longestPalindrome Result: " + JHunterString.longestPalindrome("aa"));
-        System.out.println("input: " + "xaabacxcabaaxcabaax" + " longestPalindrome Result: " + JHunterString.longestPalindrome("xaabacxcabaaxcabaax"));
-        System.out.println("input: " + "acawilli" + " longestPalindrome Result: " + JHunterString.longestPalindrome("acawilli"));
-        System.out.println("input: " + "aaabaaaa" + " longestPalindrome Result: " + JHunterString.longestPalindrome("aaabaaaa"));
-        System.out.println("input: " + "babad" + " longestPalindrome Result: " + JHunterString.longestPalindrome("babad"));
-        System.out.println("input: " + "babab" + " longestPalindrome Result: " + JHunterString.longestPalindrome("babab"));
-        System.out.println("input: " + "abaab" + " longestPalindrome Result: " + JHunterString.longestPalindrome("abaab"));
-        System.out.println("input: " + "aacabdkacaa" + " longestPalindrome Result: " + JHunterString.longestPalindrome("aacabdkacaa"));
+        System.out.println("input: " + "a" + " longestPalindromeV01 Result: " + JHunterString.longestPalindromeV01("a") );
+        System.out.println("input: " + "aa" + " longestPalindromeV01 Result: " + JHunterString.longestPalindromeV01("aa"));
+        System.out.println("input: " + "zz456456bwcbcebcweqweqqwqwbecaaaaaaa" + " longestPalindromeV01 Result: " + JHunterString.longestPalindromeV01("zz456456bwcbcebcweqweqqwqwbecaaaaaaa"));
+        System.out.println("input: " + "xaabacxcabaaxcabaax" + " longestPalindromeV01 Result: " + JHunterString.longestPalindromeV01("xaabacxcabaaxcabaax"));
+        System.out.println("input: " + "acawilli" + " longestPalindromeV01 Result: " + JHunterString.longestPalindromeV01("acawilli"));
+        System.out.println("input: " + "aaabaaaa" + " longestPalindromeV01 Result: " + JHunterString.longestPalindromeV01("aaabaaaa"));
+        System.out.println("input: " + "babad" + " longestPalindromeV01 Result: " + JHunterString.longestPalindromeV01("babad"));
+        System.out.println("input: " + "babab" + " longestPalindromeV01 Result: " + JHunterString.longestPalindromeV01("babab"));
+        System.out.println("input: " + "abaab" + " longestPalindromeV01 Result: " + JHunterString.longestPalindromeV01("abaab"));
+        System.out.println("input: " + "aacabdkacaa" + " longestPalindromeV01 Result: " + JHunterString.longestPalindromeV01("aacabdkacaa"));
+        
     }
 }

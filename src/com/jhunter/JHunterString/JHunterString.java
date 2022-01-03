@@ -157,9 +157,11 @@ public class JHunterString {
 
         Input: s = "cbbd"
         Output: "bb"
+
+        Call Out: Palindromic logic based on even or odd input string size.
     */
 
-    public static String longestPalindrome(String s) {
+    public static String longestPalindrome(String s) { // O(n^3)
         if (s == null || s.length() == 0) {
             return "";
         }
@@ -196,4 +198,40 @@ public class JHunterString {
         }
         return s.substring(startIdx, endIdx + 1);
     }
+
+    public static String longestPalindromeV01(String s) { // O(n^2)
+        if (s == null || s.length() == 0) {
+            return "";
+        }
+
+        int inputLength = s.length(), losSize = 0, midIdx = 0;
+
+        for (int i = s.length() / 2; i >= 0; i--) {
+            int oddLpsSize, evenLpsSize, currentLpsSize;
+            evenLpsSize = expandPalindrome(i, i, s);
+            oddLpsSize = expandPalindrome(i, i + 1, s);
+
+            currentLpsSize = oddLpsSize > evenLpsSize ? oddLpsSize : evenLpsSize;
+            if (currentLpsSize > losSize) {
+                losSize = currentLpsSize;
+                midIdx = i;
+            }
+        }
+
+        int startIdx = ((losSize % 2) == 1) ? (midIdx - (losSize / 2)) : (midIdx - (losSize / 2) + 1);
+        return s.substring(startIdx, startIdx + losSize);
+    }
+
+    static int expandPalindrome(int left, int right, String s) {
+        int strLength = s.length();
+        while (left >= 0 && right < strLength) {
+            if (s.charAt(left) != s.charAt(right)) {
+                break;
+            }
+            left--;
+            right++;
+        }
+        return right - (left + 1);
+    }
+
 }

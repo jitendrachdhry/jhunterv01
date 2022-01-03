@@ -1,5 +1,38 @@
 # Interview Prepration in Java
 
+><h2> Time Table </h2>
+<table>
+    <tr>
+        <th>Hours</th>
+        <th>Task</th>
+    </tr>
+    <tr>
+       <td> 5AM - 7AM </td> 
+       <td> Revision </td> 
+    </tr>
+    <tr>
+       <td> 8:30AM - 3:30PM </td> 
+       <td> LeetCode Practice </td> 
+    </tr>
+    <tr>
+       <td> 5PM - 6PM </td> 
+       <td> LeetCode Practice </td> 
+    </tr>
+    <tr>
+       <td> 7PM - 11PM </td> 
+       <td> LeetCode Practice </td> 
+    </tr>
+</table>
+
+><h2> URL </h2>
+| URL                                                                                                  | Description              |
+|------------------------------------------------------------------------------------------------------|--------------------------|
+| [Machine Coding](https://workat.tech/machine-coding/practice)                                        | machine coding in detail |
+| [low level design ](https://github.com/prasadgujar/low-level-design-primer/blob/master/solutions.md) | low level design         |
+| [interviewbit](https://www.interviewbit.com/)                                                        | interviewbit             |
+| [pramp](https://www.pramp.com/#/)                                                                    | Mock Interview Websites  |
+
+
 ><h1> Dynamic Programming based Questions </h1>
 <table>
     <tr>
