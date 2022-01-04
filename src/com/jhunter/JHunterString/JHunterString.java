@@ -200,34 +200,30 @@ public class JHunterString {
     }
 
     public static String longestPalindromeV01(String s) { // O(n^2)
-        if (s == null || s.length() == 0) {
+        int inputStrLength = s.length();
+        if (s == null || inputStrLength < 1) {
             return "";
         }
 
-        int inputLength = s.length(), losSize = 0, midIdx = 0;
-
-        for (int i = s.length() / 2; i >= 0; i--) {
+        int startIdx= 0, endIdx = 0;
+        for (int i = 0; i < inputStrLength; i++) {
             int oddLpsSize, evenLpsSize, currentLpsSize;
-            evenLpsSize = expandPalindrome(i, i, s);
-            oddLpsSize = expandPalindrome(i, i + 1, s);
+            evenLpsSize = expandPalindromeFromMiddle(i, i, s);
+            oddLpsSize = expandPalindromeFromMiddle(i, i + 1, s);
 
+            // get size of Longest Palindrome
             currentLpsSize = oddLpsSize > evenLpsSize ? oddLpsSize : evenLpsSize;
-            if (currentLpsSize > losSize) {
-                losSize = currentLpsSize;
-                midIdx = i;
+            if (currentLpsSize > endIdx - startIdx ) {
+                startIdx = i - ((currentLpsSize - 1) / 2);
+                endIdx = i + (currentLpsSize / 2);
             }
         }
-
-        int startIdx = ((losSize % 2) == 1) ? (midIdx - (losSize / 2)) : (midIdx - (losSize / 2) + 1);
-        return s.substring(startIdx, startIdx + losSize);
+        return s.substring(startIdx, endIdx + 1);
     }
 
-    static int expandPalindrome(int left, int right, String s) {
+    static int expandPalindromeFromMiddle(int left, int right, String s) {
         int strLength = s.length();
-        while (left >= 0 && right < strLength) {
-            if (s.charAt(left) != s.charAt(right)) {
-                break;
-            }
+        while (left >= 0 && right < strLength && (s.charAt(left) == s.charAt(right)) ) {
             left--;
             right++;
         }

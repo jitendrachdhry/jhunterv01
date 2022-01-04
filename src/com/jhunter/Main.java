@@ -43,6 +43,7 @@ public class Main {
         System.out.println(" lengthOfLongestSubstring Result: " + JHunterString.lengthOfLongestSubstring(""));
         System.out.println(" lengthOfLongestSubstring Result: " + JHunterString.lengthOfLongestSubstring("aa"));
 
+        System.out.println("input: " + "JTKMJTJ" + " longestPalindromeV01 Result: " + JHunterString.longestPalindromeV01("JTKMJTJ") );
         System.out.println("input: " + "a" + " longestPalindromeV01 Result: " + JHunterString.longestPalindromeV01("a") );
         System.out.println("input: " + "aa" + " longestPalindromeV01 Result: " + JHunterString.longestPalindromeV01("aa"));
         System.out.println("input: " + "zz456456bwcbcebcweqweqqwqwbecaaaaaaa" + " longestPalindromeV01 Result: " + JHunterString.longestPalindromeV01("zz456456bwcbcebcweqweqqwqwbecaaaaaaa"));
