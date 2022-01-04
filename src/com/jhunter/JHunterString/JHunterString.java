@@ -42,6 +42,30 @@ import java.util.Map;
         Example 2:
         Input: s = "cbbd"
         Output: "bb"
+    3. The string "PAYPALISHIRING" is written in a zigzag pattern on a given number of rows like this: (you may want to display this pattern in a fixed font for better legibility)
+        P   A   H   N
+        A P L S I I G
+        Y   I   R
+        And then read line by line: "PAHNAPLSIIGYIR"
+
+        Write the code that will take a string and make this conversion given a number of rows:
+
+        string convert(string s, int numRows);
+
+
+        Example 1:
+
+        Input: s = "PAYPALISHIRING", numRows = 3
+        Output: "PAHNAPLSIIGYIR"
+        Example 2:
+
+        Input: s = "PAYPALISHIRING", numRows = 4
+        Output: "PINALSIGYAHRPI"
+        Explanation:
+        P     I    N
+        A   L S  I G
+        Y A   H R
+        P     I
  */
 public class JHunterString {
     /*
@@ -205,7 +229,7 @@ public class JHunterString {
             return "";
         }
 
-        int startIdx= 0, endIdx = 0;
+        int startIdx = 0, endIdx = 0;
         for (int i = 0; i < inputStrLength; i++) {
             int oddLpsSize, evenLpsSize, currentLpsSize;
             evenLpsSize = expandPalindromeFromMiddle(i, i, s);
@@ -213,7 +237,7 @@ public class JHunterString {
 
             // get size of Longest Palindrome
             currentLpsSize = oddLpsSize > evenLpsSize ? oddLpsSize : evenLpsSize;
-            if (currentLpsSize > endIdx - startIdx ) {
+            if (currentLpsSize > endIdx - startIdx) {
                 startIdx = i - ((currentLpsSize - 1) / 2);
                 endIdx = i + (currentLpsSize / 2);
             }
@@ -223,11 +247,53 @@ public class JHunterString {
 
     static int expandPalindromeFromMiddle(int left, int right, String s) {
         int strLength = s.length();
-        while (left >= 0 && right < strLength && (s.charAt(left) == s.charAt(right)) ) {
+        while (left >= 0 && right < strLength && (s.charAt(left) == s.charAt(right))) {
             left--;
             right++;
         }
         return right - (left + 1);
     }
 
+    /*
+     * The string "PAYPALISHIRING" is written in a zigzag pattern on a given number of rows.
+     */
+    static public String zigzagPatternConvertor(String s, int numRows) {
+        int inputStringLength = s.length();
+        if (s == null || inputStringLength < 1 || numRows < 1) {
+            return "";
+        } else if (inputStringLength == 1 || numRows == 1) {
+            return s;
+        }
+
+        final boolean UP = true, DOWN = false;
+        int counter = 0;
+        boolean whichSide = DOWN;
+        StringBuilder[] v = new StringBuilder[numRows];
+        for (int i = 0; i < inputStringLength; i++) {
+            if (v[counter] == null) {
+                v[counter] = new StringBuilder();
+            }
+            v[counter].append(s.charAt(i));
+            if (whichSide == UP && counter <= 0) {
+                whichSide = DOWN;
+            } else if (whichSide == DOWN && counter >= (numRows - 1)) {
+                whichSide = UP;
+            }
+            if (whichSide == DOWN) {
+                counter++;
+            } else {
+                counter--;
+            }
+        }
+
+        StringBuilder resultStr = new StringBuilder(inputStringLength);
+        for (int i = 0; i < numRows; i++) {
+            if (v[i] != null) {
+                resultStr.append(v[i].toString());
+            } else {
+                break;
+            }
+        }
+        return resultStr.toString();
+    }
 }
