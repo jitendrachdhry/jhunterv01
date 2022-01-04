@@ -32,125 +32,22 @@
 | [interviewbit](https://www.interviewbit.com/)                                                        | interviewbit             |
 | [pramp](https://www.pramp.com/#/)                                                                    | Mock Interview Websites  |
 
+><h1> String based Questions </h1>
+| Question | Example | Time Complexity | Space Complexity | Leetcode Link | Solution Link | YouTube |
+|----------|---------|---------------|------------------|---------------|---------------|---------|
+| Given a string s, find the length of the longest substring without repeating characters. |  Input: s = "abcabcbb" <br> Output: 3 <br> Explanation: <br>The answer is "abc", with the length of 3. | O(n) | O(1) | 	.../| 	.../| 	.../|
+|Given a string s, return the longest palindromic substring in s.|Input: s = "babad" <br>Output: "bab" <br>Explanation: "aba" is also a valid answer. <br>|O(n^2) | O(1) |[longest-palindromic-substring](https://leetcode.com/problems/longest-palindromic-substring/)| [JHunterString.java#L202](https://github.com/jitendrachdhry/jhunterv01/blob/master/src/com/jhunter/JHunterString/JHunterString.java#L202)| [Longest Palindromic Substring](https://www.youtube.com/watch?v=y2BD4MJqV20)|
+|The string "PAYPALISHIRING" is written in a zigzag pattern on a given number of rows like this: (you may want to display this pattern in a fixed font for better legibility)|Input: s = "PAYPALISHIRING", numRows = 4 <br>Output: "PINALSIGYAHRPI" <br> Explanation:<br>P     I    N<br>A   L S  I G<br>Y A   H R<br>P  | O(n) | O(n) | [zigzag-conversion](https://leetcode.com/problems/zigzag-conversion/)| [the-zigzag-conversion-problem](https://dev.to/alisabaj/the-zigzag-conversion-problem-3nne)| ../|
 
 ><h1> Dynamic Programming based Questions </h1>
-<table>
-    <tr>
-        <th>Question</th>
-        <th>Example</th>
-        <th>Time Complexity</th>
-        <th>Space Complexity</th>
-        <th>Leetcode Link</th>
-        <th>Solution Link</th>
-        <th>You Tube</th>
-    </tr>
-    <tr>
-    <td> Maximum Value Contiguous Subsequence. Given a sequence of n real numbers A(1) ... A(n), determine a contiguous subsequence A(i) ... A(j) for which the sum of elements in the subsequence is maximized.    </td>
-    <td> 
-        Input: { 1, -2, 4, 3, -2, 0} Result: 7 (2,3)
-    </td>
-    <td>O(n)</td>
-    <td>O(1)</td>
-    <td>.../</td>
-    <td>.../</td>
-    <td>.../</td>
-    </tr>
-    <tr>
-    <td> Given array of integers as input and a target, return true if a contiguous subsequence sums to the target.
-    </td>
-    <td> 
-        If A={2,5,6,−1} and k=5 then the answer is 2, since both 5 and 6,−1 sum to 5.
-    </td>
-    <td>O(nx2)</td>
-    <td>O(1)</td>
-    <td>.../</td>
-    <td>.../</td>
-    <td>.../</td>
-    </tr>
-    <tr>
-    <td> Find The Longest (strict) Increasing Subsequence. </td>
-    <td> 
-        Input:
-        { -1, 3, 4, 5, 2, 2, 2, 2 } <br>
-        Output:
-        { -1, 3, 4, 5 }
-    </td>
-    <td>O(nx2)</td>
-    <td>O(1)</td>
-    <td>.../</td>
-    <td>.../</td>
-    <td>.../</td>
-    </tr>
-    <tr>
-    <td> Find The Longest NonDecreasing Subsequence. </td>
-    <td> 
-        Input:
-        { -1, 3, 4, 5, 2, 2, 2, 2 } <br>
-        Output:
-        { -1, 2, 2, 2, 2 }
-    </td>
-    <td>O(nx2)</td>
-    <td>O(1)</td>
-    <td>.../</td>
-    <td>.../</td>
-    <td>.../</td>
-    </tr>
-    <tr>
-    <td> Find The Longest Decreasing Subsequence. </td>
-    <td> 
-        Input:
-        { -1, 3, 4, 5, 2, 2, 2, 2 } <br>
-        Output:
-        { 5, 2 }
-    </td>
-    <td>O(nx2)</td>
-    <td>O(1)</td>
-    <td>.../</td>
-    <td>.../</td>
-    <td>.../</td>
-    </tr>
-</table>
+| Question                                                                                                                                                                                                | Example                                                                       | Time Complexity | Space Complexity | Leetcode Link | Solution Link | YouTube |
+|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------|-----------------|------------------|---------------|---------------|---------|
+| Maximum Value Contiguous Subsequence. Given a sequence of n real numbers A(1) ... A(n), determine a contiguous subsequence A(i) ... A(j) for which the sum of elements in the subsequence is maximized. | Input: { 1, -2, 4, 3, -2, 0} <br> Result: 7 (2,3)                             | O(n)            | O(1)             | ../           | ../           | ../     |
+| Given array of integers as input and a target, return true if a contiguous subsequence sums to the target.                                                                                              | If A={2,5,6,−1} and k=5 then the answer is 2, since both 5 and 6,−1 sum to 5. | O(n^2)          | O(1)             | ../           | ../           | ../     |
+| Find The Longest (strict) Increasing Subsequence.                                                                                                                                                       | Input:{ -1, 3, 4, 5, 2, 2, 2, 2 } <br>Output:{ -1, 3, 4, 5 }                  | O(n^2)          | O(1)             | ../           | ../           | ../     |
+| Find The Longest NonDecreasing Subsequence.                                                                                                                                                             | Input: { -1, 3, 4, 5, 2, 2, 2, 2 } <br>Output: { -1, 2, 2, 2, 2 }             | O(n^2)          | O(1)             | ../           | ../           | ../     |
+| Find The Longest Decreasing Subsequence.                                                                                                                                                                | Input: { -1, 3, 4, 5, 2, 2, 2, 2 } <br> Output: { 5, 2 }                      | O(n^2)          | O(1)             | ../           | ../           | ../     |
 
-><h1> String based Questions </h1>
-<table>
-    <tr>
-        <th>Question</th>
-        <th>Example</th>
-        <th>Time Complexity</th>
-        <th>Space Complexity</th>
-        <th>Leetcode Link</th>
-        <th>Solution Link</th>
-        <th>You Tube</th>
-    </tr>
-    <tr>
-    <td> Given a string s, find the length of the longest substring without repeating characters.
-    </td>
-    <td> 
-        Input: s = "abcabcbb" <br>
-        Output: 3 <br>
-        Explanation: <br>The answer is "abc", with the length of 3.
-    </td>
-    <td>O(n)</td>
-    <td>O(1)</td>
-    <td>.../</td>
-    <td>.../</td>
-    <td>.../</td>
-    </tr>
-    <tr>
-    <td> Given a string s, return the longest palindromic substring in s.
-    </td>
-    <td> 
-        Input: s = "babad" <br>
-        Output: "bab" <br>
-        Explanation: <br>"aba" is also a valid answer. <br>
-    </td>
-    <td>O(nx2)</td>
-    <td>O(1)</td>
-    <td>.../</td>
-    <td>.../</td>
-    <td>.../</td>
-    </tr>
-</table>
 
 <h1> Utility Classes </h1>
 <table>
