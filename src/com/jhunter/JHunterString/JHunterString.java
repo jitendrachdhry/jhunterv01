@@ -257,9 +257,7 @@ public class JHunterString {
     /*
      * The string "PAYPALISHIRING" is written in a zigzag pattern on a given number of rows.
      * Complexity Analysis
-
-        Time Complexity: O(n)O(n), where n == \text{len}(s)n==len(s)
-        * Time Complexity: O(n)O(n), where n == \text{len}(s)n==len(s)
+        Time Complexity: O(n), where n == len(s)
         Space Complexity: O(n)
      */
     static public String zigzagPatternConvertor(String s, int numRows) {
