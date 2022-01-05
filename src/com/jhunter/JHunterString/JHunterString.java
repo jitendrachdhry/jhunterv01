@@ -256,6 +256,11 @@ public class JHunterString {
 
     /*
      * The string "PAYPALISHIRING" is written in a zigzag pattern on a given number of rows.
+     * Complexity Analysis
+
+        Time Complexity: O(n)O(n), where n == \text{len}(s)n==len(s)
+        * Time Complexity: O(n)O(n), where n == \text{len}(s)n==len(s)
+        Space Complexity: O(n)
      */
     static public String zigzagPatternConvertor(String s, int numRows) {
         int inputStringLength = s.length();
@@ -265,25 +270,18 @@ public class JHunterString {
             return s;
         }
 
-        final boolean UP = true, DOWN = false;
-        int counter = 0;
-        boolean whichSide = DOWN;
+        boolean isGoingDown = false;
+        int curRow = 0;
         StringBuilder[] v = new StringBuilder[numRows];
         for (int i = 0; i < inputStringLength; i++) {
-            if (v[counter] == null) {
-                v[counter] = new StringBuilder();
+            if (v[curRow] == null) {
+                v[curRow] = new StringBuilder();
             }
-            v[counter].append(s.charAt(i));
-            if (whichSide == UP && counter <= 0) {
-                whichSide = DOWN;
-            } else if (whichSide == DOWN && counter >= (numRows - 1)) {
-                whichSide = UP;
+            v[curRow].append(s.charAt(i));
+            if(curRow<=0 || curRow >= (numRows - 1)) {
+                isGoingDown = !isGoingDown;
             }
-            if (whichSide == DOWN) {
-                counter++;
-            } else {
-                counter--;
-            }
+            curRow += isGoingDown == true ? 1 : -1;
         }
 
         StringBuilder resultStr = new StringBuilder(inputStringLength);
