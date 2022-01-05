@@ -1,8 +1,9 @@
 package com.jhunter;
 
+import com.jhunter.JHunterString.JHunterString;
 import com.jhunter.fang.FANG2021;
 import com.jhunter.fang.FANG2021DP;
-import com.jhunter.JHunterString.JHunterString;
+
 import java.util.concurrent.atomic.AtomicInteger;
 
 public class Main {
@@ -23,22 +24,22 @@ public class Main {
         FANG2021.addTwoStringNumberCompareWithOutputStringNumber(strNum1, strNum2);
 
         //int[] dp = { 1, -2, 4, 3, -2, 0};
-        int[] dp = { 1, -2, 4, -5, 2, 0};
+        int[] dp = {1, -2, 4, -5, 2, 0};
         AtomicInteger startIdx = new AtomicInteger(0), endIdx = new AtomicInteger(0);
         FANG2021DP.addTwoStringNumberCompareWithOutputStringNumber(dp, startIdx, endIdx);
 
-        int[] arrInput = {0,2,1,2,4,5};
+        int[] arrInput = {0, 2, 1, 2, 4, 5};
         // int[] arrInput = {0,2,1,-2,4,5};
 
         int target = 7;
         FANG2021DP.addTwoStringNumberCompareWithOutputStringNumber(arrInput, target);
 
         System.out.println("\n ============================= FindTheLongestIncreasingSubsequence ========================================================");
-        FANG2021DP.FindTheLongestIncreasingSubsequence(new int[] { -1, 3, 4, 5, 2, 2, 2, 2 });
+        FANG2021DP.FindTheLongestIncreasingSubsequence(new int[]{-1, 3, 4, 5, 2, 2, 2, 2});
         System.out.println("\n ============================= FindTheLongestNonDecreasingSubsequence ========================================================");
-        FANG2021DP.FindTheLongestNonDecreasingSubsequence(new int[] { -1, 3, 4, 5, 2, 2, 2, 2 });
+        FANG2021DP.FindTheLongestNonDecreasingSubsequence(new int[]{-1, 3, 4, 5, 2, 2, 2, 2});
         System.out.println("\n ============================= FindTheLongestDecreasingSubsequence ========================================================");
-        FANG2021DP.FindTheLongestDecreasingSubsequence(new int[] { -1, 3, 4, 5, 2, 2, 2, 2 });
+        FANG2021DP.FindTheLongestDecreasingSubsequence(new int[]{-1, 3, 4, 5, 2, 2, 2, 2});
 
         System.out.println("\n ============================= lengthOfLongestSubstring ========================================================");
         // System.out.println(" lengthOfLongestSubstring Result: " + JHunterString.lengthOfLongestSubstring("abcabcbb"));
@@ -50,8 +51,8 @@ public class Main {
 
         System.out.println("\n ============================= longestPalindrome ========================================================");
 
-        System.out.println("input: " + "JTKMJTJ" + " longestPalindromeV01 Result: " + JHunterString.longestPalindromeV01("JTKMJTJ") );
-        System.out.println("input: " + "a" + " longestPalindromeV01 Result: " + JHunterString.longestPalindromeV01("a") );
+        System.out.println("input: " + "JTKMJTJ" + " longestPalindromeV01 Result: " + JHunterString.longestPalindromeV01("JTKMJTJ"));
+        System.out.println("input: " + "a" + " longestPalindromeV01 Result: " + JHunterString.longestPalindromeV01("a"));
         System.out.println("input: " + "aa" + " longestPalindromeV01 Result: " + JHunterString.longestPalindromeV01("aa"));
         System.out.println("input: " + "zz456456bwcbcebcweqweqqwqwbecaaaaaaa" + " longestPalindromeV01 Result: " + JHunterString.longestPalindromeV01("zz456456bwcbcebcweqweqqwqwbecaaaaaaa"));
         System.out.println("input: " + "xaabacxcabaaxcabaax" + " longestPalindromeV01 Result: " + JHunterString.longestPalindromeV01("xaabacxcabaaxcabaax"));
@@ -66,5 +67,14 @@ public class Main {
         System.out.println("input: " + "A" + " zigzagPatternConvertor Result: " + JHunterString.zigzagPatternConvertor("A", 1));
         System.out.println("input: " + "ABCDEFGH" + " zigzagPatternConvertor Result: " + JHunterString.zigzagPatternConvertor("ABCDEFGH", 1));
         System.out.println("input: " + "ALGORITHMOFTHEDAY" + " zigzagPatternConvertor Result: " + JHunterString.zigzagPatternConvertor("ALGORITHMOFTHEDAY", 4));
+
+        System.out.println("\n ============================= myAtoi ========================================================");
+        System.out.println("input: " + "+1" + " myAtoi Result: " + JHunterString.myAtoi("+1"));
+        System.out.println("input: " + "  - 123 abc " + " myAtoi Result: " + JHunterString.myAtoi("  - 123"));
+        System.out.println("input: " + "  - 12+3 abc " + " myAtoi Result: " + JHunterString.myAtoi("  - 12+3"));
+        System.out.println("input: " + "  - 12399999e9999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999" + " myAtoi Result: " + JHunterString.myAtoi("  - 12399999e9999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999"));
+        System.out.println("input: " + "-2147483649" + " myAtoi Result: " + JHunterString.myAtoi("-2147483649"));
+        System.out.println("input: " + "-91283472332" + " myAtoi Result: " + JHunterString.myAtoi("-91283472332"));
+        System.out.println("input: " + "2147483649" + " myAtoi Result: " + JHunterString.myAtoi("2147483649"));
     }
 }

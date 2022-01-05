@@ -136,23 +136,6 @@ public class JHunterString {
         return subStringSize;
     }
 
-    public int lengthOfLongestSubstringV01(String s) {
-        Map<Character, Integer> map = new HashMap<>();
-        int left = 0;
-        int right = 0;
-        int max = 0;
-        while (right < s.length()) {
-            char ch = s.charAt(right);
-            if (map.containsKey(ch)) {
-                left = Math.max(left, map.get(s.charAt(right)) + 1);
-            }
-            max = Math.max(max, right - left + 1);
-            map.put(ch, right);
-            right++;
-        }
-        return max;
-    }
-
     public static int lengthOfLongestSubstringV02(String s) {
         HashSet<Character> set = new HashSet<Character>();
         int left = 0, right = 0, res = 0;
@@ -169,21 +152,6 @@ public class JHunterString {
         }
         return res;
     }
-
-
-    /*
-        Given a string s, return the longest palindromic substring in s.
-        Example 1:
-        Input: s = "babad"
-        Output: "bab"
-        Explanation: "aba" is also a valid answer.
-                Example 2:
-
-        Input: s = "cbbd"
-        Output: "bb"
-
-        Call Out: Palindromic logic based on even or odd input string size.
-    */
 
     public static String longestPalindrome(String s) { // O(n^3)
         if (s == null || s.length() == 0) {
@@ -222,6 +190,21 @@ public class JHunterString {
         }
         return s.substring(startIdx, endIdx + 1);
     }
+
+
+    /*
+        Given a string s, return the longest palindromic substring in s.
+        Example 1:
+        Input: s = "babad"
+        Output: "bab"
+        Explanation: "aba" is also a valid answer.
+                Example 2:
+
+        Input: s = "cbbd"
+        Output: "bb"
+
+        Call Out: Palindromic logic based on even or odd input string size.
+    */
 
     public static String longestPalindromeV01(String s) { // O(n^2)
         int inputStrLength = s.length();
@@ -276,7 +259,7 @@ public class JHunterString {
                 v[curRow] = new StringBuilder();
             }
             v[curRow].append(s.charAt(i));
-            if(curRow<=0 || curRow >= (numRows - 1)) {
+            if (curRow <= 0 || curRow >= (numRows - 1)) {
                 isGoingDown = !isGoingDown;
             }
             curRow += isGoingDown == true ? 1 : -1;
@@ -291,5 +274,86 @@ public class JHunterString {
             }
         }
         return resultStr.toString();
+    }
+
+    static public int myAtoi(String s) {
+        if (s == null || s.length() <= 0) {
+            return 0;
+        }
+
+        long result = 0;
+        boolean isSignPositive = true, isStartedCalculation = false, isSignFound = false;
+
+        for (char ch : s.toCharArray()) {
+            if (ch == '-' || ch == '+') {
+                if (isStartedCalculation || isSignFound) {
+                    return (int) (isSignPositive == true ? result : result * -1);
+                }
+                isSignFound = true;
+                isSignPositive = ch == '+' ? true : false;
+            } else if (ch >= '0' && ch <= '9') {
+                isStartedCalculation = true;
+                int currentDigit = ch - '0';
+                result = (result * 10) + currentDigit;
+                if (result > Integer.MAX_VALUE) {
+                    return isSignPositive ? Integer.MAX_VALUE : Integer.MIN_VALUE;
+                }
+            } else {
+                if (ch == ' ' && !isStartedCalculation && !isSignFound) {
+                    continue;
+                }
+                return (int) (isSignPositive == true ? result : result * -1);
+            }
+        }
+        return (int) (isSignPositive == true ? result : result * -1);
+    }
+
+    public int lengthOfLongestSubstringV01(String s) {
+        Map<Character, Integer> map = new HashMap<>();
+        int left = 0;
+        int right = 0;
+        int max = 0;
+        while (right < s.length()) {
+            char ch = s.charAt(right);
+            if (map.containsKey(ch)) {
+                left = Math.max(left, map.get(s.charAt(right)) + 1);
+            }
+            max = Math.max(max, right - left + 1);
+            map.put(ch, right);
+            right++;
+        }
+        return max;
+    }
+
+    /*
+     * Given an input string s and a pattern p, implement regular expression matching with support for '.' and '*' where:
+       '.' Matches any single character.
+       '*' Matches zero or more of the preceding element.
+       The matching should cover the entire input string (not partial).
+     */
+    public static boolean isMatch(String s, String p) {
+        if(s==null || p == null || s.length() <=0 || p.length() <= 0) {
+            return false;
+        }
+
+        char previousChar = '0';
+
+        int i =0;
+        for( ; i<s.length() && i<p.length(); i++) {
+            char currentLeftChar  = s.charAt(i);
+            char currentRightChar = p.charAt(i);
+
+            if(currentRightChar == '.') {
+                continue;
+            } else if(currentRightChar == '*') {
+                return true;
+            } else if( currentLeftChar != currentRightChar ){
+                return false;
+            }
+        }
+        if(i <= p.length()) {
+
+        }
+        return true;
     }
 }
