@@ -326,34 +326,94 @@ public class JHunterString {
     }
 
     /*
-     * Given an input string s and a pattern p, implement regular expression matching with support for '.' and '*' where:
-       '.' Matches any single character.
-       '*' Matches zero or more of the preceding element.
-       The matching should cover the entire input string (not partial).
+        Roman numerals are represented by seven different symbols: I, V, X, L, C, D and M.
+
+        Symbol       Value
+        I             1
+        V             5
+        X             10
+        L             50
+        C             100
+        D             500
+        M             1000
+        For example, 2 is written as II in Roman numeral, just two one's added together. 12 is written as XII, which is simply X + II. The number 27 is written as XXVII, which is XX + V + II.
+
+        Roman numerals are usually written largest to smallest from left to right. However, the numeral for four is not IIII. Instead, the number four is written as IV. Because the one is before the five we subtract it making four. The same principle applies to the number nine, which is written as IX. There are six instances where subtraction is used:
+
+        I can be placed before V (5) and X (10) to make 4 and 9.
+        X can be placed before L (50) and C (100) to make 40 and 90.
+        C can be placed before D (500) and M (1000) to make 400 and 900.
      */
-    public static boolean isMatch(String s, String p) {
-        if(s==null || p == null || s.length() <=0 || p.length() <= 0) {
-            return false;
+    public static String integerToRoman(int num) {
+        if (num <= 0) {
+            return "";
         }
+        String romanKeys[] = {"I", "IV", "V", "IX", "X", "XL", "L", "XC", "C", "CD", "D", "CM", "M"};
+        int romanValues[] = {1, 4, 5, 9, 10, 40, 50, 90, 100, 400, 500, 900, 1000};
 
-        char previousChar = '0';
+        StringBuilder romanStr = new StringBuilder();
+        for (int i = romanKeys.length - 1; i >= 0; i--) {
+            int res = num / romanValues[i];
+            if (res > 0) {
+                for (int j = 0; j < res; j++) {
+                    romanStr.append(romanKeys[i]);
+                }
+            }
+            num %= romanValues[i];
 
-        int i =0;
-        for( ; i<s.length() && i<p.length(); i++) {
-            char currentLeftChar  = s.charAt(i);
-            char currentRightChar = p.charAt(i);
-
-            if(currentRightChar == '.') {
-                continue;
-            } else if(currentRightChar == '*') {
-                return true;
-            } else if( currentLeftChar != currentRightChar ){
-                return false;
+            if (num == 0) {
+                break;
             }
         }
-        if(i <= p.length()) {
+        return romanStr.toString();
+    }
+/*
+    Roman to Integer
+    Example 1:
+    Input: s = "III"
+    Output: 3
+    Explanation: III = 3.
 
+    Example 2:
+    Input: s = "LVIII"
+    Output: 58
+    Explanation: L = 50, V= 5, III = 3.
+
+    Example 3:
+    Input: s = "MCMXCIV"
+    Output: 1994
+    Explanation: M = 1000, CM = 900, XC = 90 and IV = 4.
+ */
+    public static int romanToInteger(String num) {
+        if (num == null || num.length() <= 0 ) {
+            return 0;
         }
-        return true;
+
+        Map<String, Integer> romanKeyMap = new HashMap<String, Integer>();
+        romanKeyMap.put("I", 1);
+        romanKeyMap.put("IV", 4);
+        romanKeyMap.put("V", 5);
+        romanKeyMap.put("IX", 9);
+        romanKeyMap.put("X", 10);
+        romanKeyMap.put("XL", 40);
+        romanKeyMap.put("L", 50);
+        romanKeyMap.put("XC", 90);
+        romanKeyMap.put("C", 100);
+        romanKeyMap.put("CD", 400);
+        romanKeyMap.put("D", 500);
+        romanKeyMap.put("CM", 900);
+        romanKeyMap.put("M", 1000);
+
+        int result = 0;
+        for(int i=0; i<num.length(); ) {
+            if(i != num.length() - 1 && romanKeyMap.containsKey(num.substring(i, i+2))){
+                result += romanKeyMap.get(num.substring(i, i+2));
+                i+=2;
+            } else {
+                result += romanKeyMap.get(num.substring(i, i+1));
+                i+=1;
+            }
+        }
+        return result;
     }
 }

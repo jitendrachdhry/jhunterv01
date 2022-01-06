@@ -76,5 +76,16 @@ public class Main {
         System.out.println("input: " + "-2147483649" + " myAtoi Result: " + JHunterString.myAtoi("-2147483649"));
         System.out.println("input: " + "-91283472332" + " myAtoi Result: " + JHunterString.myAtoi("-91283472332"));
         System.out.println("input: " + "2147483649" + " myAtoi Result: " + JHunterString.myAtoi("2147483649"));
+        System.out.println("input: " + "missi mis*" + " matchRegex Result: " + JHunterString.matchRegex("missi", "mis*"));
+
+        System.out.println("\n ============================= integerToRoman ========================================================");
+        System.out.println("input: " + "49" + " integerToRoman Result: " + JHunterString.integerToRoman(49));
+        System.out.println("input: " + "1" + " integerToRoman Result: " + JHunterString.integerToRoman(1));
+        System.out.println("input: " + "3999" + " integerToRoman Result: " + JHunterString.integerToRoman(3999));
+
+        System.out.println("\n ============================= romanToInteger ========================================================");
+        System.out.println("input: " + "XLIX --> 49" + " romanToInteger Result: " + JHunterString.romanToInteger("XLIX"));
+        System.out.println("input: " + "I --> 1 " + " romanToInteger Result: " + JHunterString.romanToInteger("I"));
+        System.out.println("input: " + " MMMCMXCIX --> 3999" + " romanToInteger Result: " + JHunterString.romanToInteger("MMMCMXCIX"));
     }
 }
