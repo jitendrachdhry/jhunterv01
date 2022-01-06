@@ -326,6 +326,43 @@ public class JHunterString {
     }
 
     /*
+     * Given an input string s and a pattern p, implement regular expression matching with support for '.' and '*' where:
+       '.' Matches any single character.
+       '*' Matches zero or more of the preceding element.
+       The matching should cover the entire input string (not partial).
+     * Dynamic programming technique for regex matching.
+     */
+    public static boolean matchRegex(String textStr, String patternStr) {
+        char[] text = textStr.toCharArray();
+        char[] pattern = patternStr.toCharArray();
+        boolean T[][] = new boolean[text.length + 1][pattern.length + 1];
+
+        T[0][0] = true;
+        //Deals with patterns like a* or a*b* or a*b*c*
+        for (int i = 1; i < T[0].length; i++) {
+            if (pattern[i - 1] == '*') {
+                T[0][i] = T[0][i - 2];
+            }
+        }
+
+        for (int i = 1; i < T.length; i++) {
+            for (int j = 1; j < T[0].length; j++) {
+                if (pattern[j - 1] == '.' || pattern[j - 1] == text[i - 1]) {
+                    T[i][j] = T[i - 1][j - 1];
+                } else if (pattern[j - 1] == '*') {
+                    T[i][j] = T[i][j - 2];
+                    if (pattern[j - 2] == '.' || pattern[j - 2] == text[i - 1]) {
+                        T[i][j] = T[i][j] | T[i - 1][j];
+                    }
+                } else {
+                    T[i][j] = false;
+                }
+            }
+        }
+        return T[text.length][pattern.length];
+    }
+
+    /*
         Roman numerals are represented by seven different symbols: I, V, X, L, C, D and M.
 
         Symbol       Value
@@ -415,5 +452,45 @@ public class JHunterString {
             }
         }
         return result;
+    }
+
+    /*
+        Write a function to find the longest common prefix string amongst an array of strings.
+
+        If there is no common prefix, return an empty string "".
+
+        Example 1:
+        Input: strs = ["flower","flow","flight"]
+        Output: "fl"
+
+        Example 2:
+        Input: strs = ["dog","racecar","car"]
+        Output: ""
+        Explanation: There is no common prefix among the input strings.
+     */
+
+    public static String longestCommonPrefix(String[] strs) {
+        if(strs == null || strs.length <=0) {
+            return "";
+        }
+
+        String prefix = strs[0];
+        for( int i=1; i<strs.length; i++) {
+            while (strs[i].indexOf(prefix) != 0) {
+                prefix = prefix.substring( 0, prefix.length() - 1);
+            }
+        }
+        return prefix;
+    }
+
+    public static String longestCommonPrefixV01(String[] strs) {
+        for( int i=0; ; i++){
+            for(int j=1; j<strs.length; j++) {
+                if( (i < strs[j].length()) && (i < strs[0].length()) && ( strs[j].charAt(i) == strs[0].charAt(i))){
+                    continue;
+                }
+                return (j == 1) ? "" : strs[0].substring(0, j);
+            }
+        }
     }
 }
