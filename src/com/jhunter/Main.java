@@ -76,7 +76,6 @@ public class Main {
         System.out.println("input: " + "-2147483649" + " myAtoi Result: " + JHunterString.myAtoi("-2147483649"));
         System.out.println("input: " + "-91283472332" + " myAtoi Result: " + JHunterString.myAtoi("-91283472332"));
         System.out.println("input: " + "2147483649" + " myAtoi Result: " + JHunterString.myAtoi("2147483649"));
-        System.out.println("input: " + "missi mis*" + " matchRegex Result: " + JHunterString.matchRegex("missi", "mis*"));
 
         System.out.println("\n ============================= integerToRoman ========================================================");
         System.out.println("input: " + "49" + " integerToRoman Result: " + JHunterString.integerToRoman(49));
