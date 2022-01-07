@@ -116,5 +116,16 @@ public class Main {
         System.out.println("\n ============================= Group Anagrams ========================================================");
         String []groupAnagrams = {"eat","tea","tan","ate","nat","bat"};
         System.out.println("input: (\"eat\",\"tea\",\"tan\",\"ate\",\"nat\",\"bat\" ) --> [[\"bat\"],[\"nat\",\"tan\"],[\"ate\",\"eat\",\"tea\"]]" + " groupAnagrams Result: " + JHunterString.groupAnagrams( groupAnagrams ));
+
+        System.out.println("\n ============================= last Word in a given string ========================================================");
+        System.out.println("input: " + "\"this    \" --> this" + " lastWord Result: " + JHunterString.lastWord("this    "));
+        System.out.println("input: " + "\" this is cat\" --> cat" + " lastWord Result: " + JHunterString.lastWord(" this is cat"));
+
+        System.out.println("\n ============================= Simplify Path ========================================================");
+        System.out.println("input: " + "\"/a/./b/../../c/\" --> \"/c\"" + " lastWord Result: " + JHunterString.simplifyPath("/a/./b/../../c/"));
+        System.out.println("input: " + "\"/../a/../../\" --> \"/\"" + " lastWord Result: " + JHunterString.simplifyPath("/../a/../../"));
+        System.out.println("input: " + "\"/../a/\" --> \"/\"" + " lastWord Result: " + JHunterString.simplifyPath("/../a/"));
+        System.out.println("input: " + "\"/\"/home//foo/\"\" --> \"/home/foo\"" + " lastWord Result: " + JHunterString.simplifyPath("/home//foo/"));
+
     }
 }
