@@ -108,5 +108,9 @@ public class Main {
         System.out.println("input: (())())( --> 6" + " longest Valid Parentheses Result: " + JHunterString.longestValidParentheses( "(())())(" ));
         System.out.println("input: (())())( --> 6" + " longest Valid Parentheses Result: " + JHunterString.longestValidParentheses( "(((((()()()(())(" ));
 
+        System.out.println("\n ============================= Wildcard Match ========================================================");
+        System.out.println("input: (abcdt , a?*t ) --> true" + " longest Valid Parentheses Result: " + JHunterString.isWildcardMatch( "abcdt", "a?*t" ));
+        System.out.println("input: (abcdt , a?*tt ) --> true" + " longest Valid Parentheses Result: " + JHunterString.isWildcardMatch( "abcdt", "a?*tt" ));
+        System.out.println("input: (zacabz , *a?b* ) --> true" + " longest Valid Parentheses Result: " + JHunterString.isWildcardMatch( "zacabz", "*a?b*" ));
     }
 }
