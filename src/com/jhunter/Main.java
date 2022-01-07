@@ -112,5 +112,9 @@ public class Main {
         System.out.println("input: (abcdt , a?*t ) --> true" + " longest Valid Parentheses Result: " + JHunterString.isWildcardMatch( "abcdt", "a?*t" ));
         System.out.println("input: (abcdt , a?*tt ) --> true" + " longest Valid Parentheses Result: " + JHunterString.isWildcardMatch( "abcdt", "a?*tt" ));
         System.out.println("input: (zacabz , *a?b* ) --> true" + " longest Valid Parentheses Result: " + JHunterString.isWildcardMatch( "zacabz", "*a?b*" ));
+
+        System.out.println("\n ============================= Group Anagrams ========================================================");
+        String []groupAnagrams = {"eat","tea","tan","ate","nat","bat"};
+        System.out.println("input: (\"eat\",\"tea\",\"tan\",\"ate\",\"nat\",\"bat\" ) --> [[\"bat\"],[\"nat\",\"tan\"],[\"ate\",\"eat\",\"tea\"]]" + " groupAnagrams Result: " + JHunterString.groupAnagrams( groupAnagrams ));
     }
 }
