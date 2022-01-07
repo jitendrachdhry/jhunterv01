@@ -401,25 +401,26 @@ public class JHunterString {
         }
         return romanStr.toString();
     }
-/*
-    Roman to Integer
-    Example 1:
-    Input: s = "III"
-    Output: 3
-    Explanation: III = 3.
 
-    Example 2:
-    Input: s = "LVIII"
-    Output: 58
-    Explanation: L = 50, V= 5, III = 3.
+    /*
+        Roman to Integer
+        Example 1:
+        Input: s = "III"
+        Output: 3
+        Explanation: III = 3.
 
-    Example 3:
-    Input: s = "MCMXCIV"
-    Output: 1994
-    Explanation: M = 1000, CM = 900, XC = 90 and IV = 4.
- */
+        Example 2:
+        Input: s = "LVIII"
+        Output: 58
+        Explanation: L = 50, V= 5, III = 3.
+
+        Example 3:
+        Input: s = "MCMXCIV"
+        Output: 1994
+        Explanation: M = 1000, CM = 900, XC = 90 and IV = 4.
+     */
     public static int romanToInteger(String num) {
-        if (num == null || num.length() <= 0 ) {
+        if (num == null || num.length() <= 0) {
             return 0;
         }
 
@@ -439,13 +440,13 @@ public class JHunterString {
         romanKeyMap.put("M", 1000);
 
         int result = 0;
-        for(int i=0; i<num.length(); ) {
-            if(i != num.length() - 1 && romanKeyMap.containsKey(num.substring(i, i+2))){
-                result += romanKeyMap.get(num.substring(i, i+2));
-                i+=2;
+        for (int i = 0; i < num.length(); ) {
+            if (i != num.length() - 1 && romanKeyMap.containsKey(num.substring(i, i + 2))) {
+                result += romanKeyMap.get(num.substring(i, i + 2));
+                i += 2;
             } else {
-                result += romanKeyMap.get(num.substring(i, i+1));
-                i+=1;
+                result += romanKeyMap.get(num.substring(i, i + 1));
+                i += 1;
             }
         }
         return result;
@@ -467,23 +468,23 @@ public class JHunterString {
      */
 
     public static String longestCommonPrefix(String[] strs) {
-        if(strs == null || strs.length <=0) {
+        if (strs == null || strs.length <= 0) {
             return "";
         }
 
         String prefix = strs[0];
-        for( int i=1; i<strs.length; i++) {
+        for (int i = 1; i < strs.length; i++) {
             while (strs[i].indexOf(prefix) != 0) {
-                prefix = prefix.substring( 0, prefix.length() - 1);
+                prefix = prefix.substring(0, prefix.length() - 1);
             }
         }
         return prefix;
     }
 
     public static String longestCommonPrefixV01(String[] strs) {
-        for( int i=0; ; i++){
-            for(int j=1; j<strs.length; j++) {
-                if( (i < strs[j].length()) && (i < strs[0].length()) && ( strs[j].charAt(i) == strs[0].charAt(i))){
+        for (int i = 0; ; i++) {
+            for (int j = 1; j < strs.length; j++) {
+                if ((i < strs[j].length()) && (i < strs[0].length()) && (strs[j].charAt(i) == strs[0].charAt(i))) {
                     continue;
                 }
                 return (j == 1) ? "" : strs[0].substring(0, j);
@@ -513,10 +514,11 @@ public class JHunterString {
 
     Approach 1: Backtracking (https://leetcode.com/explore/featured/card/recursion-ii/472/backtracking/2654/)
      */
-    static final String [] digitMap = {"", "", "abc", "def", "ghi", "jkl", "mno", "pqrs", "tuv", "wxyz" };
+    static final String[] digitMap = {"", "", "abc", "def", "ghi", "jkl", "mno", "pqrs", "tuv", "wxyz"};
+
     public static List<String> letterCombinations(String digits) {
         List<String> result = new ArrayList<String>();
-        if(digits == null || digits.length() <=0){
+        if (digits == null || digits.length() <= 0) {
             return result;
         }
 
@@ -525,26 +527,134 @@ public class JHunterString {
     }
 
     /**
-     e.g., "23"
-     recursion tree
-                                                       root
-                                             /          |             \
-     first possibility -> "abc"           "a"           "b"            "c"
-                                        /  |  \        /  |  \        /  |  \
-     second possibility -> "def"      "d" "e" "f"    "d" "e" "f"    "d" "e" "f"
-
-     start at root with empty string,
-     and build possibilities by appending possible option at each level down each branch of the tree.
+     * e.g., "23"
+     * recursion tree
+     * root
+     * /          |             \
+     * first possibility -> "abc"           "a"           "b"            "c"
+     * /  |  \        /  |  \        /  |  \
+     * second possibility -> "def"      "d" "e" "f"    "d" "e" "f"    "d" "e" "f"
+     * <p>
+     * start at root with empty string,
+     * and build possibilities by appending possible option at each level down each branch of the tree.
      **/
     public static void dfs(String digits, int idx, String str, List<String> result) {
-        if(digits.length() == idx) {
+        if (digits.length() == idx) {
             result.add(str);
             return;
         }
 
         String currentDigitStr = digitMap[(digits.charAt(idx) - '0')];
-        for(char ch : currentDigitStr.toCharArray()){
-            dfs(digits, idx+1, str + ch , result);
+        for (char ch : currentDigitStr.toCharArray()) {
+            dfs(digits, idx + 1, str + ch, result);
         }
+    }
+
+    /*
+        Given a string s containing just the characters '(', ')', '{', '}', '[' and ']', determine if the input string is valid.
+
+        An input string is valid if:
+        Open brackets must be closed by the same type of brackets.
+        Open brackets must be closed in the correct order.
+    */
+    static public boolean isValid(String s) {
+        if (s == null || s.length() <= 0) {
+            return false;
+        }
+
+        Stack<Character> stack = new Stack<Character>();
+        for (char ch : s.toCharArray()) {
+            if (ch == '(' || ch == '{' || ch == '[') {
+                stack.push(ch);
+            } else if (ch == ')' || ch == '}' || ch == ']') {
+                if (stack.isEmpty() || stack.pop() != openBracketOf(ch)) {
+                    return false;
+                }
+            } else {
+                return false;
+            }
+        }
+        return (stack.isEmpty()) ? true : false;
+    }
+
+    public static char openBracketOf(char ch) {
+        switch (ch) {
+            case '}':
+                return '{';
+            case ')':
+                return '(';
+            case ']':
+                return '[';
+        }
+        return ch;
+    }
+
+    /*
+        Given n pairs of parentheses, write a function to generate all combinations of well-formed parentheses.
+        Example 1:
+        Input: n = 3
+        Output: ["((()))","(()())","(())()","()(())","()()()"]
+
+        Example 2:
+        Input: n = 1
+        Output: ["()"]
+     */
+    public List<String> generateParenthesis(int n) {
+        List<String> result_output = new ArrayList<String>();
+        backtrace(result_output, "", 0, 0, n);
+        return result_output;
+    }
+
+    void backtrace(List<String> result_array, String current_string, int open, int close, int max) {
+        if (current_string.length() == max) { // base case
+            result_array.add(current_string);
+            return;
+        }
+
+        if (open < max) {
+            backtrace(result_array, current_string + "(", open + 1, close, max);
+        }
+
+        if (close < open) {
+            backtrace(result_array, current_string + ")", open, close + 1, max);
+        }
+    }
+
+    /*
+        Given a string containing just the characters '(' and ')', find the length of the longest valid (well-formed) parentheses substring.
+
+        Example 1:
+        Input: s = "(()"
+        Output: 2
+        Explanation: The longest valid parentheses substring is "()".
+
+        Example 2:
+        Input: s = ")()())"
+        Output: 4
+        Explanation: The longest valid parentheses substring is "()()".
+
+     */
+    public static int longestValidParentheses(String s) {
+        if (s == null || s.length() <= 0) return 0;
+        Stack<Character> parS = new Stack<Character>();
+        Stack<Integer> latestInvalidIdxS = new Stack<Integer>();
+        latestInvalidIdxS.push(-1);
+        int max = 0, idx = 0;
+        for (char ch : s.toCharArray()) {
+            if (ch == ')') {
+                if (!parS.isEmpty() && parS.peek() == '(') {
+                    parS.pop();
+                    latestInvalidIdxS.pop();
+                    max = Math.max(max, idx - latestInvalidIdxS.peek());
+                } else {
+                    latestInvalidIdxS.push(idx);
+                }
+            } else if (ch == '(') {
+                parS.push(ch);
+                latestInvalidIdxS.push(idx);
+            }
+            idx++;
+        }
+        return max;
     }
 }

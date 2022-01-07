@@ -99,5 +99,14 @@ public class Main {
         System.out.println("\n ============================= letterCombinations ========================================================");
         System.out.println("input: 23" + " letterCombinations Result: " + JHunterString.letterCombinations( "23" ));
 
+        System.out.println("\n ============================= Valid Parentheses ========================================================");
+        System.out.println("input: {{}}[])( --> false" + " Valid Parentheses Result: " + JHunterString.isValid( "{{}}[])(" ));
+        System.out.println("input: {{}}[](()) --> true" + " Valid Parentheses Result: " + JHunterString.isValid( "{{}}[](())" ));
+
+        System.out.println("\n ============================= longest Valid Parentheses ========================================================");
+        System.out.println("input: (()) --> 6" + " longest Valid Parentheses Result: " + JHunterString.longestValidParentheses( "(())" ));
+        System.out.println("input: (())())( --> 6" + " longest Valid Parentheses Result: " + JHunterString.longestValidParentheses( "(())())(" ));
+        System.out.println("input: (())())( --> 6" + " longest Valid Parentheses Result: " + JHunterString.longestValidParentheses( "(((((()()()(())(" ));
+
     }
 }
