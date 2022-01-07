@@ -94,5 +94,10 @@ public class Main {
         String strs[] = {"flower","flow","flight"};
         System.out.println("input: " + " longestCommonPrefix Result: " + JHunterString.longestCommonPrefix( strs ));
         strs[0] = "qlower";
-        System.out.println("input: " + " longestCommonPrefix Result: " + JHunterString.longestCommonPrefix( strs ));    }
+        System.out.println("input: " + " longestCommonPrefix Result: " + JHunterString.longestCommonPrefix( strs ));
+
+        System.out.println("\n ============================= letterCombinations ========================================================");
+        System.out.println("input: 23" + " letterCombinations Result: " + JHunterString.letterCombinations( "23" ));
+
+    }
 }

@@ -1,9 +1,6 @@
 package com.jhunter.JHunterString;
 
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
+import java.util.*;
 
 /*
 
@@ -491,6 +488,63 @@ public class JHunterString {
                 }
                 return (j == 1) ? "" : strs[0].substring(0, j);
             }
+        }
+    }
+
+    /*
+    Letter Combinations of a Phone Number
+    Given a string containing digits from 2-9 inclusive, return all possible letter combinations that the number could represent. Return the answer in any order.
+    A mapping of digit to letters (just like on the telephone buttons) is given below. Note that 1 does not map to any letters. Like:
+    2 -> abc
+    3 -> def
+    4 -> geh
+
+    Example 1:
+    Input: digits = "23"
+    Output: ["ad","ae","af","bd","be","bf","cd","ce","cf"]
+
+    Example 2:
+    Input: digits = ""
+    Output: []
+
+    Example 3:
+    Input: digits = "2"
+    Output: ["a","b","c"]
+
+    Approach 1: Backtracking (https://leetcode.com/explore/featured/card/recursion-ii/472/backtracking/2654/)
+     */
+    static final String [] digitMap = {"", "", "abc", "def", "ghi", "jkl", "mno", "pqrs", "tuv", "wxyz" };
+    public static List<String> letterCombinations(String digits) {
+        List<String> result = new ArrayList<String>();
+        if(digits == null || digits.length() <=0){
+            return result;
+        }
+
+        dfs(digits, 0, "", result);
+        return result;
+    }
+
+    /**
+     e.g., "23"
+     recursion tree
+                                                       root
+                                             /          |             \
+     first possibility -> "abc"           "a"           "b"            "c"
+                                        /  |  \        /  |  \        /  |  \
+     second possibility -> "def"      "d" "e" "f"    "d" "e" "f"    "d" "e" "f"
+
+     start at root with empty string,
+     and build possibilities by appending possible option at each level down each branch of the tree.
+     **/
+    public static void dfs(String digits, int idx, String str, List<String> result) {
+        if(digits.length() == idx) {
+            result.add(str);
+            return;
+        }
+
+        String currentDigitStr = digitMap[(digits.charAt(idx) - '0')];
+        for(char ch : currentDigitStr.toCharArray()){
+            dfs(digits, idx+1, str + ch , result);
         }
     }
 }
