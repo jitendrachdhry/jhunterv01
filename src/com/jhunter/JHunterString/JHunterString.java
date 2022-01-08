@@ -842,6 +842,13 @@ public class JHunterString {
         Output: "abc"
 
         Approach: Sliding Window
+        In any sliding window based problem we have two pointers. One right pointer whose job is to expand the current window and then we have the left pointer whose job is to contract a given window. At any point in time only one of these pointers move and the other one remains fixed.
+        The solution is pretty intuitive. We keep expanding the window by moving the right pointer. When the window has all the desired characters, we contract (if possible) and save the smallest window till now.
+         Algorithm
+         1. We start with two pointers, left and right initially pointing to the first element of the string SSS.
+         2. We use the right pointer to expand the window until we get a desirable window i.e. a window that contains all of the characters of TTT.
+         3. Once we have a window with all the characters, we can move the left pointer ahead one by one. If the window is still a desirable one we keep on updating the minimum window size.
+         4. If the window is not desirable any more, we repeat step2 onwards.
     */
     public static String minWindow(String s, String t) {
         if (s == null || s.length() <= 0 || t == null || t.length() <= 0 || t.length() > s.length()) return "";
