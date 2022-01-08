@@ -127,5 +127,7 @@ public class Main {
         System.out.println("input: " + "\"/../a/\" --> \"/\"" + " lastWord Result: " + JHunterString.simplifyPath("/../a/"));
         System.out.println("input: " + "\"/\"/home//foo/\"\" --> \"/home/foo\"" + " lastWord Result: " + JHunterString.simplifyPath("/home//foo/"));
 
+        System.out.println("\n ============================= Minimum Window from a given string ========================================================");
+        System.out.println("input: (akkkkabc , abc ) --> abc" + " longest Valid Parentheses Result: " + JHunterString.minWindow( "akkkkabc", "abc" ));
     }
 }
