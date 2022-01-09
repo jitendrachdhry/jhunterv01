@@ -129,5 +129,8 @@ public class Main {
 
         System.out.println("\n ============================= Minimum Window from a given string ========================================================");
         System.out.println("input: (akkkkabc , abc ) --> abc" + " longest Valid Parentheses Result: " + JHunterString.minWindow( "akkkkabc", "abc" ));
+
+        System.out.println("\n ============================= minDistance ========================================================");
+        System.out.println("input: (horse , ros ) --> 3" + " minDistance Result: " + JHunterString.minDistance( "horse", "ros" ));
     }
 }
