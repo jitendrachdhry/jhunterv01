@@ -4,6 +4,7 @@ import com.jhunter.JHunterString.JHunterString;
 import com.jhunter.fang.FANG2021;
 import com.jhunter.fang.FANG2021DP;
 import com.jhunter.jstring.backtracking.RestoreIPAddresses93;
+import com.jhunter.jstring.charcount.AdditionOfTwoStringEqualToGivenString;
 
 import java.util.concurrent.atomic.AtomicInteger;
 
@@ -144,6 +145,11 @@ public class Main {
 
         System.out.println("\n ============================= restoreIpAddresses ========================================================");
         System.out.println("input: (\"19216911\" ) --> " + " restoreIpAddresses Result: " + RestoreIPAddresses93.restoreIpAddresses("19216911"));
+
+        System.out.println("\n ============================= isAddintionOfStringEqualToGivenString ========================================================");
+        System.out.println("input: ( \"\", \"\", \"\" ) --> true" + " isAddintionOfStringEqualToGivenString Result: " + AdditionOfTwoStringEqualToGivenString.isAddintionOfStringEqualToGivenString("", "", ""));
+        System.out.println("input: ( \"abce\", \"dfgh\", \"abcdefgh\" ) --> true" + " isAddintionOfStringEqualToGivenString Result: " + AdditionOfTwoStringEqualToGivenString.isAddintionOfStringEqualToGivenString("abce", "dfgh", "abcdefgh"));
+        System.out.println("input: ( \"ab\", \"dfgh\", \"abcdefgh\" ) --> false" + " isAddintionOfStringEqualToGivenString Result: " + AdditionOfTwoStringEqualToGivenString.isAddintionOfStringEqualToGivenString("ab", "dfgh", "abcdefgh"));
 
     }
 }

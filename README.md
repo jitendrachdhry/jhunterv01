@@ -1,4 +1,4 @@
-# Interview Prepration in Java
+# Interview Preparation in Java
 
 ><h2> Time Table </h2>
 <table>
