@@ -132,5 +132,13 @@ public class Main {
 
         System.out.println("\n ============================= minDistance ========================================================");
         System.out.println("input: (horse , ros ) --> 3" + " minDistance Result: " + JHunterString.minDistance( "horse", "ros" ));
+
+        System.out.println("\n ============================= numDecodings ========================================================");
+        System.out.println("input: (\"90\" ) --> 0" + " numDecodings Result: " + JHunterString.numDecodings( "90" ));
+        System.out.println("input: (\"100\" ) --> 0" + " numDecodings Result: " + JHunterString.numDecodings( "100" ));
+        System.out.println("input: (\"1\" ) --> 1" + " numDecodings Result: " + JHunterString.numDecodings( "1" ));
+        System.out.println("input: (\"101\" ) --> 1" + " numDecodings Result: " + JHunterString.numDecodings( "101" ));
+        System.out.println("input: (\"1010\" ) --> 2" + " numDecodings Result: " + JHunterString.numDecodings( "2610" ));
+        System.out.println("input: (\"1212\" ) --> 5" + " numDecodings Result: " + JHunterString.numDecodings( "1212" ));
     }
 }
