@@ -3,6 +3,7 @@ package com.jhunter;
 import com.jhunter.JHunterString.JHunterString;
 import com.jhunter.fang.FANG2021;
 import com.jhunter.fang.FANG2021DP;
+import com.jhunter.jstring.backtracking.RestoreIPAddresses93;
 
 import java.util.concurrent.atomic.AtomicInteger;
 
@@ -91,31 +92,31 @@ public class Main {
         System.out.println("input: " + " MMMCMXCIX --> 3999" + " romanToInteger Result: " + JHunterString.romanToInteger("MMMCMXCIX"));
 
         System.out.println("\n ============================= longestCommonPrefix ========================================================");
-        String strs[] = {"flower","flow","flight"};
-        System.out.println("input: " + " longestCommonPrefix Result: " + JHunterString.longestCommonPrefix( strs ));
+        String[] strs = {"flower", "flow", "flight"};
+        System.out.println("input: " + " longestCommonPrefix Result: " + JHunterString.longestCommonPrefix(strs));
         strs[0] = "qlower";
-        System.out.println("input: " + " longestCommonPrefix Result: " + JHunterString.longestCommonPrefix( strs ));
+        System.out.println("input: " + " longestCommonPrefix Result: " + JHunterString.longestCommonPrefix(strs));
 
         System.out.println("\n ============================= letterCombinations ========================================================");
-        System.out.println("input: 23" + " letterCombinations Result: " + JHunterString.letterCombinations( "23" ));
+        System.out.println("input: 23" + " letterCombinations Result: " + JHunterString.letterCombinations("23"));
 
         System.out.println("\n ============================= Valid Parentheses ========================================================");
-        System.out.println("input: {{}}[])( --> false" + " Valid Parentheses Result: " + JHunterString.isValid( "{{}}[])(" ));
-        System.out.println("input: {{}}[](()) --> true" + " Valid Parentheses Result: " + JHunterString.isValid( "{{}}[](())" ));
+        System.out.println("input: {{}}[])( --> false" + " Valid Parentheses Result: " + JHunterString.isValid("{{}}[])("));
+        System.out.println("input: {{}}[](()) --> true" + " Valid Parentheses Result: " + JHunterString.isValid("{{}}[](())"));
 
         System.out.println("\n ============================= longest Valid Parentheses ========================================================");
-        System.out.println("input: (()) --> 6" + " longest Valid Parentheses Result: " + JHunterString.longestValidParentheses( "(())" ));
-        System.out.println("input: (())())( --> 6" + " longest Valid Parentheses Result: " + JHunterString.longestValidParentheses( "(())())(" ));
-        System.out.println("input: (())())( --> 6" + " longest Valid Parentheses Result: " + JHunterString.longestValidParentheses( "(((((()()()(())(" ));
+        System.out.println("input: (()) --> 6" + " longest Valid Parentheses Result: " + JHunterString.longestValidParentheses("(())"));
+        System.out.println("input: (())())( --> 6" + " longest Valid Parentheses Result: " + JHunterString.longestValidParentheses("(())())("));
+        System.out.println("input: (())())( --> 6" + " longest Valid Parentheses Result: " + JHunterString.longestValidParentheses("(((((()()()(())("));
 
         System.out.println("\n ============================= Wildcard Match ========================================================");
-        System.out.println("input: (abcdt , a?*t ) --> true" + " longest Valid Parentheses Result: " + JHunterString.isWildcardMatch( "abcdt", "a?*t" ));
-        System.out.println("input: (abcdt , a?*tt ) --> true" + " longest Valid Parentheses Result: " + JHunterString.isWildcardMatch( "abcdt", "a?*tt" ));
-        System.out.println("input: (zacabz , *a?b* ) --> true" + " longest Valid Parentheses Result: " + JHunterString.isWildcardMatch( "zacabz", "*a?b*" ));
+        System.out.println("input: (abcdt , a?*t ) --> true" + " longest Valid Parentheses Result: " + JHunterString.isWildcardMatch("abcdt", "a?*t"));
+        System.out.println("input: (abcdt , a?*tt ) --> true" + " longest Valid Parentheses Result: " + JHunterString.isWildcardMatch("abcdt", "a?*tt"));
+        System.out.println("input: (zacabz , *a?b* ) --> true" + " longest Valid Parentheses Result: " + JHunterString.isWildcardMatch("zacabz", "*a?b*"));
 
         System.out.println("\n ============================= Group Anagrams ========================================================");
-        String []groupAnagrams = {"eat","tea","tan","ate","nat","bat"};
-        System.out.println("input: (\"eat\",\"tea\",\"tan\",\"ate\",\"nat\",\"bat\" ) --> [[\"bat\"],[\"nat\",\"tan\"],[\"ate\",\"eat\",\"tea\"]]" + " groupAnagrams Result: " + JHunterString.groupAnagrams( groupAnagrams ));
+        String[] groupAnagrams = {"eat", "tea", "tan", "ate", "nat", "bat"};
+        System.out.println("input: (\"eat\",\"tea\",\"tan\",\"ate\",\"nat\",\"bat\" ) --> [[\"bat\"],[\"nat\",\"tan\"],[\"ate\",\"eat\",\"tea\"]]" + " groupAnagrams Result: " + JHunterString.groupAnagrams(groupAnagrams));
 
         System.out.println("\n ============================= last Word in a given string ========================================================");
         System.out.println("input: " + "\"this    \" --> this" + " lastWord Result: " + JHunterString.lastWord("this    "));
@@ -128,17 +129,21 @@ public class Main {
         System.out.println("input: " + "\"/\"/home//foo/\"\" --> \"/home/foo\"" + " lastWord Result: " + JHunterString.simplifyPath("/home//foo/"));
 
         System.out.println("\n ============================= Minimum Window from a given string ========================================================");
-        System.out.println("input: (akkkkabc , abc ) --> abc" + " longest Valid Parentheses Result: " + JHunterString.minWindow( "akkkkabc", "abc" ));
+        System.out.println("input: (akkkkabc , abc ) --> abc" + " longest Valid Parentheses Result: " + JHunterString.minWindow("akkkkabc", "abc"));
 
         System.out.println("\n ============================= minDistance ========================================================");
-        System.out.println("input: (horse , ros ) --> 3" + " minDistance Result: " + JHunterString.minDistance( "horse", "ros" ));
+        System.out.println("input: (horse , ros ) --> 3" + " minDistance Result: " + JHunterString.minDistance("horse", "ros"));
 
         System.out.println("\n ============================= numDecodings ========================================================");
-        System.out.println("input: (\"90\" ) --> 0" + " numDecodings Result: " + JHunterString.numDecodings( "90" ));
-        System.out.println("input: (\"100\" ) --> 0" + " numDecodings Result: " + JHunterString.numDecodings( "100" ));
-        System.out.println("input: (\"1\" ) --> 1" + " numDecodings Result: " + JHunterString.numDecodings( "1" ));
-        System.out.println("input: (\"101\" ) --> 1" + " numDecodings Result: " + JHunterString.numDecodings( "101" ));
-        System.out.println("input: (\"1010\" ) --> 2" + " numDecodings Result: " + JHunterString.numDecodings( "2610" ));
-        System.out.println("input: (\"1212\" ) --> 5" + " numDecodings Result: " + JHunterString.numDecodings( "1212" ));
+        System.out.println("input: (\"90\" ) --> 0" + " numDecodings Result: " + JHunterString.numDecodings("90"));
+        System.out.println("input: (\"100\" ) --> 0" + " numDecodings Result: " + JHunterString.numDecodings("100"));
+        System.out.println("input: (\"1\" ) --> 1" + " numDecodings Result: " + JHunterString.numDecodings("1"));
+        System.out.println("input: (\"101\" ) --> 1" + " numDecodings Result: " + JHunterString.numDecodings("101"));
+        System.out.println("input: (\"1010\" ) --> 2" + " numDecodings Result: " + JHunterString.numDecodings("2610"));
+        System.out.println("input: (\"1212\" ) --> 5" + " numDecodings Result: " + JHunterString.numDecodings("1212"));
+
+        System.out.println("\n ============================= restoreIpAddresses ========================================================");
+        System.out.println("input: (\"19216911\" ) --> " + " restoreIpAddresses Result: " + RestoreIPAddresses93.restoreIpAddresses("19216911"));
+
     }
 }
