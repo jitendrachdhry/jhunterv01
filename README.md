@@ -1,29 +1,5 @@
 # Interview Preparation in Java
 
-><h2> Time Table </h2>
-<table>
-    <tr>
-        <th>Hours</th>
-        <th>Task</th>
-    </tr>
-    <tr>
-       <td> 5AM - 7AM </td> 
-       <td> Revision </td> 
-    </tr>
-    <tr>
-       <td> 8:30AM - 3:30PM </td> 
-       <td> LeetCode Practice </td> 
-    </tr>
-    <tr>
-       <td> 5PM - 6PM </td> 
-       <td> LeetCode Practice </td> 
-    </tr>
-    <tr>
-       <td> 7PM - 11PM </td> 
-       <td> LeetCode Practice </td> 
-    </tr>
-</table>
-
 > <b><i> Paradigm | Principles </i> </b>
 
 | Sr. No. | Technique           | URL                                                                                                                                                                            | In Detail                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  | Youtube | When to Approach ?|
@@ -72,6 +48,7 @@
 | 18.     | 93. Restore IP Addresses                                                                                                                                                                                                            | <b>Input:</b> s = "25525511135" <b>Output:</b> ["255.255.11.135","255.255.111.35"]                                                        | O(3^n)                       |                          | Back Tracking                                                                                  | [restore-ip-addresses](https://leetcode.com/problems/restore-ip-addresses/)                                   |                                                                                                                                             | [YouTube: Restore IP Addresses ](https://www.youtube.com/watch?v=61tN4YEdiTM)                    |
 | 19.     | 97. Interleaving String                                                                                                                                                                                                             | <b>Input:</b> s = "aab", "axy", "aaxaby" <b>Output:</b> true <br> <b>Input:</b> "aby", "xaa", "aaxaby"   <b>Output:</b> false             | O(nxm)                       |                          | Dynamic Programming                                                                            | [Interleaving String](https://leetcode.com/problems/interleaving-string/)                                     |                                                                                                                                             | [YouTube: Interleaving String ](https://www.youtube.com/watch?v=ih2OZ9-M3OM&t=365s)              |
 | 20.     | 115. Distinct Subsequences                                                                                                                                                                                                          | <b>Input:</b> s = "rabbbit", t = "rabbit" <b>Output:</b> 3 <br> <b>Input:</b> s = "babgbag", t = "bag"  <b>Output:</b> 5                  | O(nxm)                       |                          | Dynamic Programming                                                                            | [Distinct Subsequences](https://leetcode.com/problems/distinct-subsequences/)                                 |                                                                                                                                             | [YouTube: Distinct Subsequences ](https://www.youtube.com/watch?v=pPsuzQ_NIX0)                   |
+| 21.     | 125. Valid Palindrome                                                                                                                                                                                                               | <b>Input:</b> s = "A man, a plan, a canal: Panama" <b>Output:</b> true - Explanation: "amanaplanacanalpanama" is a palindrome.            | O(nxm)                       |                          |                                                                                                | [Valid Palindrome](https://leetcode.com/problems/valid-palindrome/)                                           |                                                                                                                                             |                                                                                                  |
 
 ><h1> Dynamic Programming based Questions </h1>
 | Question                                                                                                                                                                                                | Example                                                                       | Time Complexity | Space Complexity | Leetcode Link | Solution Link | YouTube |

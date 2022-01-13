@@ -7,6 +7,7 @@ import com.jhunter.jstring.backtracking.RestoreIPAddresses93;
 import com.jhunter.jstring.charcount.AdditionOfTwoStringEqualToGivenString;
 import com.jhunter.jstring.dp.DistinctSubsequences115;
 import com.jhunter.jstring.dp.InterleavingString97;
+import com.jhunter.jstring.random.ValidPalindrome125;
 
 import java.util.concurrent.atomic.AtomicInteger;
 
@@ -162,5 +163,9 @@ public class Main {
         System.out.println("input: ( \"\", \"\" ) --> 1" + " DistinctSubsequences Result: " + DistinctSubsequences115.numDistinct("", ""));
         System.out.println("input: ( \"rabbbit\", \"rabbit\" ) --> 3" + " DistinctSubsequences Result: " + DistinctSubsequences115.numDistinct("rabbbit", "rabbit"));
         System.out.println("input: ( \"bagbag\", \"bag\" ) --> 3" + " DistinctSubsequences Result: " + DistinctSubsequences115.numDistinct("bagbag", "bag"));
+
+        System.out.println("\n ============================= isPalindrome ========================================================");
+        System.out.println("input: ( \"A man, a plan, a canal: Panama\" ) --> true" + " isPalindrome Result: " + ValidPalindrome125.isPalindrome("A man, a plan, a canal: Panama"));
+
     }
 }
