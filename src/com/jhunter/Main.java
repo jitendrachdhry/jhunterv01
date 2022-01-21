@@ -83,7 +83,7 @@ public class Main {
         System.out.println("input: " + "2147483649" + " myAtoi Result: " + String2Integer8.myAtoi("2147483649"));
 
         System.out.println("\n ============================= matchRegex ========================================================");
-        //System.out.println("input: " + "missi mis*" + " matchRegex Result: " + JHunterString.matchRegex("missi", "mis*"));
+        System.out.println("input: " + "missi mis*" + " matchRegex Result: " + RegularExpressionMatching10.matchRegex("missi", "mis*"));
 
         System.out.println("\n ============================= integerToRoman ========================================================");
         System.out.println("input: " + "49" + " integerToRoman Result: " + JHunterString.integerToRoman(49));
