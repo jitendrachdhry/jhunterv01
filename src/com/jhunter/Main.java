@@ -11,6 +11,7 @@ import com.jhunter.jstring.dp.LongestSubstringWithoutRepeatingCharacters3;
 import com.jhunter.jstring.random.FractionToRecurringDecimal;
 import com.jhunter.jstring.random.ReverseWordsInAString151;
 import com.jhunter.jstring.random.ValidPalindrome125;
+import com.jhunter.jstring.random.ZigzagConversion6;
 import com.jhunter.jstring.slidingwindow.LongestPalindromicSubstring5;
 
 import java.util.concurrent.atomic.AtomicInteger;
@@ -71,9 +72,9 @@ public class Main {
         System.out.println("input: " + "aacabdkacaa" + " longestPalindromeV01 Result: " + LongestPalindromicSubstring5.longestPalindromeV01("aacabdkacaa"));
 
         System.out.println("\n ============================= zigzagPatternConvertor ========================================================");
-        System.out.println("input: " + "A" + " zigzagPatternConvertor Result: " + JHunterString.zigzagPatternConvertor("A", 1));
-        System.out.println("input: " + "ABCDEFGH" + " zigzagPatternConvertor Result: " + JHunterString.zigzagPatternConvertor("ABCDEFGH", 1));
-        System.out.println("input: " + "ALGORITHMOFTHEDAY" + " zigzagPatternConvertor Result: " + JHunterString.zigzagPatternConvertor("ALGORITHMOFTHEDAY", 4));
+        System.out.println("input: " + "A" + " zigzagPatternConvertor Result: " + ZigzagConversion6.zigzagPatternConvertor("A", 1));
+        System.out.println("input: " + "ABCDEFGH" + " zigzagPatternConvertor Result: " + ZigzagConversion6.zigzagPatternConvertor("ABCDEFGH", 1));
+        System.out.println("input: " + "ALGORITHMOFTHEDAY" + " zigzagPatternConvertor Result: " + ZigzagConversion6.zigzagPatternConvertor("ALGORITHMOFTHEDAY", 4));
 
         System.out.println("\n ============================= myAtoi ========================================================");
         System.out.println("input: " + "+1" + " myAtoi Result: " + JHunterString.myAtoi("+1"));
