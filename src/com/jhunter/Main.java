@@ -8,10 +8,7 @@ import com.jhunter.jstring.charcount.AdditionOfTwoStringEqualToGivenString;
 import com.jhunter.jstring.dp.DistinctSubsequences115;
 import com.jhunter.jstring.dp.InterleavingString97;
 import com.jhunter.jstring.dp.LongestSubstringWithoutRepeatingCharacters3;
-import com.jhunter.jstring.random.FractionToRecurringDecimal;
-import com.jhunter.jstring.random.ReverseWordsInAString151;
-import com.jhunter.jstring.random.ValidPalindrome125;
-import com.jhunter.jstring.random.ZigzagConversion6;
+import com.jhunter.jstring.random.*;
 import com.jhunter.jstring.slidingwindow.LongestPalindromicSubstring5;
 
 import java.util.concurrent.atomic.AtomicInteger;
@@ -77,13 +74,13 @@ public class Main {
         System.out.println("input: " + "ALGORITHMOFTHEDAY" + " zigzagPatternConvertor Result: " + ZigzagConversion6.zigzagPatternConvertor("ALGORITHMOFTHEDAY", 4));
 
         System.out.println("\n ============================= myAtoi ========================================================");
-        System.out.println("input: " + "+1" + " myAtoi Result: " + JHunterString.myAtoi("+1"));
-        System.out.println("input: " + "  - 123 abc " + " myAtoi Result: " + JHunterString.myAtoi("  - 123"));
-        System.out.println("input: " + "  - 12+3 abc " + " myAtoi Result: " + JHunterString.myAtoi("  - 12+3"));
-        System.out.println("input: " + "  - 12399999e9999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999" + " myAtoi Result: " + JHunterString.myAtoi("  - 12399999e9999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999"));
-        System.out.println("input: " + "-2147483649" + " myAtoi Result: " + JHunterString.myAtoi("-2147483649"));
-        System.out.println("input: " + "-91283472332" + " myAtoi Result: " + JHunterString.myAtoi("-91283472332"));
-        System.out.println("input: " + "2147483649" + " myAtoi Result: " + JHunterString.myAtoi("2147483649"));
+        System.out.println("input: " + "+1" + " myAtoi Result: " + String2Integer8.myAtoi("+1"));
+        System.out.println("input: " + "  - 123 abc " + " myAtoi Result: " + String2Integer8.myAtoi("  - 123"));
+        System.out.println("input: " + "  - 12+3 abc " + " myAtoi Result: " + String2Integer8.myAtoi("  - 12+3"));
+        System.out.println("input: " + "  - 12399999e9999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999" + " myAtoi Result: " + String2Integer8.myAtoi("  - 12399999e9999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999"));
+        System.out.println("input: " + "-2147483649" + " myAtoi Result: " + String2Integer8.myAtoi("-2147483649"));
+        System.out.println("input: " + "-91283472332" + " myAtoi Result: " + String2Integer8.myAtoi("-91283472332"));
+        System.out.println("input: " + "2147483649" + " myAtoi Result: " + String2Integer8.myAtoi("2147483649"));
 
         System.out.println("\n ============================= matchRegex ========================================================");
         //System.out.println("input: " + "missi mis*" + " matchRegex Result: " + JHunterString.matchRegex("missi", "mis*"));
