@@ -7,6 +7,7 @@ import com.jhunter.jstring.backtracking.RestoreIPAddresses93;
 import com.jhunter.jstring.charcount.AdditionOfTwoStringEqualToGivenString;
 import com.jhunter.jstring.dp.DistinctSubsequences115;
 import com.jhunter.jstring.dp.InterleavingString97;
+import com.jhunter.jstring.random.FractionToRecurringDecimal;
 import com.jhunter.jstring.random.ValidPalindrome125;
 
 import java.util.concurrent.atomic.AtomicInteger;
@@ -166,6 +167,10 @@ public class Main {
 
         System.out.println("\n ============================= isPalindrome ========================================================");
         System.out.println("input: ( \"A man, a plan, a canal: Panama\" ) --> true" + " isPalindrome Result: " + ValidPalindrome125.isPalindrome("A man, a plan, a canal: Panama"));
+
+
+        System.out.println("\n ============================= FractionToRecurringDecimal ========================================================");
+        System.out.println("input: ( \"4\" , \"333\") --> \"0.(012)\"" + " FractionToRecurringDecimal Result: " + FractionToRecurringDecimal.fractionToDecimal(4, 333));
 
     }
 }
