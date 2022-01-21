@@ -11,6 +11,7 @@ import com.jhunter.jstring.dp.LongestSubstringWithoutRepeatingCharacters3;
 import com.jhunter.jstring.random.FractionToRecurringDecimal;
 import com.jhunter.jstring.random.ReverseWordsInAString151;
 import com.jhunter.jstring.random.ValidPalindrome125;
+import com.jhunter.jstring.slidingwindow.LongestPalindromicSubstring5;
 
 import java.util.concurrent.atomic.AtomicInteger;
 
@@ -57,18 +58,17 @@ public class Main {
         System.out.println(" input: (\"aa\" ) --> 1 lengthOfLongestSubstring Result: " + LongestSubstringWithoutRepeatingCharacters3.lengthOfLongestSubstring("aa"));
 
         System.out.println("\n ============================= longestPalindrome ========================================================");
-
-        System.out.println("input: " + "JTKMJTJ" + " longestPalindromeV01 Result: " + JHunterString.longestPalindromeV01("JTKMJTJ"));
-        System.out.println("input: " + "a" + " longestPalindromeV01 Result: " + JHunterString.longestPalindromeV01("a"));
-        System.out.println("input: " + "aa" + " longestPalindromeV01 Result: " + JHunterString.longestPalindromeV01("aa"));
-        System.out.println("input: " + "zz456456bwcbcebcweqweqqwqwbecaaaaaaa" + " longestPalindromeV01 Result: " + JHunterString.longestPalindromeV01("zz456456bwcbcebcweqweqqwqwbecaaaaaaa"));
-        System.out.println("input: " + "xaabacxcabaaxcabaax" + " longestPalindromeV01 Result: " + JHunterString.longestPalindromeV01("xaabacxcabaaxcabaax"));
-        System.out.println("input: " + "acawilli" + " longestPalindromeV01 Result: " + JHunterString.longestPalindromeV01("acawilli"));
-        System.out.println("input: " + "aaabaaaa" + " longestPalindromeV01 Result: " + JHunterString.longestPalindromeV01("aaabaaaa"));
-        System.out.println("input: " + "babad" + " longestPalindromeV01 Result: " + JHunterString.longestPalindromeV01("babad"));
-        System.out.println("input: " + "babab" + " longestPalindromeV01 Result: " + JHunterString.longestPalindromeV01("babab"));
-        System.out.println("input: " + "abaab" + " longestPalindromeV01 Result: " + JHunterString.longestPalindromeV01("abaab"));
-        System.out.println("input: " + "aacabdkacaa" + " longestPalindromeV01 Result: " + JHunterString.longestPalindromeV01("aacabdkacaa"));
+        System.out.println("input: " + "JTKMJTJ" + " longestPalindromeV01 Result: " + LongestPalindromicSubstring5.longestPalindromeV01("JTKMJTJ"));
+        System.out.println("input: " + "a" + " longestPalindromeV01 Result: " + LongestPalindromicSubstring5.longestPalindromeV01("a"));
+        System.out.println("input: " + "aa" + " longestPalindromeV01 Result: " + LongestPalindromicSubstring5.longestPalindromeV01("aa"));
+        System.out.println("input: " + "zz456456bwcbcebcweqweqqwqwbecaaaaaaa" + " longestPalindromeV01 Result: " + LongestPalindromicSubstring5.longestPalindromeV01("zz456456bwcbcebcweqweqqwqwbecaaaaaaa"));
+        System.out.println("input: " + "xaabacxcabaaxcabaax" + " longestPalindromeV01 Result: " + LongestPalindromicSubstring5.longestPalindromeV01("xaabacxcabaaxcabaax"));
+        System.out.println("input: " + "acawilli" + " longestPalindromeV01 Result: " + LongestPalindromicSubstring5.longestPalindromeV01("acawilli"));
+        System.out.println("input: " + "aaabaaaa" + " longestPalindromeV01 Result: " + LongestPalindromicSubstring5.longestPalindromeV01("aaabaaaa"));
+        System.out.println("input: " + "babad" + " longestPalindromeV01 Result: " + LongestPalindromicSubstring5.longestPalindromeV01("babad"));
+        System.out.println("input: " + "babab" + " longestPalindromeV01 Result: " + LongestPalindromicSubstring5.longestPalindromeV01("babab"));
+        System.out.println("input: " + "abaab" + " longestPalindromeV01 Result: " + LongestPalindromicSubstring5.longestPalindromeV01("abaab"));
+        System.out.println("input: " + "aacabdkacaa" + " longestPalindromeV01 Result: " + LongestPalindromicSubstring5.longestPalindromeV01("aacabdkacaa"));
 
         System.out.println("\n ============================= zigzagPatternConvertor ========================================================");
         System.out.println("input: " + "A" + " zigzagPatternConvertor Result: " + JHunterString.zigzagPatternConvertor("A", 1));
