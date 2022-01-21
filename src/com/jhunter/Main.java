@@ -7,6 +7,7 @@ import com.jhunter.jstring.backtracking.RestoreIPAddresses93;
 import com.jhunter.jstring.charcount.AdditionOfTwoStringEqualToGivenString;
 import com.jhunter.jstring.dp.DistinctSubsequences115;
 import com.jhunter.jstring.dp.InterleavingString97;
+import com.jhunter.jstring.dp.LongestSubstringWithoutRepeatingCharacters3;
 import com.jhunter.jstring.random.FractionToRecurringDecimal;
 import com.jhunter.jstring.random.ReverseWordsInAString151;
 import com.jhunter.jstring.random.ValidPalindrome125;
@@ -48,13 +49,12 @@ public class Main {
         System.out.println("\n ============================= FindTheLongestDecreasingSubsequence ========================================================");
         FANG2021DP.FindTheLongestDecreasingSubsequence(new int[]{-1, 3, 4, 5, 2, 2, 2, 2});
 
-        System.out.println("\n ============================= lengthOfLongestSubstring ========================================================");
-        // System.out.println(" lengthOfLongestSubstring Result: " + JHunterString.lengthOfLongestSubstring("abcabcbb"));
-        System.out.println(" lengthOfLongestSubstring Result: " + JHunterString.lengthOfLongestSubstring("tmmzuxt"));
-        System.out.println(" lengthOfLongestSubstring Result: " + JHunterString.lengthOfLongestSubstring("abcabcbbefgh"));
-        System.out.println(" lengthOfLongestSubstring Result: " + JHunterString.lengthOfLongestSubstring("gabcabeda"));
-        System.out.println(" lengthOfLongestSubstring Result: " + JHunterString.lengthOfLongestSubstring(""));
-        System.out.println(" lengthOfLongestSubstring Result: " + JHunterString.lengthOfLongestSubstring("aa"));
+        System.out.println("\nlengthOfLongestSubstring ========================================================");
+        System.out.println(" input: (\"tmmzuxt\" ) --> 5 lengthOfLongestSubstring Result: " + LongestSubstringWithoutRepeatingCharacters3.lengthOfLongestSubstring("tmmzuxt"));
+        System.out.println(" input: (\"abcabcbbefgh\" ) --> 5 lengthOfLongestSubstring Result: " + LongestSubstringWithoutRepeatingCharacters3.lengthOfLongestSubstring("abcabcbbefgh"));
+        System.out.println(" input: (\"gabcabeda\" ) --> 5 lengthOfLongestSubstring Result: " + LongestSubstringWithoutRepeatingCharacters3.lengthOfLongestSubstring("gabcabeda"));
+        System.out.println(" input: (\"\" ) --> 0 lengthOfLongestSubstring Result: " + LongestSubstringWithoutRepeatingCharacters3.lengthOfLongestSubstring(""));
+        System.out.println(" input: (\"aa\" ) --> 1 lengthOfLongestSubstring Result: " + LongestSubstringWithoutRepeatingCharacters3.lengthOfLongestSubstring("aa"));
 
         System.out.println("\n ============================= longestPalindrome ========================================================");
 
