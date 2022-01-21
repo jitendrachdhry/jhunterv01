@@ -23,7 +23,7 @@ public class FractionToRecurringDecimal {
         -231 <= numerator, denominator <= 231 - 1
         denominator != 0
      */
-    public static String fractionToDecimal(int numerator, int denominator) {
+ /*   public static String fractionToDecimal(int numerator, int denominator) {
         if(numerator == 0) return "0";
         if(denominator == 0) return "";
 
@@ -46,6 +46,6 @@ public class FractionToRecurringDecimal {
             return false;
         }
         
-    }
+    }*/
 
 }
