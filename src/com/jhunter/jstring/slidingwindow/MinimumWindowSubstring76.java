@@ -71,13 +71,13 @@ public class MinimumWindowSubstring76 {
             // 2. compute output and release
             while (j < i && count == t.length()) {
                 j++;
-                if (subStringMap.containsKey(s.charAt(j))) {
+                char ch = s.charAt(j);
+                if (subStringMap.containsKey(ch)) {
                     String temp = s.substring(j, i + 1);
                     if (resultStr.length() == 0 || temp.length() < resultStr.length()) {
                         resultStr = temp;
                     }
                 }
-                char ch = s.charAt(j);
                 if (inputStrMap.get(ch) == 1) {
                     inputStrMap.remove(ch);
                 } else {

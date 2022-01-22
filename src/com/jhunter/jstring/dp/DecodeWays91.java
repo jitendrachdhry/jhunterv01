@@ -2,8 +2,10 @@ package com.jhunter.jstring.dp;
 
 public class DecodeWays91 {
     /*
-        A message containing letters from A-Z can be encoded into numbers using the following mapping:
+        YouTube:  https://www.youtube.com/watch?v=jFZmBQ569So&t=539s
+        LeetCode: https://leetcode.com/problems/decode-ways/
 
+        A message containing letters from A-Z can be encoded into numbers using the following mapping:
         'A' -> "1"
         'B' -> "2"
         ...
@@ -34,6 +36,7 @@ public class DecodeWays91 {
         Approach: Dynamic Programming
         Recursion, Tabulation(Bottom-up Approach) or Memoization ( Top-Down Approach). In current case we focus on Memoization.
      */
+
     public static int numDecodings(String s) {
         if (s == null || s.length() <= 0) return 0;
 
@@ -42,7 +45,12 @@ public class DecodeWays91 {
 
         for (int i = 1; i < s.length() + 1; i++) {
             int decodeNumber = (s.charAt(i - 1) == '0') ? 0 : dp[i - 1];
-            // special check for '0' or '00' or n0 (where n is > 2) like 90 or 30
+            /*
+                Exit:
+                1. if 0th element of string 's' is equal to 0. ex. 01234
+                2. if current and previous element of string 's' is equal to 0. ex. 00
+                3. if current element of string is 0 and previous element is greater than 2. ex. 90 , 30
+             */
             if ((s.charAt(i - 1) == '0') && ((i == 1) || (s.charAt(i - 2) == '0') || (s.charAt(i - 2) - '0') > 2)) {
                 return 0;
             } else if (i == 1) {
@@ -51,8 +59,6 @@ public class DecodeWays91 {
                 int num = ((s.charAt(i - 2) - '0') * 10) + (s.charAt(i - 1) - '0');
                 if (num <= 26) { // add case to check '0n'
                     decodeNumber += dp[i - 2];
-                } else if (s.charAt(i - 1) == '0') { // special case to handle n0 (where n is > 2) like 90 or 30
-                    return 0;
                 }
             }
             dp[i] = decodeNumber;
