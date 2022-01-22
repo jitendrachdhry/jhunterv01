@@ -1,15 +1,15 @@
 package com.jhunter;
 
-import com.jhunter.JHunterString.JHunterString;
+import com.jhunter.jstring.dp.*;
 import com.jhunter.fang.FANG2021;
 import com.jhunter.fang.FANG2021DP;
-import com.jhunter.jstring.backtracking.RestoreIPAddresses93;
-import com.jhunter.jstring.charcount.AdditionOfTwoStringEqualToGivenString;
-import com.jhunter.jstring.dp.DistinctSubsequences115;
-import com.jhunter.jstring.dp.InterleavingString97;
-import com.jhunter.jstring.dp.LongestSubstringWithoutRepeatingCharacters3;
 import com.jhunter.jstring.random.*;
+import com.jhunter.jstring.backtracking.RestoreIPAddresses93;
+import com.jhunter.jstring.slidingwindow.MinimumWindowSubstring76;
 import com.jhunter.jstring.slidingwindow.LongestPalindromicSubstring5;
+import com.jhunter.jstring.backtracking.LetterCombinationsOfPhoneNumber17;
+import com.jhunter.jstring.charcount.AdditionOfTwoStringEqualToGivenString;
+import com.jhunter.jstring.backtracking.GenerateCombinationsOfWellFormedParentheses22;
 
 import java.util.concurrent.atomic.AtomicInteger;
 
@@ -86,65 +86,69 @@ public class Main {
         System.out.println("input: " + "missi mis*" + " matchRegex Result: " + RegularExpressionMatching10.matchRegex("missi", "mis*"));
 
         System.out.println("\n ============================= integerToRoman ========================================================");
-        System.out.println("input: " + "49" + " integerToRoman Result: " + JHunterString.integerToRoman(49));
-        System.out.println("input: " + "1" + " integerToRoman Result: " + JHunterString.integerToRoman(1));
-        System.out.println("input: " + "3999" + " integerToRoman Result: " + JHunterString.integerToRoman(3999));
+        System.out.println("input: " + "49" + " integerToRoman Result: " + Integer2Roman12.integerToRoman(49));
+        System.out.println("input: " + "1" + " integerToRoman Result: " + Integer2Roman12.integerToRoman(1));
+        System.out.println("input: " + "3999" + " integerToRoman Result: " + Integer2Roman12.integerToRoman(3999));
 
         System.out.println("\n ============================= romanToInteger ========================================================");
-        System.out.println("input: " + "XLIX --> 49" + " romanToInteger Result: " + JHunterString.romanToInteger("XLIX"));
-        System.out.println("input: " + "I --> 1 " + " romanToInteger Result: " + JHunterString.romanToInteger("I"));
-        System.out.println("input: " + " MMMCMXCIX --> 3999" + " romanToInteger Result: " + JHunterString.romanToInteger("MMMCMXCIX"));
+        System.out.println("input: " + "XLIX --> 49" + " romanToInteger Result: " + Roman2Integer13.romanToInteger("XLIX"));
+        System.out.println("input: " + "I --> 1 " + " romanToInteger Result: " + Roman2Integer13.romanToInteger("I"));
+        System.out.println("input: " + " MMMCMXCIX --> 3999" + " romanToInteger Result: " + Roman2Integer13.romanToInteger("MMMCMXCIX"));
 
         System.out.println("\n ============================= longestCommonPrefix ========================================================");
         String[] strs = {"flower", "flow", "flight"};
-        System.out.println("input: " + " longestCommonPrefix Result: " + JHunterString.longestCommonPrefix(strs));
+        System.out.println("input: " + " longestCommonPrefix Result: " + LongestCommonPrefixString14.longestCommonPrefix(strs));
         strs[0] = "qlower";
-        System.out.println("input: " + " longestCommonPrefix Result: " + JHunterString.longestCommonPrefix(strs));
+        System.out.println("input: " + " longestCommonPrefix Result: " + LongestCommonPrefixString14.longestCommonPrefix(strs));
 
         System.out.println("\n ============================= letterCombinations ========================================================");
-        System.out.println("input: 23" + " letterCombinations Result: " + JHunterString.letterCombinations("23"));
+        System.out.println("input: 23" + " letterCombinations Result: " + LetterCombinationsOfPhoneNumber17.letterCombinations("23"));
+
+        System.out.println("\n ============================= generateParenthesis ========================================================");
+        System.out.println("input: 3  --> \"5\"" + " GenerateCombinationsOfWellFormedParentheses22 Result: " + GenerateCombinationsOfWellFormedParentheses22.generateParenthesis(3));
+        System.out.println("input: 2  --> \"2\"" + " GenerateCombinationsOfWellFormedParentheses22 Result: " + GenerateCombinationsOfWellFormedParentheses22.generateParenthesis(2));
 
         System.out.println("\n ============================= Valid Parentheses ========================================================");
-        System.out.println("input: {{}}[])( --> false" + " Valid Parentheses Result: " + JHunterString.isValid("{{}}[])("));
-        System.out.println("input: {{}}[](()) --> true" + " Valid Parentheses Result: " + JHunterString.isValid("{{}}[](())"));
+        System.out.println("input: {{}}[])( --> false" + " Valid Parentheses Result: " + ValidParentheses20.isValid("{{}}[])("));
+        System.out.println("input: {{}}[](()) --> true" + " Valid Parentheses Result: " + ValidParentheses20.isValid("{{}}[](())"));
 
         System.out.println("\n ============================= longest Valid Parentheses ========================================================");
-        System.out.println("input: (()) --> 6" + " longest Valid Parentheses Result: " + JHunterString.longestValidParentheses("(())"));
-        System.out.println("input: (())())( --> 6" + " longest Valid Parentheses Result: " + JHunterString.longestValidParentheses("(())())("));
-        System.out.println("input: (())())( --> 6" + " longest Valid Parentheses Result: " + JHunterString.longestValidParentheses("(((((()()()(())("));
+        System.out.println("input: (()) --> 6" + " longest Valid Parentheses Result: " + LongestValidParenthesesSubstring32.longestValidParentheses("(())"));
+        System.out.println("input: (())())( --> 6" + " longest Valid Parentheses Result: " + LongestValidParenthesesSubstring32.longestValidParentheses("(())())("));
+        System.out.println("input: (())())( --> 6" + " longest Valid Parentheses Result: " + LongestValidParenthesesSubstring32.longestValidParentheses("(((((()()()(())("));
 
         System.out.println("\n ============================= Wildcard Match ========================================================");
-        System.out.println("input: (abcdt , a?*t ) --> true" + " longest Valid Parentheses Result: " + JHunterString.isWildcardMatch("abcdt", "a?*t"));
-        System.out.println("input: (abcdt , a?*tt ) --> true" + " longest Valid Parentheses Result: " + JHunterString.isWildcardMatch("abcdt", "a?*tt"));
-        System.out.println("input: (zacabz , *a?b* ) --> true" + " longest Valid Parentheses Result: " + JHunterString.isWildcardMatch("zacabz", "*a?b*"));
+        System.out.println("input: (abcdt , a?*t ) --> true" + " longest Valid Parentheses Result: " + WildcardPatternMatching44.isWildcardMatch("abcdt", "a?*t"));
+        System.out.println("input: (abcdt , a?*tt ) --> true" + " longest Valid Parentheses Result: " + WildcardPatternMatching44.isWildcardMatch("abcdt", "a?*tt"));
+        System.out.println("input: (zacabz , *a?b* ) --> true" + " longest Valid Parentheses Result: " + WildcardPatternMatching44.isWildcardMatch("zacabz", "*a?b*"));
 
         System.out.println("\n ============================= Group Anagrams ========================================================");
         String[] groupAnagrams = {"eat", "tea", "tan", "ate", "nat", "bat"};
-        System.out.println("input: (\"eat\",\"tea\",\"tan\",\"ate\",\"nat\",\"bat\" ) --> [[\"bat\"],[\"nat\",\"tan\"],[\"ate\",\"eat\",\"tea\"]]" + " groupAnagrams Result: " + JHunterString.groupAnagrams(groupAnagrams));
+        System.out.println("input: (\"eat\",\"tea\",\"tan\",\"ate\",\"nat\",\"bat\" ) --> [[\"bat\"],[\"nat\",\"tan\"],[\"ate\",\"eat\",\"tea\"]]" + " groupAnagrams Result: " + GroupTheAnagrams49.groupAnagrams(groupAnagrams));
 
         System.out.println("\n ============================= last Word in a given string ========================================================");
-        System.out.println("input: " + "\"this    \" --> this" + " lastWord Result: " + JHunterString.lastWord("this    "));
-        System.out.println("input: " + "\" this is cat\" --> cat" + " lastWord Result: " + JHunterString.lastWord(" this is cat"));
+        System.out.println("input: " + "\"this    \" --> this" + " lastWord Result: " + LengthOfLastWord58.lastWord("this    "));
+        System.out.println("input: " + "\" this is cat\" --> cat" + " lastWord Result: " + LengthOfLastWord58.lastWord(" this is cat"));
 
         System.out.println("\n ============================= Simplify Path ========================================================");
-        System.out.println("input: " + "\"/a/./b/../../c/\" --> \"/c\"" + " lastWord Result: " + JHunterString.simplifyPath("/a/./b/../../c/"));
-        System.out.println("input: " + "\"/../a/../../\" --> \"/\"" + " lastWord Result: " + JHunterString.simplifyPath("/../a/../../"));
-        System.out.println("input: " + "\"/../a/\" --> \"/\"" + " lastWord Result: " + JHunterString.simplifyPath("/../a/"));
-        System.out.println("input: " + "\"/\"/home//foo/\"\" --> \"/home/foo\"" + " lastWord Result: " + JHunterString.simplifyPath("/home//foo/"));
+        System.out.println("input: " + "\"/a/./b/../../c/\" --> \"/c\"" + " lastWord Result: " + SimplifyPath71.simplifyPath("/a/./b/../../c/"));
+        System.out.println("input: " + "\"/../a/../../\" --> \"/\"" + " lastWord Result: " + SimplifyPath71.simplifyPath("/../a/../../"));
+        System.out.println("input: " + "\"/../a/\" --> \"/\"" + " lastWord Result: " + SimplifyPath71.simplifyPath("/../a/"));
+        System.out.println("input: " + "\"/\"/home//foo/\"\" --> \"/home/foo\"" + " lastWord Result: " + SimplifyPath71.simplifyPath("/home//foo/"));
 
         System.out.println("\n ============================= Minimum Window from a given string ========================================================");
-        System.out.println("input: (akkkkabc , abc ) --> abc" + " longest Valid Parentheses Result: " + JHunterString.minWindow("akkkkabc", "abc"));
+        System.out.println("input: (akkkkabc , abc ) --> abc" + " longest Valid Parentheses Result: " + MinimumWindowSubstring76.minWindow("akkkkabc", "abc"));
 
         System.out.println("\n ============================= minDistance ========================================================");
-        System.out.println("input: (horse , ros ) --> 3" + " minDistance Result: " + JHunterString.minDistance("horse", "ros"));
+        System.out.println("input: (horse , ros ) --> 3" + " minDistance Result: " + ConvertWord1ToWord72.minDistance("horse", "ros"));
 
         System.out.println("\n ============================= numDecodings ========================================================");
-        System.out.println("input: (\"90\" ) --> 0" + " numDecodings Result: " + JHunterString.numDecodings("90"));
-        System.out.println("input: (\"100\" ) --> 0" + " numDecodings Result: " + JHunterString.numDecodings("100"));
-        System.out.println("input: (\"1\" ) --> 1" + " numDecodings Result: " + JHunterString.numDecodings("1"));
-        System.out.println("input: (\"101\" ) --> 1" + " numDecodings Result: " + JHunterString.numDecodings("101"));
-        System.out.println("input: (\"1010\" ) --> 2" + " numDecodings Result: " + JHunterString.numDecodings("2610"));
-        System.out.println("input: (\"1212\" ) --> 5" + " numDecodings Result: " + JHunterString.numDecodings("1212"));
+        System.out.println("input: (\"90\" ) --> 0" + " numDecodings Result: " + DecodeWays91.numDecodings("90"));
+        System.out.println("input: (\"100\" ) --> 0" + " numDecodings Result: " + DecodeWays91.numDecodings("100"));
+        System.out.println("input: (\"1\" ) --> 1" + " numDecodings Result: " + DecodeWays91.numDecodings("1"));
+        System.out.println("input: (\"101\" ) --> 1" + " numDecodings Result: " + DecodeWays91.numDecodings("101"));
+        System.out.println("input: (\"1010\" ) --> 2" + " numDecodings Result: " + DecodeWays91.numDecodings("2610"));
+        System.out.println("input: (\"1212\" ) --> 5" + " numDecodings Result: " + DecodeWays91.numDecodings("1212"));
 
         System.out.println("\n ============================= restoreIpAddresses ========================================================");
         System.out.println("input: (\"19216911\" ) --> " + " restoreIpAddresses Result: " + RestoreIPAddresses93.restoreIpAddresses("19216911"));
