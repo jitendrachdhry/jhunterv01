@@ -34,8 +34,8 @@ public class BinaryTreeSolution {
    */
 
     BinaryTreeNode treeNode = null;
-    public BinaryTreeNode getBinaryTreeRoot() { return treeNode; }
-    public BinaryTreeSolution(int arr[]) {
+
+    public BinaryTreeSolution(int[] arr) {
         if (arr != null && arr.length > 0) {
             int halfLength = arr.length / 2;
             for (int left = halfLength, right = halfLength + 1; left >= 0; left--, right++) {
@@ -51,6 +51,10 @@ public class BinaryTreeSolution {
             }
         }
         System.out.println("BinaryTree Constructed !!!!");
+    }
+
+    public BinaryTreeNode getBinaryTreeRoot() {
+        return treeNode;
     }
 
     void insert(int info) {
@@ -166,11 +170,11 @@ public class BinaryTreeSolution {
         do {
             if (node == null) {
                 node = stack.peek();
-                if(node.right == null){
+                if (node.right == null) {
                     inOrderList.add(stack.pop().val);
                 }
 
-                if(stack.peek().right != node)
+                if (stack.peek().right != node)
                     node = node.right;
                 else
                     inOrderList.add(stack.pop().val);
@@ -178,7 +182,7 @@ public class BinaryTreeSolution {
                 stack.push(node);
                 node = node.left;
             }
-        } while (!stack.isEmpty()  );
+        } while (!stack.isEmpty());
         return inOrderList;
     }
 }

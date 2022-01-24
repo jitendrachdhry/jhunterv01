@@ -27,7 +27,7 @@ public class ValidParentheses20 {
                 return false;
             }
         }
-        return (stack.isEmpty()) ? true : false;
+        return stack.isEmpty();
     }
 
     public static char openBracketOf(char ch) {

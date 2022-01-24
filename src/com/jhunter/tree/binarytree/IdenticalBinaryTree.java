@@ -50,17 +50,17 @@ public class IdenticalBinaryTree {
             BinaryTreeNode nodeX = stackX.pop();
             BinaryTreeNode nodeY = stackY.pop();
 
-            if(nodeX.val != nodeY.val) return false;
+            if (nodeX.val != nodeY.val) return false;
 
-            if((nodeX.left == null && nodeY.left != null) || (nodeX.right == null && nodeY.right != null) || (nodeY.left == null && nodeX.left != null) || (nodeY.right == null && nodeX.right != null)) {
+            if ((nodeX.left == null && nodeY.left != null) || (nodeX.right == null && nodeY.right != null) || (nodeY.left == null && nodeX.left != null) || (nodeY.right == null && nodeX.right != null)) {
                 return false;
             }
-            if(nodeX.left != null) {
+            if (nodeX.left != null) {
                 stackX.push(nodeX.left);
                 stackY.push(nodeY.left);
             }
 
-            if(nodeX.right != null) {
+            if (nodeX.right != null) {
                 stackX.push(nodeX.right);
                 stackY.push(nodeY.right);
             }

@@ -20,7 +20,7 @@ public class WildcardPatternMatching44 {
             return true;
         }
 
-        boolean dp[][] = new boolean[p.length() + 1][s.length() + 1];
+        boolean[][] dp = new boolean[p.length() + 1][s.length() + 1];
         dp[0][0] = true;
 
         for (int i = 1; i < p.length() + 1; i++) {

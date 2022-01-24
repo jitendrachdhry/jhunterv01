@@ -11,7 +11,7 @@ public class RegularExpressionMatching10 {
     public static boolean matchRegex(String textStr, String patternStr) {
         char[] text = textStr.toCharArray();
         char[] pattern = patternStr.toCharArray();
-        boolean T[][] = new boolean[text.length + 1][pattern.length + 1];
+        boolean[][] T = new boolean[text.length + 1][pattern.length + 1];
 
         T[0][0] = true;
         //Deals with patterns like a* or a*b* or a*b*c*

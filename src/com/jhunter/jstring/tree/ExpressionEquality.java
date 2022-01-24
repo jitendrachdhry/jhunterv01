@@ -22,7 +22,7 @@ public class ExpressionEquality {
         (country_code = 'US' AND (domain_num = '1' AND domain_num = '3') AND employee_type = 'P')
         Answer : False
      */
-    public static boolean checkExpressionEquality(String s1, String s2){
+    public static boolean checkExpressionEquality(String s1, String s2) {
         return false;
     }
 }

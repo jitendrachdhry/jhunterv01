@@ -33,7 +33,7 @@ public class AdditionOfTwoStringEqualToGivenString {
         for (char ch : s1.toCharArray()) {
             if (map.getOrDefault(ch, 0) != 0) {
                 map.put(ch, map.get(ch) - 1);
-                if(map.getOrDefault(ch, 0) == 0){
+                if (map.getOrDefault(ch, 0) == 0) {
                     map.remove(ch);
                 }
             } else
@@ -43,13 +43,13 @@ public class AdditionOfTwoStringEqualToGivenString {
         for (char ch : s2.toCharArray()) {
             if (map.getOrDefault(ch, 0) != 0) {
                 map.put(ch, map.get(ch) - 1);
-                if(map.getOrDefault(ch, 0) == 0){
+                if (map.getOrDefault(ch, 0) == 0) {
                     map.remove(ch);
                 }
             } else
                 return false;
         }
 
-        return map.isEmpty() ? true : false;
+        return map.isEmpty();
     }
 }

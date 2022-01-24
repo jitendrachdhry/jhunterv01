@@ -11,16 +11,14 @@ public class ConvertBinaryTreeToItsSumTree {
           2   1                           0   0
      */
 
-    public static void convertBinaryTreeToItsSumTree(BinaryTreeNode btNode){
-        System.out.println(" ConvertBinaryTreeToItsSumTree - START");
+    public static void convertBinaryTreeToItsSumTree(BinaryTreeNode btNode) {
         sumTreeNode(btNode);
-        System.out.println(" ConvertBinaryTreeToItsSumTree - DONE");
     }
 
     public static int sumTreeNode(BinaryTreeNode bt) {
-        if(bt == null) return 0;
+        if (bt == null) return 0;
         int copyVal = bt.val;
-        bt.val = sumTreeNode(bt.left) + sumTreeNode(bt.right) ;
+        bt.val = sumTreeNode(bt.left) + sumTreeNode(bt.right);
         return bt.val + copyVal;
     }
 }

@@ -23,7 +23,7 @@ public class ConvertWord1ToWord72 {
             return 0;
         }
 
-        int dp[][] = new int[word1.length() + 1][word2.length() + 1];
+        int[][] dp = new int[word1.length() + 1][word2.length() + 1];
         dp[0][0] = 0;
         for (int i = 1; i <= word1.length() || i <= word2.length(); i++) {
             if (i <= word1.length()) {

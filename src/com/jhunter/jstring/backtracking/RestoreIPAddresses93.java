@@ -40,7 +40,7 @@ public class RestoreIPAddresses93 {
     static void backTrace(int i, int dot, String ipAdd, String s, List<String> resultList) {
         // goal: ready to exit
         if (dot == 4 && i == s.length()) {
-            resultList.add(ipAdd.substring(0, ipAdd.length()-1));
+            resultList.add(ipAdd.substring(0, ipAdd.length() - 1));
             return;
         }
 

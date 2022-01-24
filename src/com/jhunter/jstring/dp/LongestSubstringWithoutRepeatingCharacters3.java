@@ -43,19 +43,19 @@ public class LongestSubstringWithoutRepeatingCharacters3 {
          */
         if (s == null || s.length() == 0) return 0;
 
-        int dp[] = new int[MAX_ARR_SIZE];
+        int[] dp = new int[MAX_ARR_SIZE];
         int minIdx = 0;
         int startIdx = 0, endIdx = 0, subStringSize = 1;
 
         Arrays.fill(dp, -1);
-        char sArr[] = s.toCharArray();
+        char[] sArr = s.toCharArray();
         // loop through each element using for loop
         for (int i = 0; i < sArr.length; i++) {
             int newSubStringSize = 0;
             // access each character
-            if (dp[(int) sArr[i]] >= minIdx) {
+            if (dp[sArr[i]] >= minIdx) {
                 newSubStringSize = i - minIdx; // calculate newStringSize once we found duplicate char in dp[].
-                minIdx = dp[(int) sArr[i]] + 1; // set minIdx only if we found duplicate char in the dp[].
+                minIdx = dp[sArr[i]] + 1; // set minIdx only if we found duplicate char in the dp[].
 
             } else if (i == (sArr.length - 1)) { // Reached end of the array.
                 newSubStringSize = (i - minIdx) + 1; // calculate newStringSize , from minIdx to end of string idx.
@@ -66,7 +66,7 @@ public class LongestSubstringWithoutRepeatingCharacters3 {
                 endIdx = (i == (sArr.length - 1)) ? i : (i - 1);
             }
 
-            dp[(int) sArr[i]] = i;
+            dp[sArr[i]] = i;
         }
 
         return subStringSize;

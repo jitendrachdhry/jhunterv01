@@ -15,7 +15,7 @@ public class String2Integer8 {
                     return (int) (isSignPositive == true ? result : result * -1);
                 }
                 isSignFound = true;
-                isSignPositive = ch == '+' ? true : false;
+                isSignPositive = ch == '+';
             } else if (ch >= '0' && ch <= '9') {
                 isStartedCalculation = true;
                 int currentDigit = ch - '0';

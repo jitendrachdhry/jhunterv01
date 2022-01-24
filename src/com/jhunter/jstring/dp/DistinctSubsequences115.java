@@ -33,7 +33,7 @@ public class DistinctSubsequences115 {
         s and t consist of English letters.
      */
     public static int numDistinct(String s, String t) {
-        int dp[][] = new int[s.length() + 1][t.length() + 1];
+        int[][] dp = new int[s.length() + 1][t.length() + 1];
         for (int[] arr : dp) {
             Arrays.fill(arr, -1);
         }

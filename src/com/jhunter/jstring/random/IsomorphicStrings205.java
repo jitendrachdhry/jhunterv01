@@ -35,7 +35,7 @@ public class IsomorphicStrings205 {
         for (int i = 0; i < s.length(); i++) {
             char chS = s.charAt(i);
             if (!map.containsKey(chS)) {
-                if (map.values().contains(t.charAt(i))) {
+                if (map.containsValue(t.charAt(i))) {
                     return false;
                 }
                 map.put(chS, t.charAt(i));

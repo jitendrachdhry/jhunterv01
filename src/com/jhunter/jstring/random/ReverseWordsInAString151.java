@@ -65,8 +65,8 @@ public class ReverseWordsInAString151 {
         }
 
         // 4. Check for extra trailing space.
-        if(arr[writeIdx-1] == ' ') {
-            writeIdx-=1;
+        if (arr[writeIdx - 1] == ' ') {
+            writeIdx -= 1;
         }
 
         // 5. Return final staring starting from zero index to end of writeIdx.

@@ -1,16 +1,18 @@
 package com.jhunter;
 
-import com.jhunter.jstring.dp.*;
 import com.jhunter.fang.FANG2021;
 import com.jhunter.fang.FANG2021DP;
-import com.jhunter.jstring.random.*;
-import com.jhunter.jstring.backtracking.RestoreIPAddresses93;
-import com.jhunter.jstring.slidingwindow.MinimumWindowSubstring76;
-import com.jhunter.jstring.slidingwindow.LongestPalindromicSubstring5;
-import com.jhunter.jstring.backtracking.LetterCombinationsOfPhoneNumber17;
-import com.jhunter.jstring.charcount.AdditionOfTwoStringEqualToGivenString;
 import com.jhunter.jstring.backtracking.GenerateCombinationsOfWellFormedParentheses22;
+import com.jhunter.jstring.backtracking.LetterCombinationsOfPhoneNumber17;
+import com.jhunter.jstring.backtracking.RestoreIPAddresses93;
+import com.jhunter.jstring.charcount.AdditionOfTwoStringEqualToGivenString;
+import com.jhunter.jstring.dp.*;
+import com.jhunter.jstring.random.*;
+import com.jhunter.jstring.slidingwindow.LongestPalindromicSubstring5;
+import com.jhunter.jstring.slidingwindow.MinimumWindowSubstring76;
 import com.jhunter.tree.binarytree.*;
+import com.jhunter.tree.binarytree.cousins.NodesAreCousinsOfEachOther;
+import com.jhunter.tree.binarytree.cousins.PrintCousinsOfAGivenNodeInBinaryTree;
 
 import java.util.concurrent.atomic.AtomicInteger;
 
@@ -194,15 +196,20 @@ public class Main {
         BinaryTreeNode root = new BinaryTreeNode(1);
         root.left = new BinaryTreeNode(2);
         root.right = new BinaryTreeNode(3);
-        root.left.right = new BinaryTreeNode(4);
-        root.right.left = new BinaryTreeNode(5);
-        root.right.right = new BinaryTreeNode(6);
-        root.right.left.left = new BinaryTreeNode(7);
-        root.right.left.right = new BinaryTreeNode(8);
+        root.left.left = new BinaryTreeNode(4);
+        root.left.right = new BinaryTreeNode(5);
+        root.right.left = new BinaryTreeNode(6);
+        root.right.right = new BinaryTreeNode(7);
+        root.right.left.left = new BinaryTreeNode(8);
+        root.right.left.right = new BinaryTreeNode(9);
 
         System.out.println("PrintBottomViewOfBinaryTree [6,8,9,10,15,20,30]: " + PrintBottomViewOfBinaryTree.getBottomViewOfBinaryTree(btSolution.getBinaryTreeRoot()));
         System.out.println("PrintBottomViewOfBinaryTree [7, 5, 8, 6]: " + PrintBottomViewOfBinaryTree.getBottomViewOfBinaryTree(root));
         System.out.println("PrintTopViewOfBinaryTree [2, 1, 3, 6]: " + PrintTopViewOfBinaryTree.getTopViewOfBinaryTree(root));
+        System.out.println("NodesAreCousinsOfEachOther (4, 5) false : " + NodesAreCousinsOfEachOther.isNodesAreCousinsOfEachOther(root, 4, 5));
+        System.out.println("NodesAreCousinsOfEachOther (4, 6) true : " + NodesAreCousinsOfEachOther.isNodesAreCousinsOfEachOther(root, 4, 6));
+        System.out.println("PrintCousinsOfAGivenNodeInBinaryTree [6, 7]: " + PrintCousinsOfAGivenNodeInBinaryTree.getCousinsOfAGivenNodeInBinaryTree(root, 5));
+        System.out.println(" ConvertBinaryTreeToItsSumTree - DONE");
         ConvertBinaryTreeToItsSumTree.convertBinaryTreeToItsSumTree(root);
 
         System.out.println("\n ============================= IdenticalBinaryTree ========================================================");

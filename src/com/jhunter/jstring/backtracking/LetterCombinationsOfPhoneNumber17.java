@@ -44,7 +44,7 @@ public class LetterCombinationsOfPhoneNumber17 {
      * root
      * /          |             \
      * first possibility -> "abc"           "a"           "b"            "c"
-     *                                    /  |  \        /  |  \        /  |  \
+     * /  |  \        /  |  \        /  |  \
      * second possibility -> "def"      "d" "e" "f"    "d" "e" "f"    "d" "e" "f"
      * <p>
      * start at root with empty string,

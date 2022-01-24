@@ -117,24 +117,24 @@ public class FANG2021DP {
             Space Complexity: O(n)
          */
 
-        if(inputArr == null || inputArr.length == 0) {
+        if (inputArr == null || inputArr.length == 0) {
             return -1;
         }
         int[] targetArr = new int[inputArr.length];
         targetArr[0] = 1;
 
-        for(int i=1 ; i<inputArr.length; i++) {
+        for (int i = 1; i < inputArr.length; i++) {
             targetArr[i] = 1;
-            for(int j=0; j < i; j++) {
-                if(inputArr[j] < inputArr[i]){
+            for (int j = 0; j < i; j++) {
+                if (inputArr[j] < inputArr[i]) {
                     targetArr[i] = targetArr[j] + 1;
                 }
             }
         }
 
         int returnVal = targetArr[0];
-        for(int k=1; k< targetArr.length; k++) {
-            if(returnVal < targetArr[k]) {
+        for (int k = 1; k < targetArr.length; k++) {
+            if (returnVal < targetArr[k]) {
                 returnVal = targetArr[k];
             }
         }
@@ -156,24 +156,24 @@ public class FANG2021DP {
             URL: https://www.youtube.com/watch?v=fV-TF4OvZpk&t=602s
          */
 
-        if(inputArr == null || inputArr.length == 0) {
+        if (inputArr == null || inputArr.length == 0) {
             return -1;
         }
         int[] targetArr = new int[inputArr.length];
         targetArr[0] = 1;
 
-        for(int i=1 ; i<inputArr.length; i++) {
+        for (int i = 1; i < inputArr.length; i++) {
             targetArr[i] = 1;
-            for(int j=0; j < i; j++) {
-                if(inputArr[j] <= inputArr[i]){
+            for (int j = 0; j < i; j++) {
+                if (inputArr[j] <= inputArr[i]) {
                     targetArr[i] = targetArr[j] + 1;
                 }
             }
         }
 
         int returnVal = targetArr[0];
-        for(int k=1; k< targetArr.length; k++) {
-            if(returnVal < targetArr[k]) {
+        for (int k = 1; k < targetArr.length; k++) {
+            if (returnVal < targetArr[k]) {
                 returnVal = targetArr[k];
             }
         }
@@ -193,24 +193,24 @@ public class FANG2021DP {
             Space Complexity: O(n)
          */
 
-        if(inputArr == null || inputArr.length == 0) {
+        if (inputArr == null || inputArr.length == 0) {
             return -1;
         }
         int[] targetArr = new int[inputArr.length];
         targetArr[0] = 1;
 
-        for(int i=1 ; i<inputArr.length; i++) {
+        for (int i = 1; i < inputArr.length; i++) {
             targetArr[i] = 1;
-            for(int j=0; j < i; j++) {
-                if(inputArr[j] > inputArr[i]){
+            for (int j = 0; j < i; j++) {
+                if (inputArr[j] > inputArr[i]) {
                     targetArr[i] = targetArr[j] + 1;
                 }
             }
         }
 
         int returnVal = targetArr[0];
-        for(int k=1; k< targetArr.length; k++) {
-            if(returnVal < targetArr[k]) {
+        for (int k = 1; k < targetArr.length; k++) {
+            if (returnVal < targetArr[k]) {
                 returnVal = targetArr[k];
             }
         }
