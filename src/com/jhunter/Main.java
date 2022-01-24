@@ -10,6 +10,7 @@ import com.jhunter.jstring.slidingwindow.LongestPalindromicSubstring5;
 import com.jhunter.jstring.backtracking.LetterCombinationsOfPhoneNumber17;
 import com.jhunter.jstring.charcount.AdditionOfTwoStringEqualToGivenString;
 import com.jhunter.jstring.backtracking.GenerateCombinationsOfWellFormedParentheses22;
+import com.jhunter.tree.binarytree.*;
 
 import java.util.concurrent.atomic.AtomicInteger;
 
@@ -179,6 +180,49 @@ public class Main {
         System.out.println("input: ( \"  the sky is      blue    \") --> \"blue is sky the\"" + " FractionToRecurringDecimal Result: \"" + ReverseWordsInAString151.reverseWords("  the sky is      blue    ") + "\"");
         System.out.println("input: ( \"the\") --> \"the\"" + " FractionToRecurringDecimal Result: " + ReverseWordsInAString151.reverseWords("the"));
 
+        System.out.println("\n ============================= BinaryTreeSolution ========================================================");
+        BinaryTreeSolution btSolution = new BinaryTreeSolution(new int[]{6, 8, 9, 10, 15, 20, 30});
+        System.out.println("getTreeWayPreOrder : " + btSolution.getTreeWayPreOrder());
+        System.out.println("preOrderUsingStack : " + btSolution.preOrderUsingStack());
 
+        System.out.println("getTreeWayPostOrder : " + btSolution.getTreeWayPostOrder());
+        //System.out.println("postOrderUsingStack : " + btSolution.postOrderUsingStack());
+
+        System.out.println("getTreeWayInOrder : " + btSolution.getTreeWayInOrder());
+        System.out.println("inOrderUsingStack : " + btSolution.inOrderUsingStack());
+
+        BinaryTreeNode root = new BinaryTreeNode(1);
+        root.left = new BinaryTreeNode(2);
+        root.right = new BinaryTreeNode(3);
+        root.left.right = new BinaryTreeNode(4);
+        root.right.left = new BinaryTreeNode(5);
+        root.right.right = new BinaryTreeNode(6);
+        root.right.left.left = new BinaryTreeNode(7);
+        root.right.left.right = new BinaryTreeNode(8);
+
+        System.out.println("PrintBottomViewOfBinaryTree [6,8,9,10,15,20,30]: " + PrintBottomViewOfBinaryTree.getBottomViewOfBinaryTree(btSolution.getBinaryTreeRoot()));
+        System.out.println("PrintBottomViewOfBinaryTree [7, 5, 8, 6]: " + PrintBottomViewOfBinaryTree.getBottomViewOfBinaryTree(root));
+        System.out.println("PrintTopViewOfBinaryTree [2, 1, 3, 6]: " + PrintTopViewOfBinaryTree.getTopViewOfBinaryTree(root));
+        ConvertBinaryTreeToItsSumTree.convertBinaryTreeToItsSumTree(root);
+
+        System.out.println("\n ============================= IdenticalBinaryTree ========================================================");
+        // construct the first tree
+        BinaryTreeNode x = new BinaryTreeNode(15);
+        x.left = new BinaryTreeNode(10);
+        x.right = new BinaryTreeNode(20);
+        x.left.left = new BinaryTreeNode(8);
+        x.left.right = new BinaryTreeNode(12);
+        x.right.left = new BinaryTreeNode(16);
+        x.right.right = new BinaryTreeNode(25);
+
+        // construct the second tree
+        BinaryTreeNode y = new BinaryTreeNode(15);
+        y.left = new BinaryTreeNode(10);
+        y.right = new BinaryTreeNode(20);
+        y.left.left = new BinaryTreeNode(8);
+        y.left.right = new BinaryTreeNode(12);
+        y.right.left = new BinaryTreeNode(16);
+        y.right.right = new BinaryTreeNode(25);
+        System.out.println("isIdentical : " + IdenticalBinaryTree.isIdentical(x, y));
     }
 }
