@@ -13,6 +13,7 @@ import com.jhunter.jstring.slidingwindow.MinimumWindowSubstring76;
 import com.jhunter.tree.binarytree.*;
 import com.jhunter.tree.binarytree.cousins.NodesAreCousinsOfEachOther;
 import com.jhunter.tree.binarytree.cousins.PrintCousinsOfAGivenNodeInBinaryTree;
+import com.jhunter.tree.binarytree.subtree.IdenticalBinaryTree;
 import com.jhunter.tree.binarytree.sumtree.ConvertBinaryTreeToItsSumTree;
 import com.jhunter.tree.binarytree.sumtree.IsItSumTree;
 
@@ -225,7 +226,8 @@ public class Main {
         System.out.println("IsItSumTree (true): " + IsItSumTree.isItSumTree(root01));
         root01.left = new BinaryTreeNode(900);
         System.out.println("IsItSumTree (false): " + IsItSumTree.isItSumTree(root01));
-
+        System.out.println(" ConvertBinaryTreeToItsMirror DONE");
+        ConvertBinaryTreeToItsMirror.convertBinaryTreeToItsMirror(root01);
         System.out.println("\n ============================= IdenticalBinaryTree ========================================================");
         // construct the first tree
         BinaryTreeNode x = new BinaryTreeNode(15);

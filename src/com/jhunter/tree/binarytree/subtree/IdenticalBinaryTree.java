@@ -1,4 +1,6 @@
-package com.jhunter.tree.binarytree;
+package com.jhunter.tree.binarytree.subtree;
+
+import com.jhunter.tree.binarytree.BinaryTreeNode;
 
 import java.util.Stack;
 
