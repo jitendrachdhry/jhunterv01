@@ -13,6 +13,8 @@ import com.jhunter.jstring.slidingwindow.MinimumWindowSubstring76;
 import com.jhunter.tree.binarytree.*;
 import com.jhunter.tree.binarytree.cousins.NodesAreCousinsOfEachOther;
 import com.jhunter.tree.binarytree.cousins.PrintCousinsOfAGivenNodeInBinaryTree;
+import com.jhunter.tree.binarytree.sumtree.ConvertBinaryTreeToItsSumTree;
+import com.jhunter.tree.binarytree.sumtree.IsItSumTree;
 
 import java.util.concurrent.atomic.AtomicInteger;
 
@@ -211,6 +213,18 @@ public class Main {
         System.out.println("PrintCousinsOfAGivenNodeInBinaryTree [6, 7]: " + PrintCousinsOfAGivenNodeInBinaryTree.getCousinsOfAGivenNodeInBinaryTree(root, 5));
         System.out.println(" ConvertBinaryTreeToItsSumTree - DONE");
         ConvertBinaryTreeToItsSumTree.convertBinaryTreeToItsSumTree(root);
+
+
+        BinaryTreeNode root01 = new BinaryTreeNode(44);
+        root01.left = new BinaryTreeNode(9);
+        root01.right = new BinaryTreeNode(13);
+        root01.left.left = new BinaryTreeNode(4);
+        root01.left.right = new BinaryTreeNode(5);
+        root01.right.left = new BinaryTreeNode(6);
+        root01.right.right = new BinaryTreeNode(7);
+        System.out.println("IsItSumTree (true): " + IsItSumTree.isItSumTree(root01));
+        root01.left = new BinaryTreeNode(900);
+        System.out.println("IsItSumTree (false): " + IsItSumTree.isItSumTree(root01));
 
         System.out.println("\n ============================= IdenticalBinaryTree ========================================================");
         // construct the first tree

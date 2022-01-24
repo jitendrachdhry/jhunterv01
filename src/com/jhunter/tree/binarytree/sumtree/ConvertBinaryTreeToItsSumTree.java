@@ -1,4 +1,6 @@
-package com.jhunter.tree.binarytree;
+package com.jhunter.tree.binarytree.sumtree;
+
+import com.jhunter.tree.binarytree.BinaryTreeNode;
 
 public class ConvertBinaryTreeToItsSumTree {
     /*
