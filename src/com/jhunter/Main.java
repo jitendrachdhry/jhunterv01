@@ -16,6 +16,9 @@ import com.jhunter.tree.binarytree.cousins.PrintCousinsOfAGivenNodeInBinaryTree;
 import com.jhunter.tree.binarytree.subtree.IdenticalBinaryTree;
 import com.jhunter.tree.binarytree.sumtree.ConvertBinaryTreeToItsSumTree;
 import com.jhunter.tree.binarytree.sumtree.IsItSumTree;
+import com.jhunter.tree.binarytree.treetraversal.BFS;
+import com.jhunter.tree.binarytree.treetraversal.BinaryTreePaths257;
+import com.jhunter.tree.binarytree.treetraversal.DFS;
 
 import java.util.concurrent.atomic.AtomicInteger;
 
@@ -187,14 +190,24 @@ public class Main {
 
         System.out.println("\n ============================= BinaryTreeSolution ========================================================");
         BinaryTreeSolution btSolution = new BinaryTreeSolution(new int[]{6, 8, 9, 10, 15, 20, 30});
-        System.out.println("getTreeWayPreOrder : " + btSolution.getTreeWayPreOrder());
-        System.out.println("preOrderUsingStack : " + btSolution.preOrderUsingStack());
+        System.out.println("getTreeWayPreOrder : " + DFS.getTreeWayPreOrder(btSolution.getBinaryTreeRoot()));
+        System.out.println("preOrderUsingStack : " + DFS.preOrderUsingStack(btSolution.getBinaryTreeRoot()));
 
-        System.out.println("getTreeWayPostOrder : " + btSolution.getTreeWayPostOrder());
-        //System.out.println("postOrderUsingStack : " + btSolution.postOrderUsingStack());
+        System.out.println("getTreeWayPostOrder : " + DFS.getTreeWayPostOrder(btSolution.getBinaryTreeRoot()));
+        System.out.println("postOrderUsingStack : " + DFS.postOrderUsingStack(btSolution.getBinaryTreeRoot()));
 
-        System.out.println("getTreeWayInOrder : " + btSolution.getTreeWayInOrder());
-        System.out.println("inOrderUsingStack : " + btSolution.inOrderUsingStack());
+        System.out.println("getTreeWayInOrder : " + DFS.getTreeWayInOrder(btSolution.getBinaryTreeRoot()));
+        System.out.println("inOrderUsingStack : " + DFS.inOrderUsingStack(btSolution.getBinaryTreeRoot()));
+
+        BinaryTreeNode rootbfs = new BinaryTreeNode(3);
+        rootbfs.left = new BinaryTreeNode(9);
+        rootbfs.right = new BinaryTreeNode(20);
+        rootbfs.right.left = new BinaryTreeNode(15);
+        rootbfs.right.right = new BinaryTreeNode(7);
+        System.out.println("BFS levelOrderTraverse : " + BFS.levelOrderTraverse(rootbfs));
+        System.out.println("BFS levelOrderTraverse : " + BFS.levelOrderTraverseNonRecursive(rootbfs));
+
+        System.out.println("BinaryTreePaths257.getBinaryTreePaths: " + BinaryTreePaths257.getBinaryTreePaths(rootbfs));
 
         BinaryTreeNode root = new BinaryTreeNode(1);
         root.left = new BinaryTreeNode(2);
