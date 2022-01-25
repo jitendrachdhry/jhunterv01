@@ -16,6 +16,7 @@ import com.jhunter.tree.binarytree.cousins.PrintCousinsOfAGivenNodeInBinaryTree;
 import com.jhunter.tree.binarytree.subtree.IdenticalBinaryTree;
 import com.jhunter.tree.binarytree.sumtree.ConvertBinaryTreeToItsSumTree;
 import com.jhunter.tree.binarytree.sumtree.IsItSumTree;
+import com.jhunter.tree.binarytree.treetraversal.Ancestors;
 import com.jhunter.tree.binarytree.treetraversal.BFS;
 import com.jhunter.tree.binarytree.treetraversal.BinaryTreePaths257;
 import com.jhunter.tree.binarytree.treetraversal.DFS;
@@ -208,6 +209,8 @@ public class Main {
         System.out.println("BFS levelOrderTraverse : " + BFS.levelOrderTraverseNonRecursive(rootbfs));
 
         System.out.println("BinaryTreePaths257.getBinaryTreePaths: " + BinaryTreePaths257.getBinaryTreePaths(rootbfs));
+        System.out.println("Ancestors.findAncestorsHistory: " + Ancestors.findAncestorsHistory(rootbfs, 7));
+        System.out.println("Ancestors.findAncestorsHistory: " + Ancestors.findAncestorsHistory(btSolution.getBinaryTreeRoot(), 30));
 
         BinaryTreeNode root = new BinaryTreeNode(1);
         root.left = new BinaryTreeNode(2);

@@ -35,7 +35,7 @@ public class BinaryTreePaths257 {
         if (current_path.length() == 0) {
             current_path += current_node.val;
         } else {
-            current_path += "->" + current_node.val);
+            current_path += "->" + current_node.val;
         }
         if (current_node.left == null && current_node.right == null) {
             paths.add(current_path);
