@@ -31,7 +31,7 @@ public class DFS {
         preOrder(node.right, preOrderList);
     }
 
-    public static  List<Integer> getTreeWayPostOrder(BinaryTreeNode root) {
+    public static List<Integer> getTreeWayPostOrder(BinaryTreeNode root) {
         List<Integer> preOrderList = new ArrayList<>();
         postOrder(root, preOrderList);
         return preOrderList;
@@ -46,7 +46,7 @@ public class DFS {
         postOrderList.add(node.val);
     }
 
-    public static  List<Integer> getTreeWayInOrder(BinaryTreeNode root) {
+    public static List<Integer> getTreeWayInOrder(BinaryTreeNode root) {
         List<Integer> inOrderList = new ArrayList<>();
         inOrder(root, inOrderList);
         return inOrderList;
@@ -71,7 +71,7 @@ public class DFS {
             c) Go to step 3.
         5. we are done, if current_node is null and stack is empty.
      */
-    public static  List<Integer> inOrderUsingStack(BinaryTreeNode root) {
+    public static List<Integer> inOrderUsingStack(BinaryTreeNode root) {
         List<Integer> inOrderList = new ArrayList<>();
         if (root == null) return inOrderList;
         Stack<BinaryTreeNode> stack = new Stack<>();
@@ -99,7 +99,7 @@ public class DFS {
             c) Go to step 3.
         5. we are done, if current_node is null and stack is empty.
     */
-    public static  List<Integer> preOrderUsingStack(BinaryTreeNode root) {
+    public static List<Integer> preOrderUsingStack(BinaryTreeNode root) {
         List<Integer> inOrderList = new ArrayList<>();
         if (root == null) return inOrderList;
         Stack<BinaryTreeNode> stack = new Stack<>();
@@ -128,7 +128,7 @@ public class DFS {
             d) peek stack node and set it to last node.
             d) pop stack node and add it into postOrderList.
     */
-    public static  List<Integer> postOrderUsingStack(BinaryTreeNode root) {
+    public static List<Integer> postOrderUsingStack(BinaryTreeNode root) {
         List<Integer> postOrderList = new ArrayList<>();
         if (root == null) return postOrderList;
         Stack<BinaryTreeNode> stack = new Stack<>();
@@ -140,7 +140,7 @@ public class DFS {
             } else if (current_node == null) {
                 if (stack.isEmpty()) break;
                 current_node = stack.peek().right;
-                if(current_node == null) {
+                if (current_node == null) {
                     BinaryTreeNode last = null;
                     while (!stack.isEmpty() && stack.peek().right == last) {
                         last = stack.peek();

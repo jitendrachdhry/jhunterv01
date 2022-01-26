@@ -27,7 +27,7 @@ public class BinaryTreePaths257 {
         List<String> paths = new ArrayList<>();
         if (root == null) return paths;
 
-        pathFinder(root, new String(), paths);
+        pathFinder(root, "", paths);
         return paths;
     }
 

@@ -1,9 +1,5 @@
 package com.jhunter.tree.binarytree;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Stack;
-
 public class BinaryTreeSolution {
     /*
         YouTube: https://www.youtube.com/watch?v=_ANrF3FJm7I&list=PLgUwDviBIf0q8Hkd7bK2Bpryj2xVJk8Vk&index=2

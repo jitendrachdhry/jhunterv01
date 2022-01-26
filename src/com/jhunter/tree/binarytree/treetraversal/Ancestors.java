@@ -30,11 +30,11 @@ public class Ancestors {
         else
             history = current_node.val + "->" + history;
 
-        String left="", right="";
-        if(current_node.left != null)
+        String left = "", right = "";
+        if (current_node.left != null)
             left = findAncestor(current_node.left, node, history);
-        if(current_node.right != null)
+        if (current_node.right != null)
             right = findAncestor(current_node.right, node, history);
-        return (left.length() == 0) ? right : left ;
+        return (left.length() == 0) ? right : left;
     }
 }

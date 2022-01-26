@@ -241,8 +241,20 @@ public class Main {
         System.out.println("AllNodesDistanceKInBinaryTree Input[3, 2] Result[9999, 99, 15, 7] : " + AllNodesDistanceKInBinaryTree.findAllNodesDistanceKInBinaryTree(rootbfs, rootbfs, 2));
         System.out.println("DistanceBetweenGivenPairsOfNodesInABinaryTree (result: 3): " + DistanceBetweenGivenPairsOfNodesInABinaryTree.findDistanceBetweenGivenPairsOfNodesInABinaryTree(rootbfs, 9, 7));
 
-
         BinaryTreeNode root = new BinaryTreeNode(1);
+        root.left = new BinaryTreeNode(2);
+        root.right = new BinaryTreeNode(3);
+        root.left.left = new BinaryTreeNode(9);
+        root.left.right = new BinaryTreeNode(6);
+        root.right.left = new BinaryTreeNode(4);
+        root.right.right = new BinaryTreeNode(5);
+        root.left.left.right = new BinaryTreeNode(10);
+        root.left.right.left = new BinaryTreeNode(11);
+        root.right.left.left = new BinaryTreeNode(12);
+        root.right.left.right = new BinaryTreeNode(7);
+        System.out.println("findDiagonalSumOfABinaryTree output[9, 19, 42]: " + DiagonalSumOfABinaryTree.findDiagonalSumOfABinaryTree(root));
+
+        root = new BinaryTreeNode(1);
         root.left = new BinaryTreeNode(2);
         root.right = new BinaryTreeNode(3);
         root.left.left = new BinaryTreeNode(4);
@@ -252,6 +264,7 @@ public class Main {
         root.right.left.left = new BinaryTreeNode(8);
         root.right.left.right = new BinaryTreeNode(9);
 
+        System.out.println("findDiagonalSumOfABinaryTree output[11,8,13,13]: " + DiagonalSumOfABinaryTree.findDiagonalSumOfABinaryTree(root));
         System.out.println("PrintBottomViewOfBinaryTree [6,8,9,10,15,20,30]: " + PrintBottomViewOfBinaryTree.getBottomViewOfBinaryTree(btSolution.getBinaryTreeRoot()));
         System.out.println("PrintBottomViewOfBinaryTree [7, 5, 8, 6]: " + PrintBottomViewOfBinaryTree.getBottomViewOfBinaryTree(root));
         System.out.println("PrintTopViewOfBinaryTree [2, 1, 3, 6]: " + PrintTopViewOfBinaryTree.getTopViewOfBinaryTree(root));
