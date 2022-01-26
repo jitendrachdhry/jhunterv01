@@ -198,10 +198,11 @@ public class Main {
         System.out.println("inOrderUsingStack : " + DFS.inOrderUsingStack(btSolution.getBinaryTreeRoot()));
 
         BinaryTreeNode rootbfs = new BinaryTreeNode(3);
-        rootbfs.left = new BinaryTreeNode(9);
         rootbfs.right = new BinaryTreeNode(20);
         rootbfs.right.left = new BinaryTreeNode(15);
         rootbfs.right.right = new BinaryTreeNode(7);
+        rootbfs.right.right.right = new BinaryTreeNode(70);
+        rootbfs.right.right.right.right = new BinaryTreeNode(700);
         /*
         Example 1:
             3
@@ -209,6 +210,8 @@ public class Main {
          9   20
             /  \
            15  7
+                \
+                70
          */
         System.out.println("BFS levelOrderTraverse : " + BFS.levelOrderTraverse(rootbfs));
         System.out.println("BFS levelOrderTraverse : " + BFS.levelOrderTraverseNonRecursive(rootbfs));
@@ -216,7 +219,28 @@ public class Main {
         System.out.println("BinaryTreePaths257.getBinaryTreePaths: " + BinaryTreePaths257.getBinaryTreePaths(rootbfs));
         System.out.println("Ancestors.findAncestorsHistory: " + Ancestors.findAncestorsHistory(rootbfs, 7));
         System.out.println("Ancestors.findAncestorsHistory: " + Ancestors.findAncestorsHistory(btSolution.getBinaryTreeRoot(), 30));
+        //System.out.println("AllNodesDistanceKInBinaryTree Result[70] : " + AllNodesDistanceKInBinaryTree.findAllNodesDistanceKInBinaryTree(rootbfs, 20, 2));
+        rootbfs.left = new BinaryTreeNode(9);
+        rootbfs.left.right = new BinaryTreeNode(99);
+        rootbfs.left.right.right = new BinaryTreeNode(999);
+        rootbfs.left.left = new BinaryTreeNode(9999);
+               /*
+        Example 1:
+                  3
+              /      \
+             9       20
+           /  \      /  \
+        9999  99    15  7
+               \        \
+              999       70
+         */
+        System.out.println("AllNodesDistanceKInBinaryTree Input[99, 1] Result[9, 999] : " + AllNodesDistanceKInBinaryTree.findAllNodesDistanceKInBinaryTree(rootbfs, rootbfs.left.right, 1));
+        System.out.println("AllNodesDistanceKInBinaryTree Input[999, 3] Result[9999, 3] : " + AllNodesDistanceKInBinaryTree.findAllNodesDistanceKInBinaryTree(rootbfs, rootbfs.left.right.right, 3));
+        System.out.println("AllNodesDistanceKInBinaryTree Input[9, 3] Result[15,7] : " + AllNodesDistanceKInBinaryTree.findAllNodesDistanceKInBinaryTree(rootbfs, rootbfs.left, 3));
+        System.out.println("AllNodesDistanceKInBinaryTree Input[9, 2] Result[999, 20] : " + AllNodesDistanceKInBinaryTree.findAllNodesDistanceKInBinaryTree(rootbfs, rootbfs.left, 2));
+        System.out.println("AllNodesDistanceKInBinaryTree Input[3, 2] Result[9999, 99, 15, 7] : " + AllNodesDistanceKInBinaryTree.findAllNodesDistanceKInBinaryTree(rootbfs, rootbfs, 2));
         System.out.println("DistanceBetweenGivenPairsOfNodesInABinaryTree (result: 3): " + DistanceBetweenGivenPairsOfNodesInABinaryTree.findDistanceBetweenGivenPairsOfNodesInABinaryTree(rootbfs, 9, 7));
+
 
         BinaryTreeNode root = new BinaryTreeNode(1);
         root.left = new BinaryTreeNode(2);
