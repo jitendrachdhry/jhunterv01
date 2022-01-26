@@ -253,6 +253,7 @@ public class Main {
         root.right.left.left = new BinaryTreeNode(12);
         root.right.left.right = new BinaryTreeNode(7);
         System.out.println("findDiagonalSumOfABinaryTree output[9, 19, 42]: " + DiagonalSumOfABinaryTree.findDiagonalSumOfABinaryTree(root));
+        System.out.println("findDiagonalSumOfABinaryTree output[9, 19, 42]: " + DiagonalSumOfABinaryTree.findDiagonalSumOfABinaryTreeNonRecursive(root));
 
         root = new BinaryTreeNode(1);
         root.left = new BinaryTreeNode(2);

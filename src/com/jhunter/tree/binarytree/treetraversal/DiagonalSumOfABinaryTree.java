@@ -2,10 +2,7 @@ package com.jhunter.tree.binarytree.treetraversal;
 
 import com.jhunter.tree.binarytree.BinaryTreeNode;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class DiagonalSumOfABinaryTree {
     /*
@@ -44,5 +41,38 @@ public class DiagonalSumOfABinaryTree {
         map.put(diagonal, map.getOrDefault(diagonal, 0) + node.val);
         if (node.left != null) diagonalSumOfABinaryTree(node.left, map, diagonal + 1);
         if (node.right != null) diagonalSumOfABinaryTree(node.right, map, diagonal);
+    }
+
+    /*
+        https://www.youtube.com/watch?v=cTQphmYnWOI
+        Solution:
+        - We start binary tree traversal from right side diagonally
+        - We take a sum = 0 & keep on adding the all value till right node is null
+        - If any node has left node, then we add the element in queue
+        - So using this, we traverse diagonal level wise & add sum for a diagonal level
+
+        Time Complexity: O(n)
+        Space Complexity: O(n)
+     */
+    public static List<Integer> findDiagonalSumOfABinaryTreeNonRecursive(BinaryTreeNode root) {
+        List<Integer> resList = new ArrayList<>();
+        Queue<BinaryTreeNode> q = new LinkedList<>();
+        q.add(root);
+        while (!q.isEmpty()) {
+            int length = q.size();
+            int diagonalSum = 0;
+            for (int i = 0; i < length; i++) {
+                BinaryTreeNode current_node = q.poll();
+                diagonalSum += current_node.val;
+                if (current_node.left != null) q.add(current_node.left);
+                while (current_node.right != null) {
+                    diagonalSum += current_node.right.val;
+                    current_node = current_node.right;
+                    if (current_node.left != null) q.add(current_node.left);
+                }
+            }
+            resList.add(diagonalSum);
+        }
+        return resList;
     }
 }
