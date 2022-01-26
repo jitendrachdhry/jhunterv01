@@ -11,7 +11,6 @@ public class DistanceBetweenGivenPairsOfNodesInABinaryTree {
 
         Tree: The distance between node 7 and node 6 is 3.
           1
-        /   \
        /     \
       2       3
        \     / \
