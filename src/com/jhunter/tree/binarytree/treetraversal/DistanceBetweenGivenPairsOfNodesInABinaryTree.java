@@ -18,6 +18,10 @@ public class DistanceBetweenGivenPairsOfNodesInABinaryTree {
         4   5   6
            /     \
           7       8
+
+      1. Find lca of nodeA and nodeB
+      2. find distance of nodeA and nodeB from lca.
+      3. add distance of nodeA and nodeB from lca and return as a result.
     */
 
     public static int findDistanceBetweenGivenPairsOfNodesInABinaryTree(BinaryTreeNode root, int nodeA, int nodeB) {
