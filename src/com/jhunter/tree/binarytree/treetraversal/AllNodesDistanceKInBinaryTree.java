@@ -23,7 +23,8 @@ public class AllNodesDistanceKInBinaryTree {
         List<Integer> resNodes = new ArrayList<>();
         if (root == null || target == null || k < 0) return resNodes;
         Map<BinaryTreeNode, BinaryTreeNode> parentMap = new HashMap<>();
-        // Assign parent to each node and inset into map as a key(node) , value(parent) pair.
+
+        // Assign parent to each node and insert into map as a key(node) , value(parent) pair.
         initializeParent(root, null, parentMap);
 
         if (parentMap.containsKey(target)) {
