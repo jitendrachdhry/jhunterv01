@@ -233,6 +233,7 @@ public class Main {
         9999  99    15  7
                \        \
               999       70
+
          */
         System.out.println("AllNodesDistanceKInBinaryTree Input[99, 1] Result[9, 999] : " + AllNodesDistanceKInBinaryTree.findAllNodesDistanceKInBinaryTree(rootbfs, rootbfs.left.right, 1));
         System.out.println("AllNodesDistanceKInBinaryTree Input[999, 3] Result[9999, 3] : " + AllNodesDistanceKInBinaryTree.findAllNodesDistanceKInBinaryTree(rootbfs, rootbfs.left.right.right, 3));
@@ -240,6 +241,7 @@ public class Main {
         System.out.println("AllNodesDistanceKInBinaryTree Input[9, 2] Result[999, 20] : " + AllNodesDistanceKInBinaryTree.findAllNodesDistanceKInBinaryTree(rootbfs, rootbfs.left, 2));
         System.out.println("AllNodesDistanceKInBinaryTree Input[3, 2] Result[9999, 99, 15, 7] : " + AllNodesDistanceKInBinaryTree.findAllNodesDistanceKInBinaryTree(rootbfs, rootbfs, 2));
         System.out.println("DistanceBetweenGivenPairsOfNodesInABinaryTree (result: 3): " + DistanceBetweenGivenPairsOfNodesInABinaryTree.findDistanceBetweenGivenPairsOfNodesInABinaryTree(rootbfs, 9, 7));
+        System.out.println("TruncateABinaryTreeHavingSumLessThanK: " + TruncateABinaryTreeHavingSumLessThanK.truncateABinaryTreeHavingSumLessThanK(rootbfs, 100));
 
         BinaryTreeNode root = new BinaryTreeNode(1);
         root.left = new BinaryTreeNode(2);
