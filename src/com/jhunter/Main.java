@@ -197,12 +197,12 @@ public class Main {
         System.out.println("getTreeWayInOrder : " + DFS.getTreeWayInOrder(btSolution.getBinaryTreeRoot()));
         System.out.println("inOrderUsingStack : " + DFS.inOrderUsingStack(btSolution.getBinaryTreeRoot()));
 
-        BinaryTreeNode rootbfs = new BinaryTreeNode(3);
-        rootbfs.right = new BinaryTreeNode(20);
-        rootbfs.right.left = new BinaryTreeNode(15);
-        rootbfs.right.right = new BinaryTreeNode(7);
-        rootbfs.right.right.right = new BinaryTreeNode(70);
-        rootbfs.right.right.right.right = new BinaryTreeNode(700);
+        TreeNode rootbfs = new TreeNode(3);
+        rootbfs.right = new TreeNode(20);
+        rootbfs.right.left = new TreeNode(15);
+        rootbfs.right.right = new TreeNode(7);
+        rootbfs.right.right.right = new TreeNode(70);
+        rootbfs.right.right.right.right = new TreeNode(700);
         /*
         Example 1:
             3
@@ -220,10 +220,10 @@ public class Main {
         System.out.println("Ancestors.findAncestorsHistory: " + Ancestors.findAncestorsHistory(rootbfs, 7));
         System.out.println("Ancestors.findAncestorsHistory: " + Ancestors.findAncestorsHistory(btSolution.getBinaryTreeRoot(), 30));
         //System.out.println("AllNodesDistanceKInBinaryTree Result[70] : " + AllNodesDistanceKInBinaryTree.findAllNodesDistanceKInBinaryTree(rootbfs, 20, 2));
-        rootbfs.left = new BinaryTreeNode(9);
-        rootbfs.left.right = new BinaryTreeNode(99);
-        rootbfs.left.right.right = new BinaryTreeNode(999);
-        rootbfs.left.left = new BinaryTreeNode(9999);
+        rootbfs.left = new TreeNode(9);
+        rootbfs.left.right = new TreeNode(99);
+        rootbfs.left.right.right = new TreeNode(999);
+        rootbfs.left.left = new TreeNode(9999);
                /*
         Example 1:
                   3
@@ -244,17 +244,17 @@ public class Main {
         System.out.println("DistanceBetweenGivenPairsOfNodesInABinaryTree (result: 3): " + DistanceBetweenGivenPairsOfNodesInABinaryTree.findDistanceBetweenGivenPairsOfNodesInABinaryTree(rootbfs, 9, 7));
         System.out.println("TruncateABinaryTreeHavingSumLessThanK: " + TruncateABinaryTreeHavingSumLessThanK.truncateABinaryTreeHavingSumLessThanK(rootbfs, 100));
 
-        BinaryTreeNode root = new BinaryTreeNode(1);
-        root.left = new BinaryTreeNode(2);
-        root.right = new BinaryTreeNode(3);
-        root.left.left = new BinaryTreeNode(9);
-        root.left.right = new BinaryTreeNode(6);
-        root.right.left = new BinaryTreeNode(4);
-        root.right.right = new BinaryTreeNode(5);
-        root.left.left.right = new BinaryTreeNode(10);
-        root.left.right.left = new BinaryTreeNode(11);
-        root.right.left.left = new BinaryTreeNode(12);
-        root.right.left.right = new BinaryTreeNode(7);
+        TreeNode root = new TreeNode(1);
+        root.left = new TreeNode(2);
+        root.right = new TreeNode(3);
+        root.left.left = new TreeNode(9);
+        root.left.right = new TreeNode(6);
+        root.right.left = new TreeNode(4);
+        root.right.right = new TreeNode(5);
+        root.left.left.right = new TreeNode(10);
+        root.left.right.left = new TreeNode(11);
+        root.right.left.left = new TreeNode(12);
+        root.right.left.right = new TreeNode(7);
 
         /*
                                1
@@ -266,16 +266,28 @@ public class Main {
         System.out.println("findDiagonalSumOfABinaryTree output[9, 19, 42]: " + DiagonalSumOfABinaryTree.findDiagonalSumOfABinaryTree(root));
         System.out.println("findDiagonalSumOfABinaryTree output[9, 19, 42]: " + DiagonalSumOfABinaryTree.findDiagonalSumOfABinaryTreeNonRecursive(root));
         System.out.println("FindMaximumSumRootToLeafPathInABinaryTree Output[22: 1 + 2 + 9 + 10]: " + FindMaximumSumRootToLeafPathInABinaryTree.findMaximumSumRootToLeafPathInABinaryTree(root));
-
-        root = new BinaryTreeNode(1);
-        root.left = new BinaryTreeNode(2);
-        root.right = new BinaryTreeNode(3);
-        root.left.left = new BinaryTreeNode(4);
-        root.left.right = new BinaryTreeNode(5);
-        root.right.left = new BinaryTreeNode(6);
-        root.right.right = new BinaryTreeNode(7);
-        root.right.left.left = new BinaryTreeNode(8);
-        root.right.left.right = new BinaryTreeNode(9);
+        root = new TreeNode(-10);
+        root.left = new TreeNode(9);
+        root.right = new TreeNode(20);
+        root.right.left = new TreeNode(15);
+        root.right.right = new TreeNode(7);
+        /*
+                -10
+               /   \
+              9    20
+                 /   \
+                15   7
+         */
+        System.out.println("BinaryTreeMaximumPathSum125 output [15 -> 20 -> 7 : 42] : " + BinaryTreeMaximumPathSum125.maxPathSum(root));
+        root = new TreeNode(1);
+        root.left = new TreeNode(2);
+        root.right = new TreeNode(3);
+        root.left.left = new TreeNode(4);
+        root.left.right = new TreeNode(5);
+        root.right.left = new TreeNode(6);
+        root.right.right = new TreeNode(7);
+        root.right.left.left = new TreeNode(8);
+        root.right.left.right = new TreeNode(9);
 
         System.out.println("findDiagonalSumOfABinaryTree output[11,8,13,13]: " + DiagonalSumOfABinaryTree.findDiagonalSumOfABinaryTree(root));
         System.out.println("PrintBottomViewOfBinaryTree [6,8,9,10,15,20,30]: " + PrintBottomViewOfBinaryTree.getBottomViewOfBinaryTree(btSolution.getBinaryTreeRoot()));
@@ -288,36 +300,36 @@ public class Main {
         ConvertBinaryTreeToItsSumTree.convertBinaryTreeToItsSumTree(root);
 
 
-        BinaryTreeNode root01 = new BinaryTreeNode(44);
-        root01.left = new BinaryTreeNode(9);
-        root01.right = new BinaryTreeNode(13);
-        root01.left.left = new BinaryTreeNode(4);
-        root01.left.right = new BinaryTreeNode(5);
-        root01.right.left = new BinaryTreeNode(6);
-        root01.right.right = new BinaryTreeNode(7);
+        TreeNode root01 = new TreeNode(44);
+        root01.left = new TreeNode(9);
+        root01.right = new TreeNode(13);
+        root01.left.left = new TreeNode(4);
+        root01.left.right = new TreeNode(5);
+        root01.right.left = new TreeNode(6);
+        root01.right.right = new TreeNode(7);
         System.out.println("IsItSumTree (true): " + IsItSumTree.isItSumTree(root01));
-        root01.left = new BinaryTreeNode(900);
+        root01.left = new TreeNode(900);
         System.out.println("IsItSumTree (false): " + IsItSumTree.isItSumTree(root01));
         System.out.println(" ConvertBinaryTreeToItsMirror DONE");
         ConvertBinaryTreeToItsMirror.convertBinaryTreeToItsMirror(root01);
         System.out.println("\n ============================= IdenticalBinaryTree ========================================================");
         // construct the first tree
-        BinaryTreeNode x = new BinaryTreeNode(15);
-        x.left = new BinaryTreeNode(10);
-        x.right = new BinaryTreeNode(20);
-        x.left.left = new BinaryTreeNode(8);
-        x.left.right = new BinaryTreeNode(12);
-        x.right.left = new BinaryTreeNode(16);
-        x.right.right = new BinaryTreeNode(25);
+        TreeNode x = new TreeNode(15);
+        x.left = new TreeNode(10);
+        x.right = new TreeNode(20);
+        x.left.left = new TreeNode(8);
+        x.left.right = new TreeNode(12);
+        x.right.left = new TreeNode(16);
+        x.right.right = new TreeNode(25);
 
         // construct the second tree
-        BinaryTreeNode y = new BinaryTreeNode(15);
-        y.left = new BinaryTreeNode(10);
-        y.right = new BinaryTreeNode(20);
-        y.left.left = new BinaryTreeNode(8);
-        y.left.right = new BinaryTreeNode(12);
-        y.right.left = new BinaryTreeNode(16);
-        y.right.right = new BinaryTreeNode(25);
+        TreeNode y = new TreeNode(15);
+        y.left = new TreeNode(10);
+        y.right = new TreeNode(20);
+        y.left.left = new TreeNode(8);
+        y.left.right = new TreeNode(12);
+        y.right.left = new TreeNode(16);
+        y.right.right = new TreeNode(25);
         System.out.println("isIdentical : " + IdenticalBinaryTree.isIdentical(x, y));
     }
 }

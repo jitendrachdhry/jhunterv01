@@ -1,6 +1,6 @@
 package com.jhunter.tree.binarytree.subtree;
 
-import com.jhunter.tree.binarytree.BinaryTreeNode;
+import com.jhunter.tree.binarytree.TreeNode;
 
 import java.util.Stack;
 
@@ -38,19 +38,19 @@ public class IdenticalBinaryTree {
         Explanation: Both binary trees have the same structure but differ in nodes’ values.
      */
 
-    public static boolean isIdentical(BinaryTreeNode x, BinaryTreeNode y) {
+    public static boolean isIdentical(TreeNode x, TreeNode y) {
         if (x == null && y == null) return true;
         if (x == null || y == null) return false;
 
-        Stack<BinaryTreeNode> stackX = new Stack<BinaryTreeNode>();
-        Stack<BinaryTreeNode> stackY = new Stack<BinaryTreeNode>();
+        Stack<TreeNode> stackX = new Stack<TreeNode>();
+        Stack<TreeNode> stackY = new Stack<TreeNode>();
 
         stackX.push(x);
         stackY.push(y);
 
         while (!stackX.isEmpty() || !stackY.isEmpty()) {
-            BinaryTreeNode nodeX = stackX.pop();
-            BinaryTreeNode nodeY = stackY.pop();
+            TreeNode nodeX = stackX.pop();
+            TreeNode nodeY = stackY.pop();
 
             if (nodeX.val != nodeY.val) return false;
 

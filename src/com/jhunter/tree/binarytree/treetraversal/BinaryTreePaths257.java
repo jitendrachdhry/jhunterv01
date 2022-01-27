@@ -1,6 +1,6 @@
 package com.jhunter.tree.binarytree.treetraversal;
 
-import com.jhunter.tree.binarytree.BinaryTreeNode;
+import com.jhunter.tree.binarytree.TreeNode;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -22,7 +22,7 @@ public class BinaryTreePaths257 {
          {[1->2->4],[1->2->5],[1->3->6->8],[1->3->7->9]}
      */
 
-    public static List<String> getBinaryTreePaths(BinaryTreeNode root) {
+    public static List<String> getBinaryTreePaths(TreeNode root) {
 
         List<String> paths = new ArrayList<>();
         if (root == null) return paths;
@@ -31,7 +31,7 @@ public class BinaryTreePaths257 {
         return paths;
     }
 
-    public static void pathFinder(BinaryTreeNode current_node, String current_path, List<String> paths) {
+    public static void pathFinder(TreeNode current_node, String current_path, List<String> paths) {
         if (current_path.length() == 0) {
             current_path += current_node.val;
         } else {

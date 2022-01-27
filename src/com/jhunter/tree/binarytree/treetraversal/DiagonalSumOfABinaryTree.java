@@ -1,6 +1,6 @@
 package com.jhunter.tree.binarytree.treetraversal;
 
-import com.jhunter.tree.binarytree.BinaryTreeNode;
+import com.jhunter.tree.binarytree.TreeNode;
 
 import java.util.*;
 
@@ -26,7 +26,7 @@ public class DiagonalSumOfABinaryTree {
         its left subtree by increasing the diagonal by one and recur for the right subtree with the same diagonal.
      */
 
-    public static List<Integer> findDiagonalSumOfABinaryTree(BinaryTreeNode root) {
+    public static List<Integer> findDiagonalSumOfABinaryTree(TreeNode root) {
         List<Integer> resList = new ArrayList<>();
         Map<Integer, Integer> map = new HashMap<>();
         diagonalSumOfABinaryTree(root, map, 0);
@@ -36,7 +36,7 @@ public class DiagonalSumOfABinaryTree {
         return resList;
     }
 
-    public static void diagonalSumOfABinaryTree(BinaryTreeNode node, Map<Integer, Integer> map, int diagonal) {
+    public static void diagonalSumOfABinaryTree(TreeNode node, Map<Integer, Integer> map, int diagonal) {
         if (node == null) return;
         map.put(diagonal, map.getOrDefault(diagonal, 0) + node.val);
         if (node.left != null) diagonalSumOfABinaryTree(node.left, map, diagonal + 1);
@@ -54,15 +54,15 @@ public class DiagonalSumOfABinaryTree {
         Time Complexity: O(n)
         Space Complexity: O(n)
      */
-    public static List<Integer> findDiagonalSumOfABinaryTreeNonRecursive(BinaryTreeNode root) {
+    public static List<Integer> findDiagonalSumOfABinaryTreeNonRecursive(TreeNode root) {
         List<Integer> resList = new ArrayList<>();
-        Queue<BinaryTreeNode> q = new LinkedList<>();
+        Queue<TreeNode> q = new LinkedList<>();
         q.add(root);
         while (!q.isEmpty()) {
             int length = q.size();
             int diagonalSum = 0;
             for (int i = 0; i < length; i++) {
-                BinaryTreeNode current_node = q.poll();
+                TreeNode current_node = q.poll();
                 diagonalSum += current_node.val;
                 if (current_node.left != null) q.add(current_node.left);
                 while (current_node.right != null) {

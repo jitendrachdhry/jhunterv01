@@ -19,17 +19,17 @@ public class PrintTopViewOfBinaryTree {
                  7   8
      */
 
-    public static List<Integer> getTopViewOfBinaryTree(BinaryTreeNode nodeBT) {
+    public static List<Integer> getTopViewOfBinaryTree(TreeNode nodeBT) {
         List<Integer> result = new ArrayList<>();
         if (nodeBT == null) return result;
 
         Map<Integer, Integer> map = new TreeMap<>();
-        Stack<Pair<Integer, BinaryTreeNode>> st = new Stack<>();
-        BinaryTreeNode node = nodeBT;
+        Stack<Pair<Integer, TreeNode>> st = new Stack<>();
+        TreeNode node = nodeBT;
         int level = 0;
         do {
             if (node == null) {
-                Pair<Integer, BinaryTreeNode> pair = st.pop();
+                Pair<Integer, TreeNode> pair = st.pop();
                 node = pair.second.right;
                 level = pair.first + 1;
             } else {

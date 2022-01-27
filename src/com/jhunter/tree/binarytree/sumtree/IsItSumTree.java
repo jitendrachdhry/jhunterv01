@@ -1,6 +1,6 @@
 package com.jhunter.tree.binarytree.sumtree;
 
-import com.jhunter.tree.binarytree.BinaryTreeNode;
+import com.jhunter.tree.binarytree.TreeNode;
 
 public class IsItSumTree {
     /*
@@ -16,7 +16,7 @@ public class IsItSumTree {
              / \    / \
             4   5  6   7
      */
-    public static int findSumTreeOfANode(BinaryTreeNode node, boolean[] res) {
+    public static int findSumTreeOfANode(TreeNode node, boolean[] res) {
         if (node == null || res[0] == false) return 0;
         if (node.left == null && node.right == null) return node.val;
         int leftSum = findSumTreeOfANode(node.left, res);
@@ -28,7 +28,7 @@ public class IsItSumTree {
         return node.val + leftSum + rightSum;
     }
 
-    public static boolean isItSumTree(BinaryTreeNode root) {
+    public static boolean isItSumTree(TreeNode root) {
         if (root == null) return false;
         boolean[] res = {true};
         findSumTreeOfANode(root, res);

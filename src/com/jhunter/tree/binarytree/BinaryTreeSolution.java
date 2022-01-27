@@ -21,14 +21,14 @@ public class BinaryTreeSolution {
         5. Degenerate Binary Tree
    */
 
-    BinaryTreeNode treeNode = null;
+    TreeNode treeNode = null;
 
     public BinaryTreeSolution(int[] arr) {
         if (arr != null && arr.length > 0) {
             int halfLength = arr.length / 2;
             for (int left = halfLength, right = halfLength + 1; left >= 0; left--, right++) {
                 if (treeNode == null) {
-                    treeNode = new BinaryTreeNode(arr[left]);
+                    treeNode = new TreeNode(arr[left]);
                 } else {
                     insert(arr[left]);
                 }
@@ -41,23 +41,23 @@ public class BinaryTreeSolution {
         System.out.println("BinaryTree Constructed !!!!");
     }
 
-    public BinaryTreeNode getBinaryTreeRoot() {
+    public TreeNode getBinaryTreeRoot() {
         return treeNode;
     }
 
     void insert(int info) {
-        BinaryTreeNode tempNode = treeNode;
+        TreeNode tempNode = treeNode;
         while (tempNode != null) {
             if (info < tempNode.val) {
                 if (tempNode.left == null) {
-                    tempNode.left = new BinaryTreeNode(info);
+                    tempNode.left = new TreeNode(info);
                     return;
                 } else {
                     tempNode = tempNode.left;
                 }
             } else {
                 if (tempNode.right == null) {
-                    tempNode.right = new BinaryTreeNode(info);
+                    tempNode.right = new TreeNode(info);
                     return;
                 } else {
                     tempNode = tempNode.right;

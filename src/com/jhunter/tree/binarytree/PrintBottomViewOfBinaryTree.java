@@ -18,20 +18,20 @@ public class PrintBottomViewOfBinaryTree {
              7      8
      */
 
-    public static List<Integer> getBottomViewOfBinaryTree(BinaryTreeNode nodeBT) {
+    public static List<Integer> getBottomViewOfBinaryTree(TreeNode nodeBT) {
         List<Integer> result = new ArrayList<>();
         if (nodeBT == null) return result;
 
         // stack for Pre-order traverse and keep the vertical idx value.
-        Stack<Pair<Integer, BinaryTreeNode>> st = new Stack<>();
+        Stack<Pair<Integer, TreeNode>> st = new Stack<>();
 
         //Keep list of bottom view of binary tree
         Map<Integer, Integer> map = new TreeMap<>();
-        BinaryTreeNode node = nodeBT;
+        TreeNode node = nodeBT;
         int level = 0;
         do {
             if (node == null) {
-                Pair<Integer, BinaryTreeNode> pair = st.pop();
+                Pair<Integer, TreeNode> pair = st.pop();
                 node = pair.second.right;
                 level = pair.first + 1;
             } else {

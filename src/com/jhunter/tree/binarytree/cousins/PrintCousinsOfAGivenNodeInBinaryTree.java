@@ -1,6 +1,6 @@
 package com.jhunter.tree.binarytree.cousins;
 
-import com.jhunter.tree.binarytree.BinaryTreeNode;
+import com.jhunter.tree.binarytree.TreeNode;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -19,7 +19,7 @@ public class PrintCousinsOfAGivenNodeInBinaryTree {
          - 4, 5 are cousins of node 6 or 7
      */
 
-    public static boolean findNodeLevel(BinaryTreeNode node, BinaryTreeNode parentNode, int level, int child, NodeInfo info) {
+    public static boolean findNodeLevel(TreeNode node, TreeNode parentNode, int level, int child, NodeInfo info) {
         if (node == null) return false;
         if (node.val == child) {
             info.parent = parentNode;
@@ -29,7 +29,7 @@ public class PrintCousinsOfAGivenNodeInBinaryTree {
         return findNodeLevel(node.left, node, level + 1, child, info) || findNodeLevel(node.right, node, level + 1, child, info);
     }
 
-    public static void findCousins(BinaryTreeNode node, int level, NodeInfo info, List<Integer> cousinsList) {
+    public static void findCousins(TreeNode node, int level, NodeInfo info, List<Integer> cousinsList) {
         if (node == null) return;
         if (level == info.level) {
             if (node.val != info.parent.val) {
@@ -42,7 +42,7 @@ public class PrintCousinsOfAGivenNodeInBinaryTree {
         findCousins(node.right, level + 1, info, cousinsList);
     }
 
-    public static List<Integer> getCousinsOfAGivenNodeInBinaryTree(BinaryTreeNode node, int child) {
+    public static List<Integer> getCousinsOfAGivenNodeInBinaryTree(TreeNode node, int child) {
         List<Integer> cousinsList = new ArrayList<>();
         if (node == null) return cousinsList;
         NodeInfo info = new NodeInfo();

@@ -1,6 +1,6 @@
 package com.jhunter.tree.binarytree.treetraversal;
 
-import com.jhunter.tree.binarytree.BinaryTreeNode;
+import com.jhunter.tree.binarytree.TreeNode;
 
 public class Ancestors {
     /*
@@ -16,11 +16,11 @@ public class Ancestors {
            / \
           7   8
      */
-    public static String findAncestorsHistory(BinaryTreeNode root, int node) {
+    public static String findAncestorsHistory(TreeNode root, int node) {
         return findAncestor(root, node, "");
     }
 
-    public static String findAncestor(BinaryTreeNode current_node, int node, String history) {
+    public static String findAncestor(TreeNode current_node, int node, String history) {
         if (current_node == null) return "";
         else if (current_node.val == node) {
             return history;

@@ -1,6 +1,6 @@
 package com.jhunter.tree.binarytree.treetraversal;
 
-import com.jhunter.tree.binarytree.BinaryTreeNode;
+import com.jhunter.tree.binarytree.TreeNode;
 
 import java.util.*;
 
@@ -19,30 +19,30 @@ public class AllNodesDistanceKInBinaryTree {
         2) Reach the target node
         3) Perform the  bfs from this node, considering left, right and parent node connected to a give node.
      */
-    public static List<Integer> findAllNodesDistanceKInBinaryTree(BinaryTreeNode root, BinaryTreeNode target, int k) {
+    public static List<Integer> findAllNodesDistanceKInBinaryTree(TreeNode root, TreeNode target, int k) {
         List<Integer> resNodes = new ArrayList<>();
         if (root == null || target == null || k < 0) return resNodes;
-        Map<BinaryTreeNode, BinaryTreeNode> parentMap = new HashMap<>();
+        Map<TreeNode, TreeNode> parentMap = new HashMap<>();
 
         // Assign parent to each node and insert into map as a key(node) , value(parent) pair.
         initializeParent(root, null, parentMap);
 
         if (parentMap.containsKey(target)) {
-            Queue<BinaryTreeNode> q = new LinkedList<>();
-            Set<BinaryTreeNode> set = new HashSet<>();
+            Queue<TreeNode> q = new LinkedList<>();
+            Set<TreeNode> set = new HashSet<>();
             int level = 0;
             q.add(target);
 
             while (!q.isEmpty() && level <= k) {
                 if (level == k) {
-                    for (BinaryTreeNode node : q) {
+                    for (TreeNode node : q) {
                         resNodes.add(node.val);
                     }
                     return resNodes;
                 }
                 int size = q.size();
                 for (int i = 0; i < size; i++) {
-                    BinaryTreeNode temp = q.poll();
+                    TreeNode temp = q.poll();
                     set.add(temp);
                     if (temp.left != null && !set.contains(temp.left)) {
                         q.add(temp.left);
@@ -50,7 +50,7 @@ public class AllNodesDistanceKInBinaryTree {
                     if (temp.right != null && !set.contains(temp.right)) {
                         q.add(temp.right);
                     }
-                    BinaryTreeNode parent = parentMap.get(temp);
+                    TreeNode parent = parentMap.get(temp);
                     if (parent != null && !set.contains(parent)) {
                         q.add(parent);
                     }
@@ -62,7 +62,7 @@ public class AllNodesDistanceKInBinaryTree {
         return resNodes;
     }
 
-    public static void initializeParent(BinaryTreeNode node, BinaryTreeNode parent, Map<BinaryTreeNode, BinaryTreeNode> parentMap) {
+    public static void initializeParent(TreeNode node, TreeNode parent, Map<TreeNode, TreeNode> parentMap) {
         if (node == null) return;
         parentMap.put(node, parent);
         if (node.left != null) initializeParent(node.left, node, parentMap);

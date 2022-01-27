@@ -11,16 +11,16 @@ public class ConvertBinaryTreeToItsMirror {
             4   5   6   7             7   6  5   4
      */
 
-    public static void swapNode(BinaryTreeNode node) {
+    public static void swapNode(TreeNode node) {
         if (node == null) return;
-        BinaryTreeNode tempNode = node.left;
+        TreeNode tempNode = node.left;
         node.left = node.right;
         node.right = tempNode;
         swapNode(node.left);
         swapNode(node.right);
     }
 
-    public static void convertBinaryTreeToItsMirror(BinaryTreeNode root) {
+    public static void convertBinaryTreeToItsMirror(TreeNode root) {
         if (root == null) return;
         swapNode(root);
         System.out.println(" swap tree done. ");

@@ -1,6 +1,6 @@
 package com.jhunter.tree.binarytree.treetraversal;
 
-import com.jhunter.tree.binarytree.BinaryTreeNode;
+import com.jhunter.tree.binarytree.TreeNode;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,14 +16,14 @@ import java.util.Stack;
        - Be able to do level traversal using BFS.
  */
 public class DFS {
-    public static List<Integer> getTreeWayPreOrder(BinaryTreeNode root) {
+    public static List<Integer> getTreeWayPreOrder(TreeNode root) {
         List<Integer> preOrderList = new ArrayList<>();
         preOrder(root, preOrderList);
         return preOrderList;
     }
 
     /* Pre Order ( ROOT, LEFT, RIGHT ) */
-    public static void preOrder(BinaryTreeNode node, List<Integer> preOrderList) {
+    public static void preOrder(TreeNode node, List<Integer> preOrderList) {
         if (node == null) return;
 
         preOrderList.add(node.val);
@@ -31,14 +31,14 @@ public class DFS {
         preOrder(node.right, preOrderList);
     }
 
-    public static List<Integer> getTreeWayPostOrder(BinaryTreeNode root) {
+    public static List<Integer> getTreeWayPostOrder(TreeNode root) {
         List<Integer> preOrderList = new ArrayList<>();
         postOrder(root, preOrderList);
         return preOrderList;
     }
 
     /* Post Order ( LEFT, RIGHT, ROOT ) */
-    public static void postOrder(BinaryTreeNode node, List<Integer> postOrderList) {
+    public static void postOrder(TreeNode node, List<Integer> postOrderList) {
         if (node == null) return;
 
         postOrder(node.left, postOrderList);
@@ -46,14 +46,14 @@ public class DFS {
         postOrderList.add(node.val);
     }
 
-    public static List<Integer> getTreeWayInOrder(BinaryTreeNode root) {
+    public static List<Integer> getTreeWayInOrder(TreeNode root) {
         List<Integer> inOrderList = new ArrayList<>();
         inOrder(root, inOrderList);
         return inOrderList;
     }
 
     /* In Order ( LEFT, ROOT, RIGHT ) */
-    public static void inOrder(BinaryTreeNode node, List<Integer> inOrderList) {
+    public static void inOrder(TreeNode node, List<Integer> inOrderList) {
         if (node == null) return;
 
         inOrder(node.left, inOrderList);
@@ -62,7 +62,7 @@ public class DFS {
     }
 
     /* In Order ( LEFT, ROOT, RIGHT )
-        1. Create an empty stack of BinaryTreeNode.
+        1. Create an empty stack of TreeNode.
         2. initialize current_node as root
         3. Push the current_node to stack and set current_node current_node = current_node->left until current_node is NULL.
         4. if current_node is null and stack is not empty.
@@ -71,11 +71,11 @@ public class DFS {
             c) Go to step 3.
         5. we are done, if current_node is null and stack is empty.
      */
-    public static List<Integer> inOrderUsingStack(BinaryTreeNode root) {
+    public static List<Integer> inOrderUsingStack(TreeNode root) {
         List<Integer> inOrderList = new ArrayList<>();
         if (root == null) return inOrderList;
-        Stack<BinaryTreeNode> stack = new Stack<>();
-        BinaryTreeNode node = root;
+        Stack<TreeNode> stack = new Stack<>();
+        TreeNode node = root;
         do {
             if (node == null) {
                 node = stack.pop();
@@ -90,7 +90,7 @@ public class DFS {
     }
 
     /* Pre Order ( ROOT, LEFT, RIGHT )
-        1. Create an empty stack of BinaryTreeNode.
+        1. Create an empty stack of TreeNode.
         2. initialize current_node as root
         3. add current_node info to the List and push the current_node to stack. set current_node current_node = current_node->left until current_node is NULL.
         4. if current_node is null and stack is not empty.
@@ -99,11 +99,11 @@ public class DFS {
             c) Go to step 3.
         5. we are done, if current_node is null and stack is empty.
     */
-    public static List<Integer> preOrderUsingStack(BinaryTreeNode root) {
+    public static List<Integer> preOrderUsingStack(TreeNode root) {
         List<Integer> inOrderList = new ArrayList<>();
         if (root == null) return inOrderList;
-        Stack<BinaryTreeNode> stack = new Stack<>();
-        BinaryTreeNode node = root;
+        Stack<TreeNode> stack = new Stack<>();
+        TreeNode node = root;
         do {
             if (node == null) {
                 node = stack.pop();
@@ -118,7 +118,7 @@ public class DFS {
     }
 
     /* Post Order ( LEFT, RIGHT, ROOT )
-        1. Create an empty stack of BinaryTreeNode.
+        1. Create an empty stack of TreeNode.
         2. initialize current_node as root
         3. add current_node info to the List and push the current_node to stack. set current_node current_node = current_node->left until current_node is NULL.
         4. if current_node is null:
@@ -128,11 +128,11 @@ public class DFS {
             d) peek stack node and set it to last node.
             d) pop stack node and add it into postOrderList.
     */
-    public static List<Integer> postOrderUsingStack(BinaryTreeNode root) {
+    public static List<Integer> postOrderUsingStack(TreeNode root) {
         List<Integer> postOrderList = new ArrayList<>();
         if (root == null) return postOrderList;
-        Stack<BinaryTreeNode> stack = new Stack<>();
-        BinaryTreeNode current_node = root;
+        Stack<TreeNode> stack = new Stack<>();
+        TreeNode current_node = root;
         do {
             if (current_node != null) {
                 stack.push(current_node);
@@ -141,7 +141,7 @@ public class DFS {
                 if (stack.isEmpty()) break;
                 current_node = stack.peek().right;
                 if (current_node == null) {
-                    BinaryTreeNode last = null;
+                    TreeNode last = null;
                     while (!stack.isEmpty() && stack.peek().right == last) {
                         last = stack.peek();
                         postOrderList.add(stack.pop().val);

@@ -1,17 +1,17 @@
 package com.jhunter.tree.binarytree.cousins;
 
-import com.jhunter.tree.binarytree.BinaryTreeNode;
+import com.jhunter.tree.binarytree.TreeNode;
 
 class NodeInfo {
     int level;
-    BinaryTreeNode parent;
+    TreeNode parent;
 
     public NodeInfo() {
         this.parent = null;
         this.level = -1;
     }
 
-    public NodeInfo(BinaryTreeNode parent, int level) {
+    public NodeInfo(TreeNode parent, int level) {
         this.parent = parent;
         this.level = level;
     }
@@ -31,7 +31,7 @@ public class NodesAreCousinsOfEachOther {
         (2, 3), (4, 5), (6, 7), (4, 3), etc., are not cousins of each other.
      */
 
-    public static boolean findNodeLevel(BinaryTreeNode node, BinaryTreeNode parent, int val, int level, NodeInfo info) {
+    public static boolean findNodeLevel(TreeNode node, TreeNode parent, int val, int level, NodeInfo info) {
         if (node == null) return false;
         if (node.val == val) {
             info.parent = parent;
@@ -41,7 +41,7 @@ public class NodesAreCousinsOfEachOther {
         return findNodeLevel(node.left, node, val, level + 1, info) || findNodeLevel(node.right, node, val, level + 1, info);
     }
 
-    public static boolean isNodesAreCousinsOfEachOther(BinaryTreeNode root, int child1, int child2) {
+    public static boolean isNodesAreCousinsOfEachOther(TreeNode root, int child1, int child2) {
         if (root == null) return false;
         NodeInfo node1 = new NodeInfo(), node2 = new NodeInfo();
         if (!findNodeLevel(root, null, child1, 0, node1)) return false;

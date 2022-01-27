@@ -1,6 +1,6 @@
 package com.jhunter.tree.binarytree.treetraversal;
 
-import com.jhunter.tree.binarytree.BinaryTreeNode;
+import com.jhunter.tree.binarytree.TreeNode;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
@@ -23,14 +23,14 @@ public class BFS {
         Output: [[3],[9,20],[15,7]]
      */
 
-    public static List<List<Integer>> levelOrderTraverse(BinaryTreeNode root) {
+    public static List<List<Integer>> levelOrderTraverse(TreeNode root) {
         List<List<Integer>> bfsList = new ArrayList<>();
         if (root == null) return bfsList;
         levelOrderTraverseRecursive(root, bfsList, 0);
         return bfsList;
     }
 
-    public static void levelOrderTraverseRecursive(BinaryTreeNode node, List<List<Integer>> bfsList, int level) {
+    public static void levelOrderTraverseRecursive(TreeNode node, List<List<Integer>> bfsList, int level) {
         if (node == null) return;
         if (bfsList.size() == level) {
             bfsList.add(new ArrayList<Integer>());
@@ -48,17 +48,17 @@ public class BFS {
         2. Maintain a level of three.
         3. Process the numbers of nodes on each level and adds its children into the queue.
      */
-    public static List<List<Integer>> levelOrderTraverseNonRecursive(BinaryTreeNode root) {
+    public static List<List<Integer>> levelOrderTraverseNonRecursive(TreeNode root) {
         List<List<Integer>> bfsList = new ArrayList<>();
         if (root == null) return bfsList;
-        Queue<BinaryTreeNode> q = new LinkedList<BinaryTreeNode>();
+        Queue<TreeNode> q = new LinkedList<TreeNode>();
         q.add(root);
         int level = 0;
         while (!q.isEmpty()) {
             bfsList.add(new ArrayList<>());
             int size = q.size();
             for (int i = 0; i < size; i++) {
-                BinaryTreeNode node = q.remove();
+                TreeNode node = q.remove();
                 bfsList.get(level).add(node.val);
                 if (node.left != null) {
                     q.add(node.left);

@@ -1,6 +1,6 @@
 package com.jhunter.tree.binarytree.treetraversal;
 
-import com.jhunter.tree.binarytree.BinaryTreeNode;
+import com.jhunter.tree.binarytree.TreeNode;
 
 public class TruncateABinaryTreeHavingSumLessThanK {
     /*
@@ -17,13 +17,13 @@ public class TruncateABinaryTreeHavingSumLessThanK {
                 /   \      \                                    \
               1       7      3                                  7
      */
-    public static BinaryTreeNode truncateABinaryTreeHavingSumLessThanK(BinaryTreeNode root, int k) {
+    public static TreeNode truncateABinaryTreeHavingSumLessThanK(TreeNode root, int k) {
         if (root == null) return root;
         root = truncate(root, 0, k);
         return root;
     }
 
-    public static BinaryTreeNode truncate(BinaryTreeNode node, int sum, int k) {
+    public static TreeNode truncate(TreeNode node, int sum, int k) {
         if (node == null) return null;
         sum += node.val;
         if (node.left == null && node.right == null) {

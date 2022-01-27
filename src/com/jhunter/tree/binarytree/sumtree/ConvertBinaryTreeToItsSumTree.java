@@ -1,6 +1,6 @@
 package com.jhunter.tree.binarytree.sumtree;
 
-import com.jhunter.tree.binarytree.BinaryTreeNode;
+import com.jhunter.tree.binarytree.TreeNode;
 
 public class ConvertBinaryTreeToItsSumTree {
     /*
@@ -13,11 +13,11 @@ public class ConvertBinaryTreeToItsSumTree {
           2   1                           0   0
      */
 
-    public static void convertBinaryTreeToItsSumTree(BinaryTreeNode btNode) {
+    public static void convertBinaryTreeToItsSumTree(TreeNode btNode) {
         sumTreeNode(btNode);
     }
 
-    public static int sumTreeNode(BinaryTreeNode bt) {
+    public static int sumTreeNode(TreeNode bt) {
         if (bt == null) return 0;
         int copyVal = bt.val;
         bt.val = sumTreeNode(bt.left) + sumTreeNode(bt.right);

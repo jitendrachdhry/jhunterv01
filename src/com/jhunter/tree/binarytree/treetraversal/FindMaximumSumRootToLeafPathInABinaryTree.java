@@ -1,15 +1,15 @@
 package com.jhunter.tree.binarytree.treetraversal;
 
-import com.jhunter.tree.binarytree.BinaryTreeNode;
+import com.jhunter.tree.binarytree.TreeNode;
 
 import java.util.ArrayList;
 import java.util.List;
 
 class NodeInfo {
     int sum;
-    BinaryTreeNode leaf;
+    TreeNode leaf;
 
-    NodeInfo(int sum, BinaryTreeNode leaf) {
+    NodeInfo(int sum, TreeNode leaf) {
         this.sum = sum;
         this.leaf = leaf;
     }
@@ -30,14 +30,14 @@ public class FindMaximumSumRootToLeafPathInABinaryTree {
        The maximum sum is 18. The maximum sum path is 9 5 3 1.
      */
 
-    public static int findMaximumSumRootToLeafPathInABinaryTree(BinaryTreeNode root) {
+    public static int findMaximumSumRootToLeafPathInABinaryTree(TreeNode root) {
         List<Integer> resList = new ArrayList<>();
         NodeInfo nodeInfo = findMaximumSumRootToLeaf(root);
         System.out.println("findMaximumSumRootToLeafPathInABinaryTree: sum: " + nodeInfo.sum + " , leafNode: " + nodeInfo.leaf.val);
         return nodeInfo.sum;
     }
 
-    public static NodeInfo findMaximumSumRootToLeaf(BinaryTreeNode node) {
+    public static NodeInfo findMaximumSumRootToLeaf(TreeNode node) {
         if (node == null) return new NodeInfo(0, null);
         if (node.left == null && node.right == null) {
             NodeInfo info = new NodeInfo(node.val, node);

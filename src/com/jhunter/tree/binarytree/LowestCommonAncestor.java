@@ -25,13 +25,13 @@ public class LowestCommonAncestor {
               7   8
      */
 
-    BinaryTreeNode findLowestCommonAncestor(BinaryTreeNode root, BinaryTreeNode nodeA, BinaryTreeNode nodeB) {
+    TreeNode findLowestCommonAncestor(TreeNode root, TreeNode nodeA, TreeNode nodeB) {
         if (root == null) {
             return null;
         }
         if (nodeA == root || nodeB == root) return root;
-        BinaryTreeNode left = findLowestCommonAncestor(root.left, nodeA, nodeB);
-        BinaryTreeNode right = findLowestCommonAncestor(root.right, nodeA, nodeB);
+        TreeNode left = findLowestCommonAncestor(root.left, nodeA, nodeB);
+        TreeNode right = findLowestCommonAncestor(root.right, nodeA, nodeB);
 
         if (left != null && right != null) return root;
         return (left != null) ? left : right;

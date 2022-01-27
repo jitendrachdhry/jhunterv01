@@ -1,6 +1,6 @@
 package com.jhunter.tree.binarytree.treetraversal;
 
-import com.jhunter.tree.binarytree.BinaryTreeNode;
+import com.jhunter.tree.binarytree.TreeNode;
 
 import java.util.Stack;
 
@@ -23,17 +23,17 @@ public class DistanceBetweenGivenPairsOfNodesInABinaryTree {
       3. add distance of nodeA and nodeB from lca and return as a result.
     */
 
-    public static int findDistanceBetweenGivenPairsOfNodesInABinaryTree(BinaryTreeNode root, int nodeA, int nodeB) {
+    public static int findDistanceBetweenGivenPairsOfNodesInABinaryTree(TreeNode root, int nodeA, int nodeB) {
         if (root == null) return -1;
         // find LCA of nodeA, and nodeB
-        BinaryTreeNode lca = lca(root, nodeA, nodeB);
+        TreeNode lca = lca(root, nodeA, nodeB);
         if (lca == null) return -1;
         return findPathFromNode(lca, nodeA) + findPathFromNode(lca, nodeB);
     }
 
-    public static int findPathFromNode(BinaryTreeNode lca, int node) {
-        Stack<BinaryTreeNode> s = new Stack<>();
-        BinaryTreeNode current_node = lca;
+    public static int findPathFromNode(TreeNode lca, int node) {
+        Stack<TreeNode> s = new Stack<>();
+        TreeNode current_node = lca;
         do {
             if (current_node != null) {
                 s.push(current_node);
@@ -42,7 +42,7 @@ public class DistanceBetweenGivenPairsOfNodesInABinaryTree {
                 if (s.isEmpty()) break;
                 current_node = s.peek().right;
                 if (current_node == null) {
-                    BinaryTreeNode last = null;
+                    TreeNode last = null;
                     while (!s.isEmpty() && last == s.peek().right) {
                         last = s.pop();
                     }
@@ -52,14 +52,14 @@ public class DistanceBetweenGivenPairsOfNodesInABinaryTree {
         return s.size() - 1;
     }
 
-    public static BinaryTreeNode lca(BinaryTreeNode node, int nodeA, int nodeB) {
+    public static TreeNode lca(TreeNode node, int nodeA, int nodeB) {
         if (node == null) return null;
         if (node.val == nodeA || node.val == nodeB) {
             return node;
         }
 
-        BinaryTreeNode leftNode = lca(node.left, nodeA, nodeB);
-        BinaryTreeNode rightNode = lca(node.right, nodeA, nodeB);
+        TreeNode leftNode = lca(node.left, nodeA, nodeB);
+        TreeNode rightNode = lca(node.right, nodeA, nodeB);
         if (leftNode != null && rightNode != null) {
             return node;
         }
