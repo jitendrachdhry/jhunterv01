@@ -5,6 +5,7 @@ import com.jhunter.tree.binarytree.BinaryTreeNode;
 public class TruncateABinaryTreeHavingSumLessThanK {
     /*
         https://www.techiedelight.com/truncate-given-binary-tree-remove-nodes-lie-path-sum-less-k/
+        https://leetcode.com/problems/insufficient-nodes-in-root-to-leaf-paths/submissions/
         Given a binary tree and a number k, remove nodes from the tree which lie on a complete path having a sum less than k.
         A complete path in a binary tree is defined as a path from the root to a leaf. The sum of all nodes on that path is defined as the sum of that path.
 
@@ -25,8 +26,11 @@ public class TruncateABinaryTreeHavingSumLessThanK {
     public static BinaryTreeNode truncate(BinaryTreeNode node, int sum, int k) {
         if (node == null) return null;
         sum += node.val;
-        if (sum >= k) {
-            return node;
+        if (node.left == null && node.right == null) {
+            if (sum >= k) {
+                return node;
+            }
+            return null;
         }
 
         node.left = truncate(node.left, sum, k);

@@ -233,7 +233,8 @@ public class Main {
         9999  99    15  7
                \        \
               999       70
-
+                          \
+                          700
          */
         System.out.println("AllNodesDistanceKInBinaryTree Input[99, 1] Result[9, 999] : " + AllNodesDistanceKInBinaryTree.findAllNodesDistanceKInBinaryTree(rootbfs, rootbfs.left.right, 1));
         System.out.println("AllNodesDistanceKInBinaryTree Input[999, 3] Result[9999, 3] : " + AllNodesDistanceKInBinaryTree.findAllNodesDistanceKInBinaryTree(rootbfs, rootbfs.left.right.right, 3));
