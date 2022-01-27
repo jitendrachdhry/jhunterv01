@@ -255,8 +255,17 @@ public class Main {
         root.left.right.left = new BinaryTreeNode(11);
         root.right.left.left = new BinaryTreeNode(12);
         root.right.left.right = new BinaryTreeNode(7);
+
+        /*
+                               1
+                          2         3
+                      9      6    4   5
+                      10   11   12 7
+                      22: 1 + 2 + 9 + 10
+         */
         System.out.println("findDiagonalSumOfABinaryTree output[9, 19, 42]: " + DiagonalSumOfABinaryTree.findDiagonalSumOfABinaryTree(root));
         System.out.println("findDiagonalSumOfABinaryTree output[9, 19, 42]: " + DiagonalSumOfABinaryTree.findDiagonalSumOfABinaryTreeNonRecursive(root));
+        System.out.println("FindMaximumSumRootToLeafPathInABinaryTree Output[22: 1 + 2 + 9 + 10]: " + FindMaximumSumRootToLeafPathInABinaryTree.findMaximumSumRootToLeafPathInABinaryTree(root));
 
         root = new BinaryTreeNode(1);
         root.left = new BinaryTreeNode(2);
