@@ -263,6 +263,9 @@ public class Main {
                       10   11   12 7
                       22: 1 + 2 + 9 + 10
          */
+        System.out.println("PrintAllPathsFromLeaf2RootNode: " );
+        PrintAllPathsFromLeaf2RootNode.printAllPathsFromLeaf2RootNode(root);
+
         System.out.println("findDiagonalSumOfABinaryTree output[9, 19, 42]: " + DiagonalSumOfABinaryTree.findDiagonalSumOfABinaryTree(root));
         System.out.println("findDiagonalSumOfABinaryTree output[9, 19, 42]: " + DiagonalSumOfABinaryTree.findDiagonalSumOfABinaryTreeNonRecursive(root));
         System.out.println("FindMaximumSumRootToLeafPathInABinaryTree Output[22: 1 + 2 + 9 + 10]: " + FindMaximumSumRootToLeafPathInABinaryTree.findMaximumSumRootToLeafPathInABinaryTree(root));
