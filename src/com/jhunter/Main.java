@@ -10,6 +10,7 @@ import com.jhunter.jstring.dp.*;
 import com.jhunter.jstring.random.*;
 import com.jhunter.jstring.slidingwindow.LongestPalindromicSubstring5;
 import com.jhunter.jstring.slidingwindow.MinimumWindowSubstring76;
+import com.jhunter.tree.array.ConstructBinaryTreeFromGivenParentArrayRepresentation;
 import com.jhunter.tree.binarytree.*;
 import com.jhunter.tree.binarytree.cousins.NodesAreCousinsOfEachOther;
 import com.jhunter.tree.binarytree.cousins.PrintCousinsOfAGivenNodeInBinaryTree;
@@ -334,5 +335,7 @@ public class Main {
         y.right.left = new TreeNode(16);
         y.right.right = new TreeNode(25);
         System.out.println("isIdentical : " + IdenticalBinaryTree.isIdentical(x, y));
+        System.out.println("Construct Binary Tree from Parent Array");
+        ConstructBinaryTreeFromGivenParentArrayRepresentation.constructBinaryTreeFromGivenParentArrayRepresentation(new int[] {1, 5, 5, 2, 2, -1, 3});
     }
 }
