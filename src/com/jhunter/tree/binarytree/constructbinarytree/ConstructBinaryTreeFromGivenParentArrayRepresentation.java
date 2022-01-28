@@ -1,4 +1,4 @@
-package com.jhunter.tree.binarytree.array;
+package com.jhunter.tree.binarytree.constructbinarytree;
 
 import com.jhunter.tree.binarytree.TreeNode;
 
@@ -7,7 +7,7 @@ public class ConstructBinaryTreeFromGivenParentArrayRepresentation {
     https://www.youtube.com/watch?v=BuM5rSaMeVM
     https://www.techiedelight.com/build-binary-tree-given-parent-array/
 
-    Given an array that represents a tree in such a way that array indexes are values in tree nodes and array values give the parent node of that particular index (or node). The value of the root node index would always be -1 as there is no parent for root. Construct the standard linked representation of given Binary Tree from this given representation.
+    Given an constructbinarytree that represents a tree in such a way that constructbinarytree indexes are values in tree nodes and constructbinarytree values give the parent node of that particular index (or node). The value of the root node index would always be -1 as there is no parent for root. Construct the standard linked representation of given Binary Tree from this given representation.
     Examples:
     Input: parent[] = {1, 5, 5, 2, 2, -1, 3}
     Output: root of below tree
@@ -38,7 +38,7 @@ public class ConstructBinaryTreeFromGivenParentArrayRepresentation {
       5
      /
     6
-    Expected time complexity is O(n) where n is number of elements in given array.
+    Expected time complexity is O(n) where n is number of elements in given constructbinarytree.
      */
 
     public static TreeNode constructBinaryTreeFromGivenParentArrayRepresentation(int[] arr) {

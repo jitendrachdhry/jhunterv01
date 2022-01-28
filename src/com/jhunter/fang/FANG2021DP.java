@@ -12,7 +12,7 @@ import java.util.concurrent.atomic.AtomicInteger;
     ===================================================================================
     1. Maximum Value Contiguous Subsequence. Given a sequence of n real numbers A(1) ... A(n), determine a contiguous subsequence A(i) ... A(j) for which the sum of elements in the subsequence is maximized.
         Input: { 1, -2, 4, 3, -2, 0} Result: 7 (2,3)
-    2. Given array of integers as input and a target, return true if a contiguous subsequence sums to the target.
+    2. Given constructbinarytree of integers as input and a target, return true if a contiguous subsequence sums to the target.
     3. Find The Longest (strict) Increasing Subsequence.
         Input:
         { -1, 3, 4, 5, 2, 2, 2, 2 }
@@ -76,7 +76,7 @@ public class FANG2021DP {
     public static boolean addTwoStringNumberCompareWithOutputStringNumber(int[] inputArr, int target) {
         /*
             Question:
-            Given array of integers as input and a target, return true if a contiguous subsequence sums to the target.
+            Given constructbinarytree of integers as input and a target, return true if a contiguous subsequence sums to the target.
 
             Approach:
             - Take two pointer to point head and tail.

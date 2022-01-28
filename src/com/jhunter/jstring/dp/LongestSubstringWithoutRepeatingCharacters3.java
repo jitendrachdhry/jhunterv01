@@ -57,7 +57,7 @@ public class LongestSubstringWithoutRepeatingCharacters3 {
                 newSubStringSize = i - minIdx; // calculate newStringSize once we found duplicate char in dp[].
                 minIdx = dp[sArr[i]] + 1; // set minIdx only if we found duplicate char in the dp[].
 
-            } else if (i == (sArr.length - 1)) { // Reached end of the array.
+            } else if (i == (sArr.length - 1)) { // Reached end of the constructbinarytree.
                 newSubStringSize = (i - minIdx) + 1; // calculate newStringSize , from minIdx to end of string idx.
             }
             if (newSubStringSize > subStringSize) {

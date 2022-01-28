@@ -11,7 +11,10 @@ import com.jhunter.jstring.random.*;
 import com.jhunter.jstring.slidingwindow.LongestPalindromicSubstring5;
 import com.jhunter.jstring.slidingwindow.MinimumWindowSubstring76;
 import com.jhunter.tree.binarytree.*;
-import com.jhunter.tree.binarytree.array.ConstructBinaryTreeFromGivenParentArrayRepresentation;
+import com.jhunter.tree.binarytree.constructbinarytree.ConstructBinaryTreeFromGivenParentArrayRepresentation;
+import com.jhunter.tree.binarytree.constructbinarytree.FromInOrderAndPostOrderTraversal;
+import com.jhunter.tree.binarytree.constructbinarytree.FromInOrderAndPreOrderTraversal;
+import com.jhunter.tree.binarytree.constructbinarytree.FromPreOrderAndPostOrderTraversal;
 import com.jhunter.tree.binarytree.cousins.NodesAreCousinsOfEachOther;
 import com.jhunter.tree.binarytree.cousins.PrintCousinsOfAGivenNodeInBinaryTree;
 import com.jhunter.tree.binarytree.subtree.IdenticalBinaryTree;
@@ -414,5 +417,15 @@ public class Main {
         System.out.println("MaximumDifferenceBetweenANodeAndItsDescendants output[ (8 - 1) = 7]: " + MaximumDifferenceBetweenANodeAndItsDescendants.findMaximumDifferenceBetweenANodeAndItsDescendants(treeNodeY));
         System.out.println("MaximumSumPathBetweenTwoLeaves output[ 3->6->8->2->7 = 26]: " + MaximumSumPathBetweenTwoLeaves.getMaximumSumPathBetweenTwoLeaves(treeNodeY));
 
+        System.out.println("Construct a binary tree from inorder and preorder traversal !!" );
+        TreeNode rootNode = FromInOrderAndPreOrderTraversal.constructTree(new int[] {4, 2, 1, 7, 5, 8, 3, 6}, new int[]{1, 2, 4, 3, 5, 7, 8, 6});
+
+        System.out.println("Construct a binary tree from inorder and postorder traversal !!" );
+        rootNode = FromInOrderAndPostOrderTraversal.constructTree(new int[]{4, 2, 1, 7, 5, 8, 3, 6}, new int[]{4, 2, 7, 8, 5, 6, 3, 1 });
+
+        System.out.println("Construct a binary tree from preorder and postorder traversal !!" );
+        rootNode = FromPreOrderAndPostOrderTraversal.constructTree(new int[] { 2, 1 }, new int[]{ 1, 2 });
+        rootNode = FromPreOrderAndPostOrderTraversal.constructTree(new int[] { 1, 2, 4, 5, 3, 6, 8, 9, 7 }, new int[]{ 4, 5, 2, 8, 9, 6, 7, 3, 1 });
+        System.out.println(" ------------ EXIT ------------");
     }
 }

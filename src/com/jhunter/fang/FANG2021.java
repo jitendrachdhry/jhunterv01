@@ -6,7 +6,7 @@ import java.util.Arrays;
     ===================================================================================
     Questions:
     ===================================================================================
-    1. Given 3 sorted int arrays, merge them into one sorted array without duplicates.
+    1. Given 3 sorted int arrays, merge them into one sorted constructbinarytree without duplicates.
     Example:
     arr1[] = { 1,3,5}
     arr2[] = { 2,3,6,9}
@@ -15,7 +15,7 @@ import java.util.Arrays;
     Output:
     resultArr[]= {0,1,2,3,5,6,9}
 
-    2. Given two array A[0….n-1] and B[0….m-1] of size n and m respectively, representing two numbers such that every element of arrays represent a digit. For example, A[] = { 1, 2, 3} and B[] = { 2, 1, 4 } represent 123 and 214 respectively. The task is to find the sum of both the number. In above case, answer is 337.
+    2. Given two constructbinarytree A[0….n-1] and B[0….m-1] of size n and m respectively, representing two numbers such that every element of arrays represent a digit. For example, A[] = { 1, 2, 3} and B[] = { 2, 1, 4 } represent 123 and 214 respectively. The task is to find the sum of both the number. In above case, answer is 337.
     Example:
     Input :
         a[] = { 9, 5, 4, 9 }
@@ -28,7 +28,7 @@ public class FANG2021 {
     public static int[] MergeMultipleSortedArray(int[] arr1, int[] arr2, int[] arr3) {
         /*
         Question:
-        Given 3 sorted int arrays, merge them into one sorted array without duplicates.
+        Given 3 sorted int arrays, merge them into one sorted constructbinarytree without duplicates.
 
         Example:
         arr1[] = { 1,3,5}
@@ -39,13 +39,13 @@ public class FANG2021 {
         resultArr[]= {0,1,2,3,5,6,9}
 
         Doubts to confirm:
-        1. Does all array have same size?
-        2. do we allow empty(null) array as an input?
+        1. Does all constructbinarytree have same size?
+        2. do we allow empty(null) constructbinarytree as an input?
 
         Approach:
-        1. Create four index to carry counter for three input array and one result array.
-        2. Compare all input array's current values and find minimum value from all three array.
-        3. Insert into result array in sorted order without having duplicate.
+        1. Create four index to carry counter for three input constructbinarytree and one result constructbinarytree.
+        2. Compare all input constructbinarytree's current values and find minimum value from all three constructbinarytree.
+        3. Insert into result constructbinarytree in sorted order without having duplicate.
 
         Big O:
         - Time Complexity
@@ -54,20 +54,20 @@ public class FANG2021 {
           O(m + n + o)
 
         Test Cases:
-        1. Take all same array length.
-        2. take different array length.
+        1. Take all same constructbinarytree length.
+        2. take different constructbinarytree length.
 
          */
 
-        // Calculate size of output array.
+        // Calculate size of output constructbinarytree.
         int size = (arr1 != null) ? arr1.length : 0;
         size = (arr2 != null) ? arr2.length + size : size;
         size = (arr3 != null) ? arr3.length + size : size;
 
         int[] resArr = new int[size];
-        System.out.println("Result array length: " + resArr.length);
+        System.out.println("Result constructbinarytree length: " + resArr.length);
 
-        /* Initialize array indexes. */
+        /* Initialize constructbinarytree indexes. */
         int idx1 = 0, idx2 = 0, idx3 = 0, resIdx = -1;
 
         /* Start a while loop to traverse all element of arr1, arr2 and arr3. */
@@ -114,7 +114,7 @@ public class FANG2021 {
                     minimumValueArr = arr3[idx3++];
                 }
             }
-            if (resIdx < 0 || resArr[resIdx] != minimumValueArr) { /* Insert non duplicate values into output array. */
+            if (resIdx < 0 || resArr[resIdx] != minimumValueArr) { /* Insert non duplicate values into output constructbinarytree. */
                 resArr[++resIdx] = minimumValueArr;
             }
         }
@@ -130,7 +130,7 @@ public class FANG2021 {
 
         /*
             Question:
-            Given two array A[0….n-1] and B[0….m-1] of size n and m respectively, representing two numbers such that every element of arrays represent a digit. For example, A[] = { 1, 2, 3} and B[] = { 2, 1, 4 } represent 123 and 214 respectively. The task is to find the sum of both the number. In above case, answer is 337.
+            Given two constructbinarytree A[0….n-1] and B[0….m-1] of size n and m respectively, representing two numbers such that every element of arrays represent a digit. For example, A[] = { 1, 2, 3} and B[] = { 2, 1, 4 } represent 123 and 214 respectively. The task is to find the sum of both the number. In above case, answer is 337.
 
             Example:
                 Input :
