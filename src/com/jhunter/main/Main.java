@@ -430,6 +430,7 @@ public class Main {
         BinarySearchTreeFromPreorderTraversal1008.executeTestCases();
         ConstructFullBinaryTreeFomThePreorderSequenceWithLeafNodeInformation.executeTestCases();
         PrintNodesOfABinaryTreeInVerticalOrder.executeTestCases();
-        System.out.println(" ------------ EXIT ------------");
+        FindTheMinimumDepthOfABinaryTree.executeTestCases();
+        System.out.print("\n---------------------------- EXIT ----------------------------");
     }
 }
