@@ -6,6 +6,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 
 public class MaximumDifferenceBetweenANodeAndItsDescendants {
     /*
+        https://www.techiedelight.com/find-maximum-difference-node-descendants/
         Given a binary tree, find the maximum difference between a node and its descendants in it. Assume that the binary tree contains at-least two nodes.
 
         Binary Tree:
@@ -20,7 +21,7 @@ public class MaximumDifferenceBetweenANodeAndItsDescendants {
        /     \
       1       7
 
-      Output: 8 - 1 = 7
+      Output: (8 - 1) = 7
      */
 
     public static int findMaximumDifferenceBetweenANodeAndItsDescendants(TreeNode root) {
