@@ -10,6 +10,7 @@ import com.jhunter.jstring.dp.*;
 import com.jhunter.jstring.random.*;
 import com.jhunter.jstring.slidingwindow.LongestPalindromicSubstring5;
 import com.jhunter.jstring.slidingwindow.MinimumWindowSubstring76;
+import com.jhunter.tree.binarysearchtree.BinarySearchTreeFromPreorderTraversal1008;
 import com.jhunter.tree.binarytree.*;
 import com.jhunter.tree.binarytree.constructbinarytree.*;
 import com.jhunter.tree.binarytree.cousins.NodesAreCousinsOfEachOther;
@@ -426,7 +427,7 @@ public class Main {
 
         System.out.println("Construct a binary tree from inorder and levelorder traversal !!" );
         rootNode = FromInOrderAndLevelOrderTraversal.constructTree(new int[] { 4, 2, 5, 1, 6, 3, 7 }, new int[]{ 1, 2, 3, 4, 5, 6, 7 });
-
+        BinarySearchTreeFromPreorderTraversal1008.executeTestCases();
         System.out.println(" ------------ EXIT ------------");
     }
 }
