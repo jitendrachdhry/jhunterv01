@@ -1,4 +1,4 @@
-package com.jhunter;
+package com.jhunter.main;
 
 import com.jhunter.fang.FANG2021;
 import com.jhunter.fang.FANG2021DP;
@@ -10,7 +10,7 @@ import com.jhunter.jstring.dp.*;
 import com.jhunter.jstring.random.*;
 import com.jhunter.jstring.slidingwindow.LongestPalindromicSubstring5;
 import com.jhunter.jstring.slidingwindow.MinimumWindowSubstring76;
-import com.jhunter.tree.array.ConstructBinaryTreeFromGivenParentArrayRepresentation;
+import com.jhunter.tree.binarytree.array.ConstructBinaryTreeFromGivenParentArrayRepresentation;
 import com.jhunter.tree.binarytree.*;
 import com.jhunter.tree.binarytree.cousins.NodesAreCousinsOfEachOther;
 import com.jhunter.tree.binarytree.cousins.PrintCousinsOfAGivenNodeInBinaryTree;
@@ -318,24 +318,79 @@ public class Main {
         ConvertBinaryTreeToItsMirror.convertBinaryTreeToItsMirror(root01);
         System.out.println("\n ============================= IdenticalBinaryTree ========================================================");
         // construct the first tree
-        TreeNode x = new TreeNode(15);
-        x.left = new TreeNode(10);
-        x.right = new TreeNode(20);
-        x.left.left = new TreeNode(8);
-        x.left.right = new TreeNode(12);
-        x.right.left = new TreeNode(16);
-        x.right.right = new TreeNode(25);
+        TreeNode treeNodeX = new TreeNode(15);
+        treeNodeX.left = new TreeNode(10);
+        treeNodeX.right = new TreeNode(20);
+        treeNodeX.left.left = new TreeNode(8);
+        treeNodeX.left.right = new TreeNode(12);
+        treeNodeX.right.left = new TreeNode(16);
+        treeNodeX.right.right = new TreeNode(25);
 
         // construct the second tree
-        TreeNode y = new TreeNode(15);
-        y.left = new TreeNode(10);
-        y.right = new TreeNode(20);
-        y.left.left = new TreeNode(8);
-        y.left.right = new TreeNode(12);
-        y.right.left = new TreeNode(16);
-        y.right.right = new TreeNode(25);
-        System.out.println("isIdentical : " + IdenticalBinaryTree.isIdentical(x, y));
+        TreeNode treeNodeY = new TreeNode(15);
+        treeNodeY.left = new TreeNode(10);
+        treeNodeY.right = new TreeNode(20);
+        treeNodeY.left.left = new TreeNode(8);
+        treeNodeY.left.right = new TreeNode(12);
+        treeNodeY.right.left = new TreeNode(16);
+        treeNodeY.right.right = new TreeNode(25);
+        /*
+                 15
+              /     \
+            10       20
+          /  \     /   \
+        8    12   16   25
+                       /
+                      100
+                        \
+                        500
+                                 */
+        System.out.println("isIdentical : " + IdenticalBinaryTree.isIdentical(treeNodeX, treeNodeY));
         System.out.println("Construct Binary Tree from Parent Array");
         ConstructBinaryTreeFromGivenParentArrayRepresentation.constructBinaryTreeFromGivenParentArrayRepresentation(new int[] {1, 5, 5, 2, 2, -1, 3});
+        treeNodeY.right.right.left = new TreeNode(100);
+        treeNodeY.right.right.left.right = new TreeNode(500);
+        System.out.println("FindAllNodesAtAGivenDistanceFromLeafNodes output[2 -> 15, 25]: " + FindAllNodesAtAGivenDistanceFromLeafNodes.findAllNodesAtAGivenDistanceFromLeafNodes(treeNodeY, 2));
+        System.out.println("FindAllNodesAtAGivenDistanceFromLeafNodes output[1 -> 10, 20, 100]: " + FindAllNodesAtAGivenDistanceFromLeafNodes.findAllNodesAtAGivenDistanceFromLeafNodes(treeNodeY, 1));
+        System.out.println("FindAllNodesAtAGivenDistanceFromLeafNodes output[3 -> 20]: " + FindAllNodesAtAGivenDistanceFromLeafNodes.findAllNodesAtAGivenDistanceFromLeafNodes(treeNodeY, 3));
+
+        treeNodeY = new TreeNode(1);
+        treeNodeY.left = new TreeNode(2);
+        treeNodeY.right = new TreeNode(3);
+        treeNodeY.left.left = new TreeNode(4);
+        treeNodeY.left.left.left = new TreeNode(4);
+        treeNodeY.right.left = new TreeNode(5);
+        treeNodeY.right.left.left = new TreeNode(5);
+        treeNodeY.right.left.right = new TreeNode(5);
+        treeNodeY.right.right = new TreeNode(6);
+        treeNodeY.right.right.right = new TreeNode(7);
+        //System.out.println("CountUnivalueSubtrees output[6]: " + CountUnivalueSubtrees.getCountOfUnivalueSubtrees(treeNodeY));
+
+        /*
+                1
+              /   \
+             1    1
+           /  \    \
+          5   5    5
+         */
+        treeNodeY = new TreeNode(1);
+        treeNodeY.left = new TreeNode(1);
+        treeNodeY.right = new TreeNode(1);
+        treeNodeY.left.left = new TreeNode(5);
+        treeNodeY.left.right = new TreeNode(5);
+        treeNodeY.right.right = new TreeNode(5);
+        System.out.println("CountUnivalueSubtrees output[3]: " + CountUnivalueSubtrees.getCountOfUnivalueSubtrees(treeNodeY));
+
+        treeNodeY = new TreeNode(5);
+        treeNodeY.left = new TreeNode(1);
+        treeNodeY.right = new TreeNode(5);
+        treeNodeY.left.left = new TreeNode(5);
+        treeNodeY.left.right = new TreeNode(5);
+        treeNodeY.right.right = new TreeNode(5);
+        System.out.println("CountUnivalueSubtrees output[4]: " + CountUnivalueSubtrees.getCountOfUnivalueSubtrees(treeNodeY));
+        treeNodeY.right.right.right = new TreeNode(5);
+        treeNodeY.right.right.right.right = new TreeNode(5);
+        System.out.println("CountUnivalueSubtrees output[6]: " + CountUnivalueSubtrees.getCountOfUnivalueSubtrees(treeNodeY));
+
     }
 }

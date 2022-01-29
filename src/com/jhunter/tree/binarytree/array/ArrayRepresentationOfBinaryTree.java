@@ -1,4 +1,4 @@
-package com.jhunter.tree.array;
+package com.jhunter.tree.binarytree.array;
 
 public class ArrayRepresentationOfBinaryTree {
     /*
