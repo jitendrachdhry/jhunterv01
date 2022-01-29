@@ -10,8 +10,8 @@ import com.jhunter.jstring.dp.*;
 import com.jhunter.jstring.random.*;
 import com.jhunter.jstring.slidingwindow.LongestPalindromicSubstring5;
 import com.jhunter.jstring.slidingwindow.MinimumWindowSubstring76;
-import com.jhunter.tree.binarytree.array.ConstructBinaryTreeFromGivenParentArrayRepresentation;
 import com.jhunter.tree.binarytree.*;
+import com.jhunter.tree.binarytree.array.ConstructBinaryTreeFromGivenParentArrayRepresentation;
 import com.jhunter.tree.binarytree.cousins.NodesAreCousinsOfEachOther;
 import com.jhunter.tree.binarytree.cousins.PrintCousinsOfAGivenNodeInBinaryTree;
 import com.jhunter.tree.binarytree.subtree.IdenticalBinaryTree;
@@ -264,7 +264,7 @@ public class Main {
                       10   11   12 7
                       22: 1 + 2 + 9 + 10
          */
-        System.out.println("PrintAllPathsFromLeaf2RootNode: " );
+        System.out.println("PrintAllPathsFromLeaf2RootNode: ");
         PrintAllPathsFromLeaf2RootNode.printAllPathsFromLeaf2RootNode(root);
 
         System.out.println("findDiagonalSumOfABinaryTree output[9, 19, 42]: " + DiagonalSumOfABinaryTree.findDiagonalSumOfABinaryTree(root));
@@ -347,7 +347,7 @@ public class Main {
                                  */
         System.out.println("isIdentical : " + IdenticalBinaryTree.isIdentical(treeNodeX, treeNodeY));
         System.out.println("Construct Binary Tree from Parent Array");
-        ConstructBinaryTreeFromGivenParentArrayRepresentation.constructBinaryTreeFromGivenParentArrayRepresentation(new int[] {1, 5, 5, 2, 2, -1, 3});
+        ConstructBinaryTreeFromGivenParentArrayRepresentation.constructBinaryTreeFromGivenParentArrayRepresentation(new int[]{1, 5, 5, 2, 2, -1, 3});
         treeNodeY.right.right.left = new TreeNode(100);
         treeNodeY.right.right.left.right = new TreeNode(500);
         System.out.println("FindAllNodesAtAGivenDistanceFromLeafNodes output[2 -> 15, 25]: " + FindAllNodesAtAGivenDistanceFromLeafNodes.findAllNodesAtAGivenDistanceFromLeafNodes(treeNodeY, 2));
@@ -391,6 +391,28 @@ public class Main {
         treeNodeY.right.right.right = new TreeNode(5);
         treeNodeY.right.right.right.right = new TreeNode(5);
         System.out.println("CountUnivalueSubtrees output[6]: " + CountUnivalueSubtrees.getCountOfUnivalueSubtrees(treeNodeY));
+
+        treeNodeY = new TreeNode(6);
+        treeNodeY.left = new TreeNode(3);
+        treeNodeY.right = new TreeNode(8);
+        treeNodeY.right.left = new TreeNode(2);
+        treeNodeY.right.right = new TreeNode(4);
+        treeNodeY.right.left.left = new TreeNode(1);
+        treeNodeY.right.left.right = new TreeNode(7);
+        /* Construct the following tree
+              6
+            /   \
+           /     \
+          3       8
+                /   \
+               /     \
+              2       4
+            /   \
+           /     \
+          1       7
+        */
+        System.out.println("MaximumDifferenceBetweenANodeAndItsDescendants output[ (8 - 1) = 7]: " + MaximumDifferenceBetweenANodeAndItsDescendants.findMaximumDifferenceBetweenANodeAndItsDescendants(treeNodeY));
+
 
     }
 }
