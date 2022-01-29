@@ -428,6 +428,7 @@ public class Main {
         System.out.println("Construct a binary tree from inorder and levelorder traversal !!" );
         rootNode = FromInOrderAndLevelOrderTraversal.constructTree(new int[] { 4, 2, 5, 1, 6, 3, 7 }, new int[]{ 1, 2, 3, 4, 5, 6, 7 });
         BinarySearchTreeFromPreorderTraversal1008.executeTestCases();
+        ConstructFullBinaryTreeFomThePreorderSequenceWithLeafNodeInformation.executeTestCases();
         System.out.println(" ------------ EXIT ------------");
     }
 }
