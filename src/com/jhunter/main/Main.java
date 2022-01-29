@@ -11,10 +11,7 @@ import com.jhunter.jstring.random.*;
 import com.jhunter.jstring.slidingwindow.LongestPalindromicSubstring5;
 import com.jhunter.jstring.slidingwindow.MinimumWindowSubstring76;
 import com.jhunter.tree.binarytree.*;
-import com.jhunter.tree.binarytree.constructbinarytree.ConstructBinaryTreeFromGivenParentArrayRepresentation;
-import com.jhunter.tree.binarytree.constructbinarytree.FromInOrderAndPostOrderTraversal;
-import com.jhunter.tree.binarytree.constructbinarytree.FromInOrderAndPreOrderTraversal;
-import com.jhunter.tree.binarytree.constructbinarytree.FromPreOrderAndPostOrderTraversal;
+import com.jhunter.tree.binarytree.constructbinarytree.*;
 import com.jhunter.tree.binarytree.cousins.NodesAreCousinsOfEachOther;
 import com.jhunter.tree.binarytree.cousins.PrintCousinsOfAGivenNodeInBinaryTree;
 import com.jhunter.tree.binarytree.subtree.IdenticalBinaryTree;
@@ -426,6 +423,10 @@ public class Main {
         System.out.println("Construct a binary tree from preorder and postorder traversal !!" );
         rootNode = FromPreOrderAndPostOrderTraversal.constructTree(new int[] { 2, 1 }, new int[]{ 1, 2 });
         rootNode = FromPreOrderAndPostOrderTraversal.constructTree(new int[] { 1, 2, 4, 5, 3, 6, 8, 9, 7 }, new int[]{ 4, 5, 2, 8, 9, 6, 7, 3, 1 });
+
+        System.out.println("Construct a binary tree from inorder and levelorder traversal !!" );
+        rootNode = FromInOrderAndLevelOrderTraversal.constructTree(new int[] { 4, 2, 5, 1, 6, 3, 7 }, new int[]{ 1, 2, 3, 4, 5, 6, 7 });
+
         System.out.println(" ------------ EXIT ------------");
     }
 }
