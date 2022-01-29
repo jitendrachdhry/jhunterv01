@@ -412,7 +412,7 @@ public class Main {
           1       7
         */
         System.out.println("MaximumDifferenceBetweenANodeAndItsDescendants output[ (8 - 1) = 7]: " + MaximumDifferenceBetweenANodeAndItsDescendants.findMaximumDifferenceBetweenANodeAndItsDescendants(treeNodeY));
-
+        System.out.println("MaximumSumPathBetweenTwoLeaves output[ 3->6->8->2->7 = 26]: " + MaximumSumPathBetweenTwoLeaves.getMaximumSumPathBetweenTwoLeaves(treeNodeY));
 
     }
 }
