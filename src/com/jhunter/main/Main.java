@@ -429,6 +429,7 @@ public class Main {
         rootNode = FromInOrderAndLevelOrderTraversal.constructTree(new int[] { 4, 2, 5, 1, 6, 3, 7 }, new int[]{ 1, 2, 3, 4, 5, 6, 7 });
         BinarySearchTreeFromPreorderTraversal1008.executeTestCases();
         ConstructFullBinaryTreeFomThePreorderSequenceWithLeafNodeInformation.executeTestCases();
+        PrintNodesOfABinaryTreeInVerticalOrder.executeTestCases();
         System.out.println(" ------------ EXIT ------------");
     }
 }

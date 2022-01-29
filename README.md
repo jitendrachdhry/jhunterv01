@@ -129,8 +129,66 @@ import java.io.*;
         }
     }
 ```
-URL: https://people.cs.clemson.edu/~bcdean/dp_practice/ 
-![image](https://user-images.githubusercontent.com/28762727/144358436-83fa698c-40d0-410f-a851-1279db7cdbab.png)
 
-![image](https://user-images.githubusercontent.com/28762727/144462085-e0c63c1c-7ce6-482c-9a7c-0c7ccdc4b35b.png)
+> Sort a HashMap in Java
+>>https://www.baeldung.com/java-hashmap-sort
+
+| Class                     | Definition                                                                                                                                                                                                  | Example                                                             |
+|---------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------|
+| TreeMap                   | keys in TreeMap are sorted using their natural order. This is a good solution when we want to sort the key-value pairs by their key. So the idea is to push all the data from our HashMap into the TreeMap. | ![img_2.png](images/img_2.png)                                             |
+| ArrayList                 | we can sort the entries of the map with the help of ArrayList. The key difference from the previous method is that we don't maintain the Map interface here.                                                | ![img_1.png](images/img_1.png) <br> ![img_5.png](images/img_5.png)                |
+| TreeSet                   | In case we don't want to accept duplicate values in our sorted collection, there is a nice solution with TreeSet.                                                                                           | ![img_6.png](images/img_6.png) <br> ![img_7.png](images/img_7.png)                                       |
+| Using Lambdas and Streams | Since the Java 8, we can use the Stream API and lambda expressions to sort the map. All we need is to call the sorted method over the map's stream pipeline.                                                | ![img_3.png](images/img_3.png) <br>  Sort by Value ![img_4.png](images/img_4.png) |
+
+>List implementations:
+
+| Class                 | get  | add  | contains | next | remove(0) | iterator.remove |
+|-----------------------|------|------|----------|------|-----------|-----------------|
+|                       | get  | add  | contains | next | remove(0) | iterator.remove | 
+| ArrayList             | O(1) | O(1) | O(n)     | O(1) | O(n)      | O(n)            | 
+| LinkedList            | O(n) | O(1) | O(n)     | O(1) | O(1)      | O(1)            |
+| CopyOnWrite-ArrayList | O(1) | O(n) | O(n)     | O(1) | O(n)      | O(n)            | 
+
+>Set implementations:
+
+| Class                 | add      | contains | next     | notes                   |
+|-----------------------|----------|----------|----------|-------------------------|
+| HashSet               | O(1)     | O(1)     | O(h/n)   | h is the table capacity |
+| LinkedHashSet         | O(1)     | O(1)     | O(1)     |                         |
+| CopyOnWriteArraySet   | O(n)     | O(n)     | O(1)     |                         |
+| EnumSet               | O(1)     | O(1)     | O(1)     |                         |
+| TreeSet               | O(log n) | O(log n) | O(log n) |                         |
+| ConcurrentSkipListSet | O(log n) | O(log n) | O(1)     |                         |
+
+> Map implementations:
+
+| Class                 | get      | containsKey | next     | notes                   |
+|-----------------------|----------|-------------|----------|-------------------------|
+| HashMap               | O(1)     | O(1)        | O(h/n)   | h is the table capacity |
+| LinkedHashMap         | O(1)     | O(1)        | O(1)     |                         |
+| IdentityHashMap       | O(1)     | O(1)        | O(h/n)   | h is the table          |
+| EnumMap               | O(1)     | O(1)        | O(1)     |                         |
+| TreeMap               | O(log n) | O(log n)    | O(log n) |                         |
+| ConcurrentHashMap     | O(1)     | O(1)        | O(h/n)   | h is the table          |
+| ConcurrentSkipListMap | O(log n) | O(log n)    | O(1)     |                         |
+
+>Queue implementations:
+
+| Class                 | offer    | peek | poll     | size |
+|-----------------------|----------|------|----------|------|
+| PriorityQueue         | O(log n) | O(1) | O(log n) | O(1) |
+| ConcurrentLinkedQueue | O(1)     | O(1) | O(1)     | O(n) |
+| ArrayBlockingQueue    | O(1)     | O(1) | O(1)     | O(1) |
+| LinkedBlockingQueue   | O(1)     | O(1) | O(1)     | O(1) |
+| PriorityBlockingQueue | O(log n) | O(1) | O(log n) | O(1) |
+| DelayQueue            | O(log n) | O(1) | O(log n) | O(1) |
+| LinkedList            | O(1)     | O(1) | O(1)     | O(1) |
+| ArrayDeque            | O(1)     | O(1) | O(1)     | O(1) |
+| LinkedBlockingDeque   | O(1)     | O(1) | O(1)     | O(1) |
+
+> Dynamic Programming
+>> URL: https://people.cs.clemson.edu/~bcdean/dp_practice/ 
+>>![image](https://user-images.githubusercontent.com/28762727/144358436-83fa698c-40d0-410f-a851-1279db7cdbab.png)
+
+>>![image](https://user-images.githubusercontent.com/28762727/144462085-e0c63c1c-7ce6-482c-9a7c-0c7ccdc4b35b.png)
 
