@@ -7,7 +7,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 public class ConstructFullBinaryTreeFomThePreorderSequenceWithLeafNodeInformation {
     /*
         https://www.techiedelight.com/construct-full-binary-tree-from-preorder-sequence-with-leaf-information/
-        Construct a full binary tree from the preorder sequence with leaf node information
+        Construct a full binary tree from the preorder sequence with leaf node cheatsheet
         Write an efficient algorithm to construct a full binary tree from a sequence of keys representing preorder traversal
         and a boolean array that determines if the value at the corresponding index in the preorder sequence is a leaf node
         or an internal node. A full binary tree is a tree in which every node has either 0 or 2 children.
