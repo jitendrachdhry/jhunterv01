@@ -13,13 +13,15 @@
 | 7.      | Recursion           |                                                                                                                                                                                                                                     |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |         | |
 
 ><h2> URL </h2>
-| URL                                                                                                  | Description              |
-|------------------------------------------------------------------------------------------------------|--------------------------|
-| [Machine Coding](https://workat.tech/machine-coding/practice)                                        | machine coding in detail |
-| [low level design ](https://github.com/prasadgujar/low-level-design-primer/blob/master/solutions.md) | low level design         |
-| [interviewbit](https://www.interviewbit.com/)                                                        | interviewbit             |
-| [pramp](https://www.pramp.com/#/)                                                                    | Mock Interview Websites  |
-| [takeuforward](https://takeuforward.org/)                                                            | takeuforward             |
+| URL                                                                                                                                                          | Description              |
+|--------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------|
+| [Machine Coding](https://workat.tech/machine-coding/practice)                                                                                                | machine coding in detail |
+| [low level design ](https://github.com/prasadgujar/low-level-design-primer/blob/master/solutions.md)                                                         | low level design         |
+| [interviewbit](https://www.interviewbit.com/)                                                                                                                | interviewbit             |
+| [pramp](https://www.pramp.com/#/)                                                                                                                            | Mock Interview Websites  |
+| [takeuforward](https://takeuforward.org/)                                                                                                                    | takeuforward             |
+| [System Design](https://onedrive.live.com/?authkey=%21AHfW1J8WjgDwnGk&cid=842AECBB531CCEA4&id=842AECBB531CCEA4%218980&parId=842AECBB531CCEA4%218803&o=OneUp) | System Design pdf        |
+
 
 ><h1> String based Questions </h1>
 | Sr. No. | Question                                                                                                                                                                                                                                                   | Example                                                                                                                                   | Time Complexity              | Space Complexity         | Paradigm                                                                                       | Leetcode Link                                                                                                                        | Solution Link                                                                                                                                                                            | YouTube                                                                                          |
@@ -186,6 +188,41 @@ import java.io.*;
 | ArrayDeque            | O(1)     | O(1) | O(1)     | O(1) |
 | LinkedBlockingDeque   | O(1)     | O(1) | O(1)     | O(1) |
 
+>How to Traverse HashMap:
+If you're only interested in the keys, you can iterate through the keySet() of the map:
+
+Method #1: Iterating over entries using a For-Each loop.
+```
+Map<Integer, Integer> map = new HashMap<Integer, Integer>();
+for (Map.Entry<Integer, Integer> entry : map.entrySet()) {
+    System.out.println("Key = " + entry.getKey() + ", Value = " + entry.getValue());
+}
+```
+Method #2: Iterating over keys or values using a For-Each loop.
+
+If you need only keys or values from the map, you can iterate over keySet or values instead of entrySet.
+```
+Map<Integer, Integer> map = new HashMap<Integer, Integer>();
+
+// Iterating over keys only
+for (Integer key : map.keySet()) {
+System.out.println("Key = " + key);
+}
+
+// Iterating over values only
+for (Integer value : map.values()) {
+System.out.println("Value = " + value);
+} 
+```
+Method #3: Iterating using Iterator.
+```
+Map<Integer, Integer> map = new HashMap<Integer, Integer>();
+Iterator<Map.Entry<Integer, Integer>> entries = map.entrySet().iterator();
+while (entries.hasNext()) {
+    Map.Entry<Integer, Integer> entry = entries.next();
+    System.out.println("Key = " + entry.getKey() + ", Value = " + entry.getValue());
+}
+```
 > Dynamic Programming
 >> URL: https://people.cs.clemson.edu/~bcdean/dp_practice/ 
 >>![image](https://user-images.githubusercontent.com/28762727/144358436-83fa698c-40d0-410f-a851-1279db7cdbab.png)

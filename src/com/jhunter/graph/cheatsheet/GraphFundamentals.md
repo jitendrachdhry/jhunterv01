@@ -2,7 +2,37 @@
 > 
 > A Graph in the data structure can be termed as a data structure consisting of data that is stored among many groups of edges(paths) and vertices (nodes), which are interconnected. Graph data structure (N, E) is structured with a collection of Nodes and Edges. Both nodes and vertices need to be finite.
 
+> Real life Application
+>>1. Google Maps ( to find shortest time or distance)
+>>2. Social Network ( user == vertex | connection == edge )
+>>3. web search ( each page == vertex | link between 2 page == edge)
+
 > [Types of Graphs](https://www.upgrad.com/blog/graphs-in-data-structure/#:~:text=A%20graph%20can%20be%20represented,the%20row%20and%20column%20labels.)
+
+> How to prepair for Graph?
+>1. Build a Graph
+>2. Traverse the Graph using BFS / DFS
+>3. Find if Graph is Cyclic or ACyclic using BFS / DFS
+>4. Find the shortest path from source to destination
+   1. BFS
+   2. Dijkstra 
+>5. Topological sorting
+>6. Minimum spanning tree (MST)
+>   1. Kruskal
+>   2. Prim
+>7. Backtracking
+   1. nQueen
+   2. Rat and Maze
+   3. Knight Tour
+>8. Techniques 
+   1. Bellman ford
+   2. Floyd warshall
+   3. TSP
+   4. Flood fill
+   5. Graph Coloring 
+   6. snake and ladder
+
+
 
 > Different Types of Graph in Data Structure
 
@@ -22,7 +52,7 @@
 | 12      | Subgraph                        | A graph G1 =(Vx, Ex) is said to be a subgraph of G=(V, E) if Vx ⊆ V and Ex ⊆ E.                                                                                                                                                                                                                                                                                                                                                        | ![img_10.png](images/img_10.png) ![img_11.png](images/img_11.png)                                                   |
 | 13      | Connected or Disconnected Graph | In case one can find a path from one vertex of the graph to any of the other vertex, then the graph is said to be a connected graph. Thus a null graph is said to a disconnected graph as there is no edge connecting the vertices.                                                                                                                                                                                                    | (A) – Connected Graph![img_12.png](images/img_12.png) <br>(B) – Disconnected Graph ![img_13.png](images/img_13.png) |
 | 14      | Directed Acyclic Graph          | It’s also known as DAG, these are the graphs with directed edges, but they do not contain any cycle. Vertices also hold some data, and as it is directed; thus, edges are represented using an ordered pair of vertices.                                                                                                                                                                                                               | ![img_14.png](images/img_14.png)                                                                                    |
-| 15      | Bipartite Graph                 | A bipartite graph also called a bi-graph, is a set of graph vertices, i.e, points where multiple lines meet, decomposed into two disjoint sets, meaning they have no element in common, such that no two graph vertices within the same set are adjacent.                                                                                                                                                                              | ![img.png](img.png)                                                                                                 |
+| 15      | Bipartite Graph                 | A bipartite graph also called a bi-graph, is a set of graph vertices, i.e, points where multiple lines meet, decomposed into two disjoint sets, meaning they have no element in common, such that no two graph vertices within the same set are adjacent.                                                                                                                                                                              | ![img.png](images/img.png)                                                                                                 |
 
 > Graph Question Sets
 > 
@@ -37,3 +67,7 @@
 | 6       | #886 We want to split a group of n people (labeled from 1 to n) into two groups of any size. Each person may dislike some other people, and they should not go into the same group. Given the integer n and the array dislikes where dislikes[i] = [ai, bi] indicates that the person labeled ai does not like the person labeled bi, return true if it is possible to split everyone into two groups in this way. <br>Example:<br>Input: n = 4, dislikes = [[1,2],[1,3],[2,4]]<br><b>Output: true</b> <br>Explanation: group1 [1,4] and group2 [2,3]. | [#886](https://leetcode.com/problems/possible-bipartition/)           | [Possible Bipartition - Bipartite graph - Graph coloring](https://www.youtube.com/watch?v=0ACfAqs8mm0&list=PLEJXowNB4kPzByLnnFYNSCoqtFz0VKLk5&index=8) |
 | 7       | #207 There are a total of numCourses courses you have to take, labeled from 0 to numCourses - 1. You are given an array prerequisites where prerequisites[i] = [ai, bi] indicates that you must take course bi first if you want to take course ai. <br> For example, the pair [0, 1], indicates that to take course 0 you have to first take course 1.<br>Return true if you can finish all courses. Otherwise, return false.                                                                                                                         | [#207](https://leetcode.com/problems/course-schedule/)                | [Course Schedule, Deadlock detection, Graph coloring](https://www.youtube.com/watch?v=kXy0ABd1vwo&list=PLEJXowNB4kPzByLnnFYNSCoqtFz0VKLk5&index=9)    |
 | 8       | #787 cheapest-flights-within-k-stops                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   | [#787](https://leetcode.com/problems/cheapest-flights-within-k-stops) | [cheapest-flights-within-k-stops](https://www.youtube.com/watch?v=60RbWlDFsmI&list=PLEJXowNB4kPzByLnnFYNSCoqtFz0VKLk5&index=10)                                                                                                                                                   |
+
+> Graph Example
+1. Directed Graph ![img_1.png](images/img_1.png)
+2. UnDirected Graph ![img.png](img.png)

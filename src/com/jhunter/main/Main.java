@@ -2,6 +2,7 @@ package com.jhunter.main;
 
 import com.jhunter.fang.FANG2021;
 import com.jhunter.fang.FANG2021DP;
+import com.jhunter.graph.Graph;
 import com.jhunter.jstring.backtracking.GenerateCombinationsOfWellFormedParentheses22;
 import com.jhunter.jstring.backtracking.LetterCombinationsOfPhoneNumber17;
 import com.jhunter.jstring.backtracking.RestoreIPAddresses93;
@@ -20,6 +21,8 @@ import com.jhunter.tree.binarytree.sumtree.ConvertBinaryTreeToItsSumTree;
 import com.jhunter.tree.binarytree.sumtree.IsItSumTree;
 import com.jhunter.tree.binarytree.treetraversal.*;
 
+import java.util.HashSet;
+import java.util.Set;
 import java.util.concurrent.atomic.AtomicInteger;
 
 public class Main {
@@ -431,6 +434,17 @@ public class Main {
         ConstructFullBinaryTreeFomThePreorderSequenceWithLeafNodeInformation.executeTestCases();
         PrintNodesOfABinaryTreeInVerticalOrder.executeTestCases();
         FindTheMinimumDepthOfABinaryTree.executeTestCases();
+
+        Graph g = new Graph(true);
+        g.executeTestCases();
+
+        Set<String> set = new HashSet<>();
+        set.add("12:12");
+        set.add("11:12");
+        set.add("12:11");
+        set.add("00:00");
+
+        MinimumTimeDifference539.getMinimumTimeDifference(set);
         System.out.print("\n---------------------------- EXIT ----------------------------");
     }
 }
